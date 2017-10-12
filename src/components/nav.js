@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Nav = () => (
-  <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+  <nav className="navbar is-dark" aria-label="main navigation">
     <div className="navbar-brand">
       <div className="navbar-item">
         <h1 className="title is-3">Marvel Universe</h1>

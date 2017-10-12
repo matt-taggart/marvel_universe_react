@@ -20,13 +20,16 @@ const Card = () => (
           <nav className="level is-mobile">
             <div className="level-left">
               <a className="level-item">
-                <span className="icon is-small"><i className="fa fa-reply"></i></span>
+                <span className="icon is-small" style={{ marginRight: '5px' }}>
+                  <i className="fa fa-bookmark" />
+                </span>
+                <span className="is-small">Save</span>
               </a>
               <a className="level-item">
-                <span className="icon is-small"><i className="fa fa-retweet"></i></span>
-              </a>
-              <a className="level-item">
-                <span className="icon is-small"><i className="fa fa-heart"></i></span>
+                <span className="icon is-small" style={{ marginRight: '5px' }}>
+                  <i className="fa fa-info-circle" />
+                </span>
+                <span className="is-small">Details</span>
               </a>
             </div>
           </nav>

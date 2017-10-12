@@ -29,7 +29,16 @@ module.exports = ({ production = false }) => ({
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: { presets: [ 'env', 'react' ] },
+          options: { 
+            presets: [ 
+              ['env', {
+                targets: {
+                  node: 'current'
+                }
+              }], 
+              'react' 
+            ] 
+          },
         }
       },
       {
