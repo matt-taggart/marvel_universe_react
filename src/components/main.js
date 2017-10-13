@@ -1,47 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import SideBar from './sidebar';
 import Card from './card';
 import fetchCharacters from '../sagas/characters';
 
 class Main extends Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.fetchCharacters();
   }
   render() {
-    // const { characters } = this.props;
+    const { characters } = this.props;
 
-    // const characterCards = characters.get('characters')
-    //   .map(character => {
-        
-    //   })
+    const characterCards = characters.get('characters')
+      .map(character => <Card {...character} key={character.id} />);
+
     return (
       <div className="section">
         <div className="columns">
           <SideBar />
           <div className="column is-three-quarters">
             <div className="columns is-multiline">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              { characterCards }
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {};
+Main.propTypes = {
+  characters: PropTypes.object.isRequired,
+  fetchCharacters: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchCharacters: () => fetchCharacters()
-  }
-};
+const mapStateToProps = state => ({
+  characters: state.characters,
+});
+
+const mapDispatchToProps = () => ({
+  fetchCharacters,
+});
 
 export default connect(
   mapStateToProps,

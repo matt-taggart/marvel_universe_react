@@ -1,20 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Card = () => (
+const Card = ({ id, name, description, thumbnail: { path, extension } }) => (
   <div className="column is-half">
     <div className="box">
       <article className="media">
         <div className="media-left">
           <figure className="image is-64x64">
-            <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image" />
+            <img src={`${path}.${extension}`} alt="http://bulma.io/images/placeholders/128x128.png" />
           </figure>
         </div>
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+              <strong>{ name }</strong>
               <br />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+              { description || 'No description available.' }
             </p>
           </div>
           <nav className="level is-mobile">
@@ -39,4 +40,15 @@ const Card = () => (
   </div>
 );
 
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  thumbnail: PropTypes.shape({
+    extension: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 export default Card;
+
