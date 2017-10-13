@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SideBar from './sidebar';
-import Card from './card';
-import LoadingSpinner from './loadingSpinner';
+import CharacterCard from './characterCard';
+import LoadingComponent from './loadingHOC';
 import fetchCharacters from '../sagas/characters';
 
 class Main extends Component {
@@ -11,10 +11,8 @@ class Main extends Component {
     this.props.fetchCharacters();
   }
   render() {
-    const { characters } = this.props;
-
-    const characterCards = characters.get('characters')
-      .map(character => <Card {...character} key={character.id} />);
+    const { characters, display } = this.props;
+    const CharacterListFromAPI = LoadingComponent(CharacterCard);
 
     return (
       <div className="section">
@@ -22,9 +20,10 @@ class Main extends Component {
           <div className="columns">
             <SideBar />
             <div className="column is-three-quarters">
-              <div className="columns is-multiline">
-                { characterCards }
-              </div>
+              <CharacterListFromAPI
+                isLoading={display.get('loading')}              
+                list={characters.get('characters')}
+              />
             </div>
           </div>
         </div>
@@ -35,6 +34,7 @@ class Main extends Component {
 
 Main.propTypes = {
   characters: PropTypes.object.isRequired,
+  display: PropTypes.object.isRequired,
   fetchCharacters: PropTypes.func.isRequired,
 };
 

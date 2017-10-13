@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ id, name, description, thumbnail: { path, extension } }) => (
+const CharacterCard = ({ id, name, description, thumbnail: { path, extension } }) => (
   <div className="column is-half">
     <div className="box">
       <article className="media">
@@ -40,7 +40,7 @@ const Card = ({ id, name, description, thumbnail: { path, extension } }) => (
   </div>
 );
 
-Card.propTypes = {
+CharacterCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -50,5 +50,5 @@ Card.propTypes = {
   }).isRequired,
 };
 
-export default Card;
+export default CharacterCard;
 
