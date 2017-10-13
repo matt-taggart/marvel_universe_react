@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import store from './store';
-import Nav from './components/nav';
-import Main from './components/main';
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Nav />
-        <Main />
-      </div>
-    );
-  }
-}
+import App from './containers/app';
 
 render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>, 
   document.getElementById('app')
 );
