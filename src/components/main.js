@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SideBar from './sidebar';
 import Card from './card';
+import LoadingSpinner from './loadingSpinner';
 import fetchCharacters from '../sagas/characters';
 
 class Main extends Component {
@@ -17,11 +18,13 @@ class Main extends Component {
 
     return (
       <div className="section">
-        <div className="columns">
-          <SideBar />
-          <div className="column is-three-quarters">
-            <div className="columns is-multiline">
-              { characterCards }
+        <div className="container">
+          <div className="columns">
+            <SideBar />
+            <div className="column is-three-quarters">
+              <div className="columns is-multiline">
+                { characterCards }
+              </div>
             </div>
           </div>
         </div>
@@ -37,6 +40,7 @@ Main.propTypes = {
 
 const mapStateToProps = state => ({
   characters: state.characters,
+  display: state.display,
 });
 
 const mapDispatchToProps = () => ({
