@@ -3,19 +3,19 @@ import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './rootReducer';
-import charactersSaga from './sagas/characters';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
-const middleWare = process.env.dev ? [sagaMiddleware] : [sagaMiddleware, createLogger()];
+const middleWare = process.env.production ? [sagaMiddleware] : [sagaMiddleware, createLogger()];
 
 const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(...middleWare),
-    (typeof window.devToolsExtension === 'function') ? window.devToolsExtension() : f => f    
-  )
+    (typeof window.devToolsExtension === 'function') ? window.devToolsExtension() : f => f,
+  ),
 );
 
-sagaMiddleware.run(charactersSaga);
+sagaMiddleware.run(rootSaga);
 
 export default store;

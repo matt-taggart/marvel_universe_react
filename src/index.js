@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import store from './store';
@@ -11,5 +11,5 @@ render(
       <App />
     </BrowserRouter>
   </Provider>, 
-  document.getElementById('app')
+  document.getElementById('app'),
 );

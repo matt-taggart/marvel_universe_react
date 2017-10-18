@@ -2,10 +2,11 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const cssDevMode = [ 'style-loader', 'css-loader', 'sass-loader' ];
+
+const cssDevMode = ['style-loader', 'css-loader', 'sass-loader'];
 const cssProdMode = ExtractTextPlugin.extract({
   fallback: 'style-loader',
-  use: ['css-loader', 'sass-loader']
+  use: ['css-loader', 'sass-loader'],
 });
 
 module.exports = ({ production = false }) => ({
@@ -73,6 +74,6 @@ module.exports = ({ production = false }) => ({
     new webpack.NamedModulesPlugin(),
   ],
   resolve: {
-    extensions: [ '.js', '.jsx' ],
+    extensions: ['.js', '.jsx'],
   },
 });

@@ -1,9 +1,10 @@
-import { call, put } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import * as Api from '../utils/api';
 import { LOADING } from '../constants/display';
 import {
   CHARACTERS_FETCH_SUCCEEDED,
   CHARACTERS_FETCH_FAILED,
+  GET_CHARACTERS,
 } from '../constants/characters';
 
 function* fetchCharacters() {
@@ -18,5 +19,8 @@ function* fetchCharacters() {
   }
 }
 
-export default fetchCharacters;
+function* getCharacters() {
+  yield takeEvery(GET_CHARACTERS, fetchCharacters);
+}
 
+export default getCharacters;
