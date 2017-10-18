@@ -9,7 +9,7 @@ const ComicCard = ({
   prices,
   thumbnail: { path, extension },
 }) => (
-  <div className="column is-half">
+  <div className="column is-half ComicCard">
     <div className="box">
       <article className="media">
         <div className="media-left">
