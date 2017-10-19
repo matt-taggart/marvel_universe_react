@@ -1,11 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import * as Api from '../utils/api';
-import { LOADING } from '../constants/display';
-import {
-  EVENTS_FETCH_SUCCEEDED,
-  EVENTS_FETCH_FAILED,
-  GET_EVENTS,
-} from '../constants/events';
+import { LOADING, FETCH_FAILED } from '../constants/display';
+import { EVENTS_FETCH_SUCCEEDED, GET_EVENTS } from '../constants/events';
 
 function* fetchEvents() {
   try {
@@ -15,7 +11,7 @@ function* fetchEvents() {
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });
-    yield put({ type: EVENTS_FETCH_FAILED, message: e.message });
+    yield put({ type: FETCH_FAILED, message: e.message });
   }
 }
 

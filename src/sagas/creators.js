@@ -1,11 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import * as Api from '../utils/api';
-import { LOADING } from '../constants/display';
-import {
-  CREATORS_FETCH_SUCCEEDED,
-  CREATORS_FETCH_FAILED,
-  GET_CREATORS,
-} from '../constants/creators';
+import { LOADING, FETCH_FAILED } from '../constants/display';
+import { CREATORS_FETCH_SUCCEEDED, GET_CREATORS } from '../constants/creators';
 
 function* fetchCreators() {
   try {
@@ -15,7 +11,7 @@ function* fetchCreators() {
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });
-    yield put({ type: CREATORS_FETCH_FAILED, message: e.message });
+    yield put({ type: FETCH_FAILED, message: e.message });
   }
 }
 
