@@ -5,18 +5,23 @@ import Nav from '../components/nav';
 import Main from '../components/main';
 import CharacterCard from '../components/characterCard';
 import ComicCard from '../components/comicCard';
+import CreatorCard from '../components/creatorCard';
 import LoadingComponent from '../components/loadingHOC';
 import { GET_CHARACTERS } from '../constants/characters';
 import { GET_COMICS } from '../constants/comics';
+import { GET_CREATORS} from '../constants/creators';
 
 const CharacterListFromAPI = LoadingComponent(CharacterCard);
 const ComicListFromAPI = LoadingComponent(ComicCard);
+const CreatorListFromAPI = LoadingComponent(CreatorCard);
 
 const App = ({
   getCharacters,
   getComics,
+  getCreators,
   characters,
   comics,
+  creators,
   display,
   location,
 }) => {
@@ -47,6 +52,16 @@ const App = ({
               />
             )}
           />
+          <Route
+            path="/creators"
+            render={() => (
+              <CreatorListFromAPI
+                list={creators.get('creators')}
+                apiCall={getCreators}
+                isLoading={display.get('loading')}
+              />
+            )}
+          />
           <Redirect to="/" />
         </Switch>
       </Main>
@@ -57,16 +72,17 @@ const App = ({
 const mapStateToProps = state => ({
   characters: state.characters,
   comics: state.comics,
+  creators: state.creators,
   display: state.display,
 });
 
 const mapDispatchToProps = dispatch => ({
   getCharacters: () => dispatch({ type: GET_CHARACTERS }),
   getComics: () => dispatch({ type: GET_COMICS }),
+  getCreators: () => dispatch({ type: GET_CREATORS }),
 });
 
 export default withRouter(connect(
   mapStateToProps, 
   mapDispatchToProps,
 )(App));
-

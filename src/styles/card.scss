@@ -1,7 +1,5 @@
-.ComicCard {
-  .content {
-    p:not(:last-child) {
-      margin-bottom: 0.5em;
-    }
+.content {
+  p:not(:last-child) {
+    margin-bottom: 0.3em;
   }
 }
