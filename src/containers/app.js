@@ -38,7 +38,7 @@ const App = ({
       <Main>
         <Switch>
           <Route
-            path="/"
+            path="/characters"
             exact
             render={() => (
               <CharacterListFromAPI
@@ -90,6 +90,7 @@ const App = ({
               />
             )}
           />
+          <Redirect from="/" to="/characters" />
           <Redirect to="/" />
         </Switch>
       </Main>
