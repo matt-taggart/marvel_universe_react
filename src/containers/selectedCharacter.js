@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SelectedCharacter extends Component {
-  componentDidMount() {
-    this.props.getSelectedCharacter(this.props.match.params.id);
-  }
-  render() {
-    return <div>Yup!</div>;
-  }
-}
+const SelectedCharacter = () => (
+  <div>Hello world!</div>
+);
 
 export default SelectedCharacter;
+

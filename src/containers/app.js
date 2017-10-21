@@ -16,6 +16,7 @@ const CharacterListFromAPI = LoadingComponent(CharacterCard);
 const ComicListFromAPI = LoadingComponent(ComicCard);
 const CreatorListFromAPI = LoadingComponent(CreatorCard);
 const EventListFromAPI = LoadingComponent(EventCard);
+const SelectedCharacterFromAPI = LoadingComponent(SelectedCharacter);
 
 const App = ({
   getCharacters,
@@ -80,7 +81,14 @@ const App = ({
           />
           <Route
             path="/characters/:id"
-            render={props => <SelectedCharacter  {...props} getSelectedCharacter={getSelectedCharacter} />}
+            render={props => (
+              <SelectedCharacterFromAPI  
+                {...props} 
+                selectedItem
+                apiCall={getSelectedCharacter} 
+                isLoading={display.get('loading')}
+              />
+            )}
           />
           <Redirect to="/" />
         </Switch>
