@@ -15,7 +15,8 @@ export default WrappedComponent => (
     static propTypes = {
       apiCall: PropTypes.func.isRequired,
       isLoading: PropTypes.bool.isRequired,
-      list: PropTypes.array.isRequired,
+      list: PropTypes.array,
+      history: PropTypes.object.isRequired,
     }
     render() {
       const { isLoading, selectedItem, list, history } = this.props;

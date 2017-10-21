@@ -40,7 +40,7 @@ const CharacterCard = ({ id, name, description, thumbnail: { path, extension }, 
         </article>
       </div>
     </div>
-  )
+  );
 };
 
 CharacterCard.propTypes = {
@@ -51,7 +51,7 @@ CharacterCard.propTypes = {
     extension: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
   }).isRequired,
-  selectItem: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 export default CharacterCard;
