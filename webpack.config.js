@@ -39,6 +39,7 @@ module.exports = ({ production = false }) => ({
                 },
               }],
               'react',
+              'stage-2',
             ],
           },
         },
