@@ -18,8 +18,8 @@ const EventCard = ({ id, title, description, start, end, thumbnail: { path, exte
               <br />
               { description || 'No description available.' }
             </p>
-            <p>Start: <em>{ moment(start).format('dddd, MMMM Do YYYY') }</em></p>
-            <p>End: <em>{ moment(end).format('dddd, MMMM Do YYYY') }</em></p>  
+            <p>Start: <em>{ start ? moment(start).format('dddd, MMMM Do YYYY') : 'Date not available' }</em></p>
+            <p>End: <em>{ end ? moment(end).format('dddd, MMMM Do YYYY') : 'Date not available' }</em></p>  
           </div>
           <nav className="level is-mobile">
             <div className="level-left">

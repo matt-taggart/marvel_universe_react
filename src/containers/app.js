@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Nav from '../components/nav';
 import Main from '../components/main';
@@ -8,10 +9,7 @@ import ComicCard from '../components/comicCard';
 import CreatorCard from '../components/creatorCard';
 import EventCard from '../components/eventCard';
 import LoadingComponent from '../components/loadingHOC';
-import { GET_CHARACTERS } from '../constants/characters';
-import { GET_COMICS } from '../constants/comics';
-import { GET_CREATORS } from '../constants/creators';
-import { GET_EVENTS } from '../constants/events';
+import * as ApiActions from '../actions/api';
 
 const CharacterListFromAPI = LoadingComponent(CharacterCard);
 const ComicListFromAPI = LoadingComponent(ComicCard);
@@ -92,12 +90,7 @@ const mapStateToProps = state => ({
   display: state.display,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getCharacters: () => dispatch({ type: GET_CHARACTERS }),
-  getComics: () => dispatch({ type: GET_COMICS }),
-  getCreators: () => dispatch({ type: GET_CREATORS }),
-  getEvents: () => dispatch({ type: GET_EVENTS }),
-});
+const mapDispatchToProps = dispatch => bindActionCreators(ApiActions, dispatch);
 
 export default withRouter(connect(
   mapStateToProps, 
