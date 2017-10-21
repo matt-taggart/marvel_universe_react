@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
-const EventCard = ({ id, title, description, thumbnail: { path, extension } }) => (
+const EventCard = ({ id, title, description, start, end, thumbnail: { path, extension } }) => (
   <div className="column is-half">
     <div className="box">
       <article className="media">
@@ -17,6 +18,8 @@ const EventCard = ({ id, title, description, thumbnail: { path, extension } }) =
               <br />
               { description || 'No description available.' }
             </p>
+            <p>Start: <em>{ moment(start).format('dddd, MMMM Do YYYY') }</em></p>
+            <p>End: <em>{ moment(end).format('dddd, MMMM Do YYYY') }</em></p>  
           </div>
           <nav className="level is-mobile">
             <div className="level-left">
@@ -44,6 +47,8 @@ EventCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  start: PropTypes.string.isRequired,
+  end: PropTypes.string.isRequired,
   thumbnail: PropTypes.shape({
     extension: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
