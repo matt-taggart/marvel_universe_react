@@ -10,6 +10,7 @@ import CreatorCard from '../components/creatorCard';
 import EventCard from '../components/eventCard';
 import LoadingComponent from '../components/loadingHOC';
 import * as ApiActions from '../actions/api';
+import SelectedCharacter from '../containers/selectedCharacter';
 
 const CharacterListFromAPI = LoadingComponent(CharacterCard);
 const ComicListFromAPI = LoadingComponent(ComicCard);
@@ -21,12 +22,13 @@ const App = ({
   getComics,
   getCreators,
   getEvents,
+  getSelectedCharacter,
   characters,
   comics,
   creators,
   events,
   display,
-  location,
+  history,
 }) => {
 
   return (
@@ -42,6 +44,7 @@ const App = ({
                 list={characters.get('characters')}
                 apiCall={getCharacters}
                 isLoading={display.get('loading')}
+                history={history}
               />
             )}
           />
@@ -74,6 +77,10 @@ const App = ({
                 isLoading={display.get('loading')}
               />
             )}
+          />
+          <Route
+            path="/characters/:id"
+            render={props => <SelectedCharacter  {...props} getSelectedCharacter={getSelectedCharacter} />}
           />
           <Redirect to="/" />
         </Switch>

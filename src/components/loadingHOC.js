@@ -13,14 +13,14 @@ export default WrappedComponent => (
       list: PropTypes.array.isRequired,
     }
     render() {
-      const { isLoading, list } = this.props;
+      const { isLoading, list, history } = this.props;
       if (isLoading) {
         return <LoadingSpinner />;
       }
 
       return (
         <div className="columns is-multiline">
-          { list.map(item => <WrappedComponent {...item} key={item.id} />) }
+          { list.map(item => <WrappedComponent {...item} history={history} key={item.id} />) }
         </div>
       );
     }
