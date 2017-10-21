@@ -8,8 +8,8 @@ export default WrappedComponent => (
       this.props.apiCall();
     }
     static propTypes = {
-      apiCall: PropTypes.function.isRequired,
-      isLoading: PropTypes.boolean.isRequired,
+      apiCall: PropTypes.func.isRequired,
+      isLoading: PropTypes.bool.isRequired,
       list: PropTypes.array.isRequired,
     }
     render() {
