@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Nav from '../components/nav';
 import Main from '../components/main';
+import SignIn from '../components/signIn';
 import CharacterCard from '../components/characterCard';
 import ComicCard from '../components/comicCard';
 import CreatorCard from '../components/creatorCard';
@@ -30,73 +31,75 @@ const App = ({
   events,
   display,
   history,
-}) => {
-
-  return (
-    <div>
-      <Nav />
-      <Main>
-        <Switch>
-          <Route
-            path="/characters"
-            exact
-            render={() => (
-              <CharacterListFromAPI
-                list={characters.get('characters')}
-                apiCall={getCharacters}
-                isLoading={display.get('loading')}
-                history={history}
-              />
-            )}
-          />
-          <Route
-            path="/comics"
-            render={() => (
-              <ComicListFromAPI
-                list={comics.get('comics')}
-                apiCall={getComics}
-                isLoading={display.get('loading')}
-              />
-            )}
-          />
-          <Route
-            path="/creators"
-            render={() => (
-              <CreatorListFromAPI
-                list={creators.get('creators')}
-                apiCall={getCreators}
-                isLoading={display.get('loading')}
-              />
-            )}
-          />
-          <Route
-            path="/events"
-            render={() => (
-              <EventListFromAPI
-                list={events.get('events')}
-                apiCall={getEvents}
-                isLoading={display.get('loading')}
-              />
-            )}
-          />
-          <Route
-            path="/characters/:id"
-            render={props => (
-              <SelectedCharacterFromAPI  
-                {...props} 
-                selectedItem
-                apiCall={getSelectedCharacter} 
-                isLoading={display.get('loading')}
-              />
-            )}
-          />
-          <Redirect from="/" to="/characters" />
-          <Redirect to="/" />
-        </Switch>
-      </Main>
-    </div>
-  );
-};
+}) => (
+  <div>
+    <Nav history={history} />
+    <Main>
+      <Switch>
+        <Route
+          exact
+          path="/sign-in"
+          component={SignIn}
+        />        
+        <Route
+          path="/characters"
+          exact
+          render={() => (
+            <CharacterListFromAPI
+              list={characters.get('characters')}
+              apiCall={getCharacters}
+              isLoading={display.get('loading')}
+              history={history}
+            />
+          )}
+        />
+        <Route
+          path="/characters/:id"
+          render={props => (
+            <SelectedCharacterFromAPI  
+              {...props} 
+              selectedItem
+              apiCall={getSelectedCharacter} 
+              isLoading={display.get('loading')}
+            />
+          )}
+        />
+        <Route
+          path="/comics"
+          render={() => (
+            <ComicListFromAPI
+              list={comics.get('comics')}
+              apiCall={getComics}
+              isLoading={display.get('loading')}
+            />
+          )}
+        />
+        <Route
+          path="/creators"
+          render={() => (
+            <CreatorListFromAPI
+              list={creators.get('creators')}
+              apiCall={getCreators}
+              isLoading={display.get('loading')}
+            />
+          )}
+        />
+        <Route
+          path="/events"
+          render={() => (
+            <EventListFromAPI
+              list={events.get('events')}
+              apiCall={getEvents}
+              isLoading={display.get('loading')}
+            />
+          )}
+        />
+        <Redirect from="/" to="/characters" />
+        <Redirect to="/" />
+      </Switch>
+    </Main>
+  </div>
+);
 
 const mapStateToProps = state => ({
   characters: state.characters,
