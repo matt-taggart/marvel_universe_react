@@ -7,10 +7,12 @@ function* signIn() {
   try {
     yield put({ type: LOADING, payload: true });
 
-    const credentials = select(state => ({
-      username: state.form.signIn.username,
-      password: state.form.signIn.password,
+    const credentials = yield select(state => ({
+      username: state.form.signIn.values.username,
+      password: state.form.signIn.values.password,
     }));
+    console.log('CREDENTIALS', credentials);
+
     const user = yield call(Api.signIn, credentials);
 
     yield put({ type: SIGN_IN_SUCCEEDED, user });

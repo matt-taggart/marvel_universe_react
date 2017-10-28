@@ -31,6 +31,7 @@ const App = ({
   events,
   display,
   history,
+  signIn,
 }) => (
   <div>
     <Nav history={history} />
@@ -39,7 +40,7 @@ const App = ({
         <Route
           exact
           path="/sign-in"
-          component={SignIn}
+          render={() => <SignIn signIn={signIn} />}
         />        
         <Route
           path="/characters"

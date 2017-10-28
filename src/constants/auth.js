@@ -1,0 +1,2 @@
+export const SIGN_IN_ATTEMPT = 'SIGN_IN_ATTEMPT';
+export const SIGN_IN_SUCCEEDED = 'SIGN_IN_SUCCEDED';
