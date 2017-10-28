@@ -2,14 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { validateCredentials } from '../utils/validators';
-
-const renderField = ({ input, type, placeholder, meta: { error } }) => {
-  const inputClasses = error ? 'input is-medium help is-danger' : 'input is-medium';
-  return [
-    <input {...input} className={inputClasses} type={type} placeholder={placeholder} />,
-    <p className="help is-danger">{ error }</p>,
-  ];
-};
+import renderField from '../components/renderField';
 
 const SignIn = ({ handleSubmit, signIn }) => {
   const submit = ({ username, password }) => {
@@ -34,7 +27,7 @@ const SignIn = ({ handleSubmit, signIn }) => {
                 component={renderField}
               />
               <span className="icon is-small is-left">
-                <i className="fa fa-envelope"></i>
+                <i className="fa fa-envelope" />
               </span>
             </p>
           </div>
@@ -47,7 +40,7 @@ const SignIn = ({ handleSubmit, signIn }) => {
                 component={renderField}
               />
               <span className="icon is-small is-left">
-                <i className="fa fa-lock"></i>
+                <i className="fa fa-lock" />
               </span>
             </p>
           </div>
