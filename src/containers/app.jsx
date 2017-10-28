@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Nav from '../components/nav';
 import Main from '../components/main';
 import SignIn from '../components/signIn';
+import Register from '../components/register';
 import CharacterCard from '../components/characterCard';
 import ComicCard from '../components/comicCard';
 import CreatorCard from '../components/creatorCard';
@@ -41,7 +42,12 @@ const App = ({
           exact
           path="/sign-in"
           render={() => <SignIn signIn={signIn} />}
-        />        
+        />
+        <Route
+          exact
+          path="/register"
+          render={() => <Register />}    
+        />
         <Route
           path="/characters"
           exact

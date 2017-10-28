@@ -11,7 +11,7 @@ const renderField = ({ input, type, placeholder, meta: { error } }) => {
   ];
 };
 
-const SignIn = ({ handleSubmit, signIn }) => {
+const Register = ({ handleSubmit, register }) => {
   const submit = ({ username, password }) => {
     const errors = validateCredentials(username, password);
 
@@ -19,12 +19,25 @@ const SignIn = ({ handleSubmit, signIn }) => {
       throw new SubmissionError(errors);
     }
 
-    signIn();
+    register();
   };
   return (
     <div className="columns is-centered">
       <div className="column is-two-thirds">
         <form onSubmit={handleSubmit(submit)}>
+          <div className="field">
+            <p className="control has-icons-left">
+              <Field
+                name="name"
+                type="text"
+                placeholder="Name"
+                component={renderField}
+              />
+              <span className="icon is-small is-left">
+                <i className="fa fa-user"></i>
+              </span>
+            </p>
+          </div>
           <div className="field">
             <p className="control has-icons-left">
               <Field
@@ -54,27 +67,10 @@ const SignIn = ({ handleSubmit, signIn }) => {
           <div className="field">
             <p className="control">
               <button className="button is-dark is-medium">
-                Sign In
+                Register
               </button>
             </p>
           </div>
-          <div className="level">
-            <div className="level-left">
-              <div className="level-item">
-                <span>Don't have an account yet? Click <Link to="register">here</Link> to register!</span>
-              </div>
-            </div>
-          </div>
-          {/* <div className="field">
-            <div className="control">
-              <div className="select">
-                <select>
-                  <option>Select dropdown</option>
-                  <option>With options</option>
-                </select>
-              </div>
-            </div>
-          </div> */}
         </form>
       </div>
     </div>
@@ -82,5 +78,5 @@ const SignIn = ({ handleSubmit, signIn }) => {
 };
 
 export default reduxForm({
-  form: 'signIn',
-})(SignIn);
+  form: 'register',
+})(Register);
