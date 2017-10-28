@@ -3,12 +3,33 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 
-const renderField = ({ input, type, placeholder, className, meta: { error } }) => (
-  <input {...input} className={className} type={type} placeholder={placeholder} />
-);
-
+const renderField = ({ input, type, placeholder, meta: { error } }) => {
+  const inputClasses = error ? 'input is-medium help is-danger' : 'input is-medium';
+  return (
+    <span>
+      <input {...input} className={inputClasses} type={type} placeholder={placeholder} />
+      { error && <p className="help is-danger">{ error }</p> }
+    </span>
+  );
+};
 const SignIn = ({ handleSubmit, signIn }) => {
-  const submit = () => signIn();
+  const submit = ({ username, password }) => {
+    const errors = {};
+
+    if (!username) {
+      errors.username = 'Username must be provided.';
+    }
+
+    if (!password) {
+      errors.password = 'Password must be provided.';
+    }
+
+    if (Object.keys(errors).length) {
+      throw new SubmissionError(errors);
+    }
+
+    signIn();
+  };
   return (
     <div className="columns is-centered">
       <div className="column is-two-thirds">
@@ -17,7 +38,6 @@ const SignIn = ({ handleSubmit, signIn }) => {
             <p className="control has-icons-left has-icons-right">
               <Field
                 name="username"
-                className="input is-medium"
                 type="email"
                 placeholder="Email"
                 component={renderField}
@@ -25,16 +45,12 @@ const SignIn = ({ handleSubmit, signIn }) => {
               <span className="icon is-small is-left">
                 <i className="fa fa-envelope"></i>
               </span>
-              <span className="icon is-small is-right">
-                <i className="fa fa-check"></i>
-              </span>
             </p>
           </div>
           <div className="field">
             <p className="control has-icons-left">
               <Field
                 name="password"
-                className="input is-medium"
                 type="password"
                 placeholder="Password"
                 component={renderField}

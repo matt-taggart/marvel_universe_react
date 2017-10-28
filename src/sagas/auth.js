@@ -11,7 +11,6 @@ function* signIn() {
       username: state.form.signIn.values.username,
       password: state.form.signIn.values.password,
     }));
-    console.log('CREDENTIALS', credentials);
 
     const user = yield call(Api.signIn, credentials);
 
