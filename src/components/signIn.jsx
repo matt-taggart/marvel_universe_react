@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 const renderField = ({ input, type, placeholder, className, meta: { error } }) => (
-  <input {...input} className={className} type={type} placeholder={placeholder}></input> 
+  <input {...input} className={className} type={type} placeholder={placeholder} />
 );
 
 const SignIn = () => (

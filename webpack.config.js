@@ -11,7 +11,7 @@ const cssProdMode = ExtractTextPlugin.extract({
 
 module.exports = ({ production = false }) => ({
   context: resolve('src'),
-  entry: ['./index.js', './style.scss'],
+  entry: ['./index.jsx', './style.scss'],
   output: {
     path: resolve('dist'),
     filename: 'bundle.js',
@@ -27,7 +27,7 @@ module.exports = ({ production = false }) => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
