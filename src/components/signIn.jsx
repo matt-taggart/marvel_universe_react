@@ -58,16 +58,6 @@ const SignIn = ({ handleSubmit, signIn }) => {
               </div>
             </div>
           </div>
-          {/* <div className="field">
-            <div className="control">
-              <div className="select">
-                <select>
-                  <option>Select dropdown</option>
-                  <option>With options</option>
-                </select>
-              </div>
-            </div>
-          </div> */}
         </form>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { validateCredentials } from '../utils/validators';
 import renderField from '../components/renderField';
+import renderDropdown from '../components/renderDropdown';
 
 const Register = ({ handleSubmit, register }) => {
   const submit = ({ username, password }) => {
@@ -56,6 +57,26 @@ const Register = ({ handleSubmit, register }) => {
                 <i className="fa fa-lock" />
               </span>
             </p>
+          </div>
+          <div className="field is-grouped">
+            <div className="control">
+              <Field
+                name="age"
+                type="text"
+                placeholder="Age"
+                component={renderField}
+              />
+            </div>
+            <div className="control">
+              <div className="select is-medium">
+                <Field
+                  name="gender"
+                  defaultValue="Gender"
+                  options={['Male', 'Female']}
+                  component={renderDropdown}
+                />
+              </div>
+            </div>
           </div>
           <div className="field">
             <p className="control">
