@@ -16,7 +16,7 @@ function* fetchCharacters() {
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });
-    yield put({ type: FETCH_FAILED, message: e.message });
+    yield put({ type: FETCH_FAILED, error: e });
   }
 }
 
@@ -28,7 +28,7 @@ function* fetchSelectedCharacter({ id }) {
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });
-    yield put({ type: FETCH_FAILED, message: e.message });
+    yield put({ type: FETCH_FAILED, error: e });
   }
 }
 

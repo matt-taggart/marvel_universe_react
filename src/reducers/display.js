@@ -3,7 +3,7 @@ import { LOADING, FETCH_FAILED } from '../constants/display';
 
 const initialState = new Map({
   loading: false,
-  error: null,
+  error: {},
 });
 
 export default (state = initialState, action) => {
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
     case LOADING:
       return state.set('loading', action.payload);
     case FETCH_FAILED:
-      return state.set('error', action.message);
+      return state.set('error', action.error);
     default:
       return state;
   }
