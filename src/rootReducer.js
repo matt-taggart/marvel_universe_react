@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import characters from './reducers/characters';
 import comics from './reducers/comics';
 import creators from './reducers/creators';
@@ -11,4 +12,5 @@ export default combineReducers({
   creators,
   events,
   display,
+  form: formReducer,
 });
