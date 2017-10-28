@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
+import { validateCredentials } from '../utils/validators';
 
 const renderField = ({ input, type, placeholder, meta: { error } }) => {
   const inputClasses = error ? 'input is-medium help is-danger' : 'input is-medium';
@@ -14,15 +14,7 @@ const renderField = ({ input, type, placeholder, meta: { error } }) => {
 };
 const SignIn = ({ handleSubmit, signIn }) => {
   const submit = ({ username, password }) => {
-    const errors = {};
-
-    if (!username) {
-      errors.username = 'Username must be provided.';
-    }
-
-    if (!password) {
-      errors.password = 'Password must be provided.';
-    }
+    const errors = validateCredentials(username, password);
 
     if (Object.keys(errors).length) {
       throw new SubmissionError(errors);
@@ -38,7 +30,7 @@ const SignIn = ({ handleSubmit, signIn }) => {
             <p className="control has-icons-left has-icons-right">
               <Field
                 name="username"
-                type="email"
+                type="text"
                 placeholder="Email"
                 component={renderField}
               />
