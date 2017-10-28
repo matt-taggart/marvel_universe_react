@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-axios.interceptors.response.use(() => {
-}, error => Promise.reject(error.response.data));
+axios.interceptors.response.use(
+  response => response,
+  error => Promise.reject(error.response.data),
+);
 
 export const fetchCharacters = () => axios.get('http://192.168.99.100:3000/characters');
 export const fetchComics = () => axios.get('http://192.168.99.100:3000/comics');
