@@ -22,9 +22,9 @@ const ComicCard = ({
             <p>
               <strong>{ title }</strong>
             </p>
-            <p>{ `Series: ${name}` }</p>
-            <p>{ `Issue Number: ${issueNumber}` }</p>
-            <p>{ `Print Price: $${prices[0].price}` }</p>
+            <p>Series: <em>{name}</em></p>
+            <p>Issue Number: <em>{issueNumber}</em></p>
+            <p>Print Price: <em>${prices[0].price}</em></p>
           </div>
           <nav className="level is-mobile">
             <div className="level-left">
