@@ -1,17 +1,17 @@
 import validator from 'validator';
 
-export const validateCredentials = (username, password) => {
+export const validateCredentials = (email, password) => {
   const errors = {};
 
-  if (!username) {
-    errors.username = 'Email must be provided.';
+  if (!email) {
+    errors.email = 'Email must be provided.';
   }
 
   if (!password) {
     errors.password = 'Password must be provided.';
   }
 
-  if (username && !validator.isEmail(username)) {
+  if (email && !validator.isEmail(email)) {
     errors.username = 'Invalid email address.';
   }
 
@@ -37,3 +37,7 @@ export const validateCredentials = (username, password) => {
 
   return errors;
 };
+
+const validateRegistration = () => {
+
+}

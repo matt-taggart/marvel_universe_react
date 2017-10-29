@@ -21,7 +21,7 @@ const SignIn = ({ handleSubmit, signIn }) => {
           <div className="field">
             <p className="control has-icons-left">
               <Field
-                name="username"
+                name="email"
                 type="text"
                 placeholder="Email"
                 component={renderField}

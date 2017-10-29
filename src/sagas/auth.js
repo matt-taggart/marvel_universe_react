@@ -8,7 +8,7 @@ function* signIn() {
     yield put({ type: LOADING, payload: true });
 
     const credentials = yield select(state => ({
-      username: state.form.signIn.values.username,
+      email: state.form.signIn.values.email,
       password: state.form.signIn.values.password,
     }));
 

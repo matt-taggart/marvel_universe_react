@@ -6,8 +6,8 @@ import renderField from '../components/renderField';
 import renderDropdown from '../components/renderDropdown';
 
 const Register = ({ handleSubmit, register }) => {
-  const submit = ({ username, password }) => {
-    const errors = validateCredentials(username, password);
+  const submit = ({ email, password }) => {
+    const errors = validateCredentials(email, password);
 
     if (Object.keys(errors).length) {
       throw new SubmissionError(errors);
@@ -35,7 +35,7 @@ const Register = ({ handleSubmit, register }) => {
           <div className="field">
             <p className="control has-icons-left">
               <Field
-                name="username"
+                name="email"
                 type="text"
                 placeholder="Email"
                 component={renderField}
