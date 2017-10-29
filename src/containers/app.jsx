@@ -20,94 +20,110 @@ const CreatorListFromAPI = LoadingComponent(CreatorCard);
 const EventListFromAPI = LoadingComponent(EventCard);
 const SelectedCharacterFromAPI = LoadingComponent(SelectedCharacter);
 
-const App = ({
-  getCharacters,
-  getComics,
-  getCreators,
-  getEvents,
-  getSelectedCharacter,
-  characters,
-  comics,
-  creators,
-  events,
-  display,
-  history,
-  signIn,
-  register,
-}) => (
-  <div>
-    <Nav history={history} />
-    <Main>
-      <Switch>
-        <Route
-          exact
-          path="/sign-in"
-          render={() => <SignIn signIn={signIn} />}
-        />
-        <Route
-          exact
-          path="/register"
-          render={() => <Register register={register} />}    
-        />
-        <Route
-          path="/characters"
-          exact
-          render={() => (
-            <CharacterListFromAPI
-              list={characters.get('characters')}
-              apiCall={getCharacters}
-              isLoading={display.get('loading')}
-              history={history}
+class App extends Component {
+  componentDidCatch(error, info) {
+    const { setApplicationError } = this.props;
+
+    setApplicationError({ 
+      error: error.message, 
+      info: info.componentStack
+    });
+  }
+
+  render() {
+    const {
+      getCharacters,
+      getComics,
+      getCreators,
+      getEvents,
+      getSelectedCharacter,
+      characters,
+      comics,
+      creators,
+      events,
+      user,
+      display,
+      history,
+      signIn,
+      register,
+    } = this.props;
+    
+    return (
+      <div>
+        <Nav history={history} user={user} />
+        <Main>
+          <Switch>
+            <Route
+              exact
+              path="/sign-in"
+              render={() => <SignIn signIn={signIn} />}
             />
-          )}
-        />
-        <Route
-          path="/characters/:id"
-          render={props => (
-            <SelectedCharacterFromAPI  
-              {...props} 
-              selectedItem
-              apiCall={getSelectedCharacter} 
-              isLoading={display.get('loading')}
+            <Route
+              exact
+              path="/register"
+              render={() => <Register register={register} />}    
             />
-          )}
-        />
-        <Route
-          path="/comics"
-          render={() => (
-            <ComicListFromAPI
-              list={comics.get('comics')}
-              apiCall={getComics}
-              isLoading={display.get('loading')}
+            <Route
+              path="/characters"
+              exact
+              render={() => (
+                <CharacterListFromAPI
+                  list={characters.get('characters')}
+                  apiCall={getCharacters}
+                  isLoading={display.get('loading')}
+                  history={history}
+                />
+              )}
             />
-          )}
-        />
-        <Route
-          path="/creators"
-          render={() => (
-            <CreatorListFromAPI
-              list={creators.get('creators')}
-              apiCall={getCreators}
-              isLoading={display.get('loading')}
+            <Route
+              path="/characters/:id"
+              render={props => (
+                <SelectedCharacterFromAPI  
+                  {...props} 
+                  selectedItem
+                  apiCall={getSelectedCharacter} 
+                  isLoading={display.get('loading')}
+                />
+              )}
             />
-          )}
-        />
-        <Route
-          path="/events"
-          render={() => (
-            <EventListFromAPI
-              list={events.get('events')}
-              apiCall={getEvents}
-              isLoading={display.get('loading')}
+            <Route
+              path="/comics"
+              render={() => (
+                <ComicListFromAPI
+                  list={comics.get('comics')}
+                  apiCall={getComics}
+                  isLoading={display.get('loading')}
+                />
+              )}
             />
-          )}
-        />
-        <Redirect from="/" to="/characters" />
-        <Redirect to="/" />
-      </Switch>
-    </Main>
-  </div>
-);
+            <Route
+              path="/creators"
+              render={() => (
+                <CreatorListFromAPI
+                  list={creators.get('creators')}
+                  apiCall={getCreators}
+                  isLoading={display.get('loading')}
+                />
+              )}
+            />
+            <Route
+              path="/events"
+              render={() => (
+                <EventListFromAPI
+                  list={events.get('events')}
+                  apiCall={getEvents}
+                  isLoading={display.get('loading')}
+                />
+              )}
+            />
+            <Redirect from="/" to="/characters" />
+            <Redirect to="/" />
+          </Switch>
+        </Main>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   characters: state.characters,
@@ -115,6 +131,7 @@ const mapStateToProps = state => ({
   creators: state.creators,
   events: state.events,
   display: state.display,
+  user: state.user,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(ApiActions, dispatch);
