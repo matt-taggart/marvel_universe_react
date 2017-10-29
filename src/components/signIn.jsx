@@ -5,8 +5,8 @@ import { validateCredentials } from '../utils/validators';
 import renderField from '../components/renderField';
 
 const SignIn = ({ handleSubmit, signIn }) => {
-  const submit = ({ username, password }) => {
-    const errors = validateCredentials(username, password);
+  const submit = ({ email, password }) => {
+    const errors = validateCredentials(email, password);
 
     if (Object.keys(errors).length) {
       throw new SubmissionError(errors);
