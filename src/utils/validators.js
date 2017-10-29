@@ -1,7 +1,7 @@
 import validator from 'validator';
 
-export const validateCredentials = (email, password) => {
-  const errors = {};
+export const validateCredentials = (email, password, err = {}) => {
+  const errors = err || {};
 
   if (!email) {
     errors.email = 'Email must be provided.';
@@ -12,7 +12,7 @@ export const validateCredentials = (email, password) => {
   }
 
   if (email && !validator.isEmail(email)) {
-    errors.username = 'Invalid email address.';
+    errors.email = 'Invalid email address.';
   }
 
   if (password && !validator.isLength(password, { min: 8 })) {
@@ -38,6 +38,30 @@ export const validateCredentials = (email, password) => {
   return errors;
 };
 
-const validateRegistration = () => {
+export const validateRegistration = (name, email, password, age, gender) => {
+  const errors = {};
 
-}
+  if (!name) {
+    errors.name = 'Name must be provided.';
+  }
+
+  if (!age) {
+    errors.age = 'Age must be provided.';
+  }
+
+  if (!gender) {
+    errors.gender = 'Gender must be provided.';
+  }
+
+  validateCredentials(email, password, errors);
+
+  if (name && !validator.isAlpha(name)) {
+    errors.name = 'Name format is invalid.';
+  }
+
+  if (age && !validator.isNumeric(age)) {
+    errors.age = 'Age format is invalid.';
+  }
+
+  return errors;
+};
