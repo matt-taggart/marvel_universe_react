@@ -3,7 +3,7 @@ import comicsSaga from './comics';
 import creatorsSaga from './creators';
 import eventsSaga from './events';
 import authSaga from './auth';
-import userSaga from './users';
+import userSaga from './user';
 
 export default function* root() {
   yield [
