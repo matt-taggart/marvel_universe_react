@@ -68,14 +68,12 @@ const Register = ({ handleSubmit, register }) => {
               />
             </div>
             <div className="control">
-              <div className="select is-medium">
-                <Field
-                  name="gender"
-                  defaultValue="Gender"
-                  options={['Male', 'Female']}
-                  component={renderDropdown}
-                />
-              </div>
+              <Field
+                name="gender"
+                defaultValue="Gender"
+                options={['Male', 'Female']}
+                component={renderDropdown}
+              />
             </div>
           </div>
           <div className="field">

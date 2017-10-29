@@ -11,3 +11,4 @@ export const fetchCreators = () => axios.get('http://192.168.99.100:3000/creator
 export const fetchEvents = () => axios.get('http://192.168.99.100:3000/events');
 export const fetchSelectedCharacter = id => () => axios.get(`http://192.168.99.100:3000/characters/${id}`);
 export const signIn = credentials => axios.post('http://192.168.99.100:3000/login', { ...credentials });
+export const register = payload => axios.post('http://192.168.99.100:3000/users',  { ...payload });

@@ -33,6 +33,7 @@ const App = ({
   display,
   history,
   signIn,
+  register,
 }) => (
   <div>
     <Nav history={history} />
@@ -46,7 +47,7 @@ const App = ({
         <Route
           exact
           path="/register"
-          render={() => <Register />}    
+          render={() => <Register register={register} />}    
         />
         <Route
           path="/characters"
