@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
 import { SIGN_IN_SUCCEEDED } from '../constants/auth';
-import { REGISTRATION_SUCCEEDED } from '../constants/users';
+import { REGISTRATION_SUCCEEDED } from '../constants/user';
 
 const initialState = new Map({
   user: {},

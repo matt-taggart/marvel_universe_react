@@ -14,7 +14,7 @@ function* signIn() {
 
     const user = yield call(Api.signIn, credentials);
 
-    yield put({ type: SIGN_IN_SUCCEEDED, user });
+    yield put({ type: SIGN_IN_SUCCEEDED, user: user.data });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

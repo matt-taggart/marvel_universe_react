@@ -1,7 +1,7 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 import * as Api from '../utils/api';
 import { LOADING, FETCH_FAILED } from '../constants/display';
-import { REGISTRATION_SUCCEEDED, REGISTRATION_ATTEMPT } from '../constants/users';
+import { REGISTRATION_SUCCEEDED, REGISTRATION_ATTEMPT } from '../constants/user';
 
 function* registerUser() {
   try {
@@ -17,7 +17,7 @@ function* registerUser() {
 
     const user = yield call(Api.register, payload);
 
-    yield put({ type: REGISTRATION_SUCCEEDED, user });
+    yield put({ type: REGISTRATION_SUCCEEDED, user: user.data });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

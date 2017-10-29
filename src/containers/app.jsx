@@ -56,12 +56,22 @@ class App extends Component {
             <Route
               exact
               path="/sign-in"
-              render={() => <SignIn signIn={signIn} />}
+              render={() => (
+                <SignIn 
+                  signIn={signIn} 
+                  isLoading={display.get('loading')}
+                />
+              )}
             />
             <Route
               exact
               path="/register"
-              render={() => <Register register={register} />}    
+              render={() => (
+                <Register 
+                  register={register} 
+                  isLoading={display.get('loading')} 
+                />
+              )}    
             />
             <Route
               path="/characters"

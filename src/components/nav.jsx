@@ -12,7 +12,12 @@ const Nav = ({ user }) => (
       <div className="navbar-end">
         <div className="navbar-item">
           { Object.keys(user.get('user')).length
-            ? <a className="title is-6">User</a>
+            ? (
+              <a className="title is-6">
+                <span className="right-margin"><i className="fa fa-user" /></span>
+                <span>{ user.get('user').name }</span>
+              </a>
+            )
             : <Link to="sign-in" className="title is-6">Sign In</Link>
           }
         </div>

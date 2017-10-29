@@ -3,7 +3,7 @@ import { GET_COMICS } from '../constants/comics';
 import { GET_CREATORS } from '../constants/creators';
 import { GET_EVENTS } from '../constants/events';
 import { SIGN_IN_ATTEMPT } from '../constants/auth';
-import { REGISTRATION_ATTEMPT } from '../constants/users';
+import { REGISTRATION_ATTEMPT } from '../constants/user';
 import { SET_APPLICATION_ERROR } from '../constants/display';
 
 export const getCharacters = () => ({ type: GET_CHARACTERS });
