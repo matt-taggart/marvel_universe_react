@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { validateRegistration } from '../utils/validators';
 import renderField from '../components/renderField';
+import renderGroupField from '../components/renderGroupField';
 import renderDropdown from '../components/renderDropdown';
 
 const Register = ({ handleSubmit, register }) => {
@@ -19,55 +20,35 @@ const Register = ({ handleSubmit, register }) => {
     <div className="columns is-centered">
       <div className="column is-two-thirds">
         <form onSubmit={handleSubmit(submit)}>
-          <div className="field">
-            <p className="control has-icons-left">
-              <Field
-                name="name"
-                type="text"
-                placeholder="Name"
-                component={renderField}
-              />
-              <span className="icon is-small is-left">
-                <i className="fa fa-user" />
-              </span>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control has-icons-left">
-              <Field
-                name="email"
-                type="text"
-                placeholder="Email"
-                component={renderField}
-              />
-              <span className="icon is-small is-left">
-                <i className="fa fa-envelope" />
-              </span>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control has-icons-left">
-              <Field
-                name="password"
-                type="password"
-                placeholder="Password"
-                component={renderField}
-              />
-              <span className="icon is-small is-left">
-                <i className="fa fa-lock" />
-              </span>
-            </p>
-          </div>
-          <div className="field is-grouped">
-            <div className="control">
+          <Field
+            name="name"
+            type="text"
+            placeholder="Name"
+            iconClasses="fa fa-user"
+            component={renderField}
+          />
+          <Field
+            name="email"
+            type="text"
+            placeholder="Email"
+            iconClasses="fa fa-envelope"
+            component={renderField}
+          />
+          <Field
+            name="password"
+            type="password"
+            placeholder="Password"
+            iconClasses="fa fa-lock"            
+            component={renderField}
+          />
+          <div className="field is-horizontal">
+            <div className="field-body">
               <Field
                 name="age"
                 type="text"
                 placeholder="Age"
-                component={renderField}
+                component={renderGroupField}
               />
-            </div>
-            <div className="control">
               <Field
                 name="gender"
                 defaultValue="Gender"

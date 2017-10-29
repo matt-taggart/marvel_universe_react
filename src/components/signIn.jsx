@@ -18,32 +18,20 @@ const SignIn = ({ handleSubmit, signIn }) => {
     <div className="columns is-centered">
       <div className="column is-two-thirds">
         <form onSubmit={handleSubmit(submit)}>
-          <div className="field">
-            <p className="control has-icons-left">
-              <Field
-                name="email"
-                type="text"
-                placeholder="Email"
-                component={renderField}
-              />
-              <span className="icon is-small is-left">
-                <i className="fa fa-envelope" />
-              </span>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control has-icons-left">
-              <Field
-                name="password"
-                type="password"
-                placeholder="Password"
-                component={renderField}
-              />
-              <span className="icon is-small is-left">
-                <i className="fa fa-lock" />
-              </span>
-            </p>
-          </div>
+          <Field
+            name="email"
+            type="text"
+            placeholder="Email"
+            iconClasses="fa fa-envelope"
+            component={renderField}
+          />
+          <Field
+            name="password"
+            type="password"
+            placeholder="Password"
+            iconClasses="fa fa-lock"
+            component={renderField}
+          />
           <div className="field">
             <p className="control">
               <button className="button is-dark is-medium">

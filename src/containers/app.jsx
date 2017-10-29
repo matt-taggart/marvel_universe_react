@@ -144,7 +144,9 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(ApiActions, dispatch);
+const mapDispatchToProps = dispatch => (
+  bindActionCreators(ApiActions, dispatch)
+);
 
 export default withRouter(connect(
   mapStateToProps, 
