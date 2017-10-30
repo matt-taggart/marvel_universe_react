@@ -1,5 +1,6 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 import * as Api from '../utils/api';
+import history from '../utils/history';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import { REGISTRATION_SUCCEEDED, REGISTRATION_ATTEMPT } from '../constants/user';
 
@@ -19,6 +20,7 @@ function* registerUser() {
 
     yield put({ type: REGISTRATION_SUCCEEDED, user: user.data });
     yield put({ type: LOADING, payload: false });
+    yield call(history.push, '/registration-successful');
   } catch (e) {
     yield put({ type: LOADING, payload: false });
     yield put({ type: FETCH_FAILED, error: e });

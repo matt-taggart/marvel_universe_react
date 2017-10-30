@@ -1,4 +1,4 @@
-import { call, put, takeEvery, select } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import * as Api from '../utils/api';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import {

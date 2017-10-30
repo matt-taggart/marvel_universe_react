@@ -6,7 +6,7 @@ import renderField from '../components/renderField';
 import renderGroupField from '../components/renderGroupField';
 import renderDropdown from '../components/renderDropdown';
 
-const Register = ({ handleSubmit, register }) => {
+const Register = ({ handleSubmit, register, isLoading, history }) => {
   const submit = ({ name, email, password, age, gender }) => {
     const errors = validateRegistration(name, email, password, age, gender);
 
@@ -16,6 +16,10 @@ const Register = ({ handleSubmit, register }) => {
 
     register();
   };
+  const buttonClasses = isLoading
+    ? 'button disabled is-dark is-medium is-loading'
+    : 'button is-dark is-medium';
+
   return (
     <div className="columns is-centered">
       <div className="column is-two-thirds">
@@ -59,7 +63,7 @@ const Register = ({ handleSubmit, register }) => {
           </div>
           <div className="field">
             <p className="control">
-              <button className="button is-dark is-medium">
+              <button className={buttonClasses}>
                 Register
               </button>
             </p>

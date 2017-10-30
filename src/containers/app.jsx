@@ -6,6 +6,7 @@ import Nav from '../components/nav';
 import Main from '../components/main';
 import SignIn from '../components/signIn';
 import Register from '../components/register';
+import RegistrationSuccessful from '../components/registrationSuccessful';
 import CharacterCard from '../components/characterCard';
 import ComicCard from '../components/comicCard';
 import CreatorCard from '../components/creatorCard';
@@ -69,9 +70,19 @@ class App extends Component {
               render={() => (
                 <Register 
                   register={register} 
-                  isLoading={display.get('loading')} 
+                  isLoading={display.get('loading')}
+                  history={history}
                 />
               )}    
+            />
+            <Route
+              exact
+              path="/registration-successful"
+              render={() => (
+                <RegistrationSuccessful 
+                  user={user}
+                />
+              )}
             />
             <Route
               path="/characters"
