@@ -30,6 +30,14 @@ class App extends Component {
       info: info.componentStack
     });
   }
+  
+  componentWillReceiveProps(nextProps) {
+    const { location, clearApiErrors } = this.props;
+
+    if (location.pathname !== nextProps.location.pathname) {
+      clearApiErrors();
+    }
+  }
 
   render() {
     const {
@@ -47,6 +55,7 @@ class App extends Component {
       history,
       signIn,
       register,
+      clearApiErrors,
     } = this.props;
     
     return (

@@ -1,5 +1,10 @@
 import { Map } from 'immutable';
-import { LOADING, FETCH_FAILED, SET_APPLICATION_ERROR } from '../constants/display';
+import {
+  LOADING,
+  FETCH_FAILED,
+  SET_APPLICATION_ERROR,
+  CLEAR_API_ERRORS,
+} from '../constants/display';
 
 const initialState = new Map({
   loading: false,
@@ -15,6 +20,8 @@ export default (state = initialState, action) => {
       return state.set('apiError', action.error);
     case SET_APPLICATION_ERROR:
       return state.set('applicationError', action.error);
+    case CLEAR_API_ERRORS:
+      return state.set('apiError', initialState.get('apiError'));
     default:
       return state;
   }

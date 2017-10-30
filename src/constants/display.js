@@ -1,3 +1,5 @@
 export const LOADING = 'LOADING';
 export const FETCH_FAILED = 'FETCH_FAILED';
 export const SET_APPLICATION_ERROR = 'SET_APPLICATION_ERROR';
+export const CLEAR_API_ERRORS = 'CLEAR_API_ERRORS';
+
