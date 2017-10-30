@@ -6,7 +6,7 @@ import renderField from '../components/renderField';
 import renderGroupField from '../components/renderGroupField';
 import renderDropdown from '../components/renderDropdown';
 
-const Register = ({ handleSubmit, register, isLoading, history }) => {
+const Register = ({ handleSubmit, display, register, isLoading, history }) => {
   const submit = ({ name, email, password, age, gender }) => {
     const errors = validateRegistration(name, email, password, age, gender);
 
@@ -61,6 +61,15 @@ const Register = ({ handleSubmit, register, isLoading, history }) => {
               />
             </div>
           </div>
+          { display.get('apiError').message && (
+            <div className="field">
+              <div className="message is-danger">
+                <div className="message-body">
+                  { display.get('apiError').message }
+                </div>
+              </div>
+            </div>
+          )}
           <div className="field">
             <p className="control">
               <button className={buttonClasses}>

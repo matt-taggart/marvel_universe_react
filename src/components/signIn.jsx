@@ -4,7 +4,7 @@ import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { validateCredentials } from '../utils/validators';
 import renderField from '../components/renderField';
 
-const SignIn = ({ handleSubmit, signIn }) => {
+const SignIn = ({ handleSubmit, display, signIn }) => {
   const submit = ({ email, password }) => {
     const errors = validateCredentials(email, password);
 
@@ -32,6 +32,15 @@ const SignIn = ({ handleSubmit, signIn }) => {
             iconClasses="fa fa-lock"
             component={renderField}
           />
+          { display.get('apiError').message && (
+            <div className="field">
+              <div className="message is-danger">
+                <div className="message-body">
+                  { display.get('apiError').message }
+                </div>
+              </div>
+            </div>
+          )}
           <div className="field">
             <p className="control">
               <button className="button is-dark is-medium">

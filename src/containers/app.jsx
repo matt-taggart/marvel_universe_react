@@ -59,7 +59,8 @@ class App extends Component {
               path="/sign-in"
               render={() => (
                 <SignIn 
-                  signIn={signIn} 
+                  signIn={signIn}
+                  display={display}
                   isLoading={display.get('loading')}
                 />
               )}
@@ -69,7 +70,8 @@ class App extends Component {
               path="/register"
               render={() => (
                 <Register 
-                  register={register} 
+                  register={register}
+                  display={display}
                   isLoading={display.get('loading')}
                   history={history}
                 />

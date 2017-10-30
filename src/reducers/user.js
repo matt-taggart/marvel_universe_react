@@ -4,12 +4,15 @@ import { REGISTRATION_SUCCEEDED } from '../constants/user';
 
 const initialState = new Map({
   user: {},
+  signedIn: false,
 });
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case SIGN_IN_SUCCEEDED:
-      return state.set('user', action.user);
+      return state
+        .set('user', action.user)
+        .set('signedIn', true);
     case REGISTRATION_SUCCEEDED:
       return state.set('user', action.user);
     default:
