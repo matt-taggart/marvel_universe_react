@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import Immutable from 'immutable';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { validateRegistration } from '../utils/validators';
 import renderField from '../components/renderField';
 import renderGroupField from '../components/renderGroupField';
 import renderDropdown from '../components/renderDropdown';
 
-const Register = ({ handleSubmit, display, register, isLoading, history }) => {
+const Register = ({ handleSubmit, display, register, isLoading }) => {
   const submit = ({ name, email, password, age, gender }) => {
     const errors = validateRegistration(name, email, password, age, gender);
 
@@ -81,6 +82,13 @@ const Register = ({ handleSubmit, display, register, isLoading, history }) => {
       </div>
     </div>
   );
+};
+
+Register.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  display: PropTypes.instanceOf(Immutable.Map).isRequired,
+  register: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default reduxForm({

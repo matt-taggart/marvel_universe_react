@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Immutable from 'immutable';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { validateCredentials } from '../utils/validators';
@@ -51,7 +53,9 @@ const SignIn = ({ handleSubmit, display, signIn }) => {
           <div className="level">
             <div className="level-left">
               <div className="level-item">
-                <span>Don't have an account yet? Click <Link to="register">here</Link> to register!</span>
+                <span>
+                  Don't have an account yet? Click <Link to="register">here</Link> to register!
+                </span>
               </div>
             </div>
           </div>
@@ -59,6 +63,12 @@ const SignIn = ({ handleSubmit, display, signIn }) => {
       </div>
     </div>
   );
+};
+
+SignIn.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  display: PropTypes.instanceOf(Immutable.Map).isRequired,
+  signIn: PropTypes.func.isRequired,
 };
 
 export default reduxForm({

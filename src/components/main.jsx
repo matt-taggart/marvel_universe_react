@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SideBar from './sidebar';
 
@@ -16,24 +15,8 @@ const Main = ({ children }) => (
   </div>
 );
 
+Main.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export default Main;
-
-// Main.propTypes = {
-//   characters: PropTypes.object.isRequired,
-//   display: PropTypes.object.isRequired,
-//   fetchCharacters: PropTypes.func.isRequired,
-// };
-
-// const mapStateToProps = state => ({
-//   characters: state.characters,
-//   display: state.display,
-// });
-
-// const mapDispatchToProps = () => ({
-//   fetchCharacters,
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Main);
