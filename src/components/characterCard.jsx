@@ -32,7 +32,9 @@ const CharacterCard = ({ id, name, description, thumbnail: { path, extension }, 
                   <span className="icon is-small" style={{ marginRight: '5px' }}>
                     <i className="fa fa-info-circle" />
                   </span>
-                  <span className="is-small" role="presentation" onClick={selectCharacter}>Details</span>
+                  <span className="is-small" role="presentation" onClick={selectCharacter}>
+                    Details
+                  </span>
                 </a>
               </div>
             </nav>

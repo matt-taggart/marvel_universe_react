@@ -7,6 +7,7 @@ function* fetchComics() {
   try {
     yield put({ type: LOADING, payload: true });
     const comics = yield call(Api.fetchComics);
+
     yield put({ type: COMICS_FETCH_SUCCEEDED, comics: comics.data.data });
     yield put({ type: LOADING, payload: false });
   } catch (e) {

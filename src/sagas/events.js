@@ -7,6 +7,7 @@ function* fetchEvents() {
   try {
     yield put({ type: LOADING, payload: true });
     const events = yield call(Api.fetchEvents);
+
     yield put({ type: EVENTS_FETCH_SUCCEEDED, events: events.data.data });
     yield put({ type: LOADING, payload: false });
   } catch (e) {

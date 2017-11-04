@@ -7,6 +7,7 @@ function* fetchCreators() {
   try {
     yield put({ type: LOADING, payload: true });
     const creators = yield call(Api.fetchCreators);
+
     yield put({ type: CREATORS_FETCH_SUCCEEDED, creators: creators.data.data });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
