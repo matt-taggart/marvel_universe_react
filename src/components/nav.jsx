@@ -18,7 +18,7 @@ const Nav = ({ user }) => (
                 <span>{ user.get('user').name }</span>
               </a>
             )
-            : <Link to="sign-in" className="title is-6">Sign In</Link>
+            : <Link to="/sign-in" className="title is-6">Sign In</Link>
           }
         </div>
       </div>
