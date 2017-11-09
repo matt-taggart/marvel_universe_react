@@ -26,7 +26,7 @@ function* fetchSelectedCharacter({ id }) {
     yield put({ type: LOADING, payload: true });
     const character = yield call(Api.fetchSelectedCharacter(id));
 
-    yield put({ type: SELECTED_CHARACTER_FETCH_SUCCEEDED, character: character.data.data });
+    yield put({ type: SELECTED_CHARACTER_FETCH_SUCCEEDED, character: character.data.data[0] });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

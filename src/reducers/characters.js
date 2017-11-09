@@ -6,7 +6,7 @@ import {
 
 const initialState = new Map({
   characters: [],
-  selectedCharacter: [],
+  selectedCharacter: {},
 });
 
 export default (state = initialState, action) => {
