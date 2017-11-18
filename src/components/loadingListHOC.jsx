@@ -5,10 +5,7 @@ import LoadingSpinner from './loadingSpinner';
 export default WrappedComponent => (
   class extends Component {
     componentDidMount() {
-      const { selectedItem, apiCall, match } = this.props;
-      if (selectedItem) {
-        return apiCall(match.params.id);        
-      }
+      const { apiCall } = this.props;
 
       apiCall();
     }
@@ -19,13 +16,10 @@ export default WrappedComponent => (
       history: PropTypes.object.isRequired,
     }
     render() {
-      const { isLoading, selectedItem, list, history } = this.props;
+      const { isLoading, list, history } = this.props;
+
       if (isLoading) {
         return <LoadingSpinner />;
-      }
-
-      if (selectedItem) {
-        return <WrappedComponent />
       }
 
       return (

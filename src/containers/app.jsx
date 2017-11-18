@@ -11,32 +11,33 @@ import CharacterCard from '../components/characterCard';
 import ComicCard from '../components/comicCard';
 import CreatorCard from '../components/creatorCard';
 import EventCard from '../components/eventCard';
-import LoadingComponent from '../components/loadingHOC';
+import LoadingListComponent from '../components/loadingListHOC';
+import LoadingItemComponent from '../components/loadingItemHOC';
 import * as ApiActions from '../actions/api';
 import SelectedCharacter from '../containers/selectedCharacter';
 
-const CharacterListFromAPI = LoadingComponent(CharacterCard);
-const ComicListFromAPI = LoadingComponent(ComicCard);
-const CreatorListFromAPI = LoadingComponent(CreatorCard);
-const EventListFromAPI = LoadingComponent(EventCard);
-const SelectedCharacterFromAPI = LoadingComponent(SelectedCharacter);
+const CharacterListFromAPI = LoadingListComponent(CharacterCard);
+const ComicListFromAPI = LoadingListComponent(ComicCard);
+const CreatorListFromAPI = LoadingListComponent(CreatorCard);
+const EventListFromAPI = LoadingListComponent(EventCard);
+const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
 
 class App extends Component {
-  componentDidCatch(error, info) {
-    const { setApplicationError } = this.props;
-
-    setApplicationError({ 
-      error: error.message, 
-      info: info.componentStack
-    });
-  }
-  
   componentWillReceiveProps(nextProps) {
     const { location, clearApiErrors } = this.props;
 
     if (location.pathname !== nextProps.location.pathname) {
       clearApiErrors();
     }
+  }
+
+  componentDidCatch(error, info) {
+    const { setApplicationError } = this.props;
+
+    setApplicationError({
+      error: error.message,
+      info: info.componentStack,
+    });
   }
 
   render() {
@@ -64,10 +65,9 @@ class App extends Component {
         <Main>
           <Switch>
             <Route
-              exact
               path="/sign-in"
               render={() => (
-                <SignIn 
+                <SignIn
                   signIn={signIn}
                   display={display}
                   isLoading={display.get('loading')}
@@ -75,22 +75,20 @@ class App extends Component {
               )}
             />
             <Route
-              exact
               path="/register"
               render={() => (
-                <Register 
+                <Register
                   register={register}
                   display={display}
                   isLoading={display.get('loading')}
                   history={history}
                 />
-              )}    
+              )}
             />
             <Route
-              exact
               path="/registration-successful"
               render={() => (
-                <RegistrationSuccessful 
+                <RegistrationSuccessful
                   user={user}
                 />
               )}
@@ -110,10 +108,10 @@ class App extends Component {
             <Route
               path="/characters/:id"
               render={props => (
-                <SelectedCharacterFromAPI  
-                  {...props} 
-                  selectedItem
-                  apiCall={getSelectedCharacter} 
+                <SelectedCharacterFromAPI
+                  data={characters.get('selectedCharacter')}
+                  apiCall={getSelectedCharacter}                   
+                  match={props.match}
                   isLoading={display.get('loading')}
                 />
               )}
@@ -171,6 +169,6 @@ const mapDispatchToProps = dispatch => (
 );
 
 export default withRouter(connect(
-  mapStateToProps, 
-  mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps
 )(App));
