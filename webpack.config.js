@@ -71,6 +71,7 @@ module.exports = ({ production = false }) => ({
         warnings: false,
         drop_console: false,
       },
+      sourceMap: true,
     }),
     new webpack.NamedModulesPlugin(),
   ],
