@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Immutable from 'immutable';
 import Nav from '../components/nav';
 import Main from '../components/main';
 import SignIn from '../components/signIn';
@@ -56,7 +58,6 @@ class App extends Component {
       history,
       signIn,
       register,
-      clearApiErrors,
     } = this.props;
     
     return (
@@ -155,6 +156,26 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  getCharacters: PropTypes.func.isRequired,
+  getComics: PropTypes.func.isRequired,
+  getCreators: PropTypes.func.isRequired,
+  getEvents: PropTypes.func.isRequired,
+  getSelectedCharacter: PropTypes.func.isRequired,
+  characters: PropTypes.instanceOf(Immutable.Map).isRequired,
+  comics: PropTypes.instanceOf(Immutable.Map).isRequired,
+  creators: PropTypes.instanceOf(Immutable.Map).isRequired,
+  events: PropTypes.instanceOf(Immutable.Map).isRequired,
+  user: PropTypes.instanceOf(Immutable.Map).isRequired,
+  display: PropTypes.instanceOf(Immutable.Map).isRequired,
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  setApplicationError: PropTypes.func.isRequired,
+  signIn: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+  clearApiErrors: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => ({
   characters: state.characters,
   comics: state.comics,
@@ -169,6 +190,6 @@ const mapDispatchToProps = dispatch => (
 );
 
 export default withRouter(connect(
-  mapStateToProps,
+  mapStateToProps, 
   mapDispatchToProps
 )(App));
