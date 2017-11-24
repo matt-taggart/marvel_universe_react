@@ -189,7 +189,9 @@ const mapDispatchToProps = dispatch => (
   bindActionCreators(ApiActions, dispatch)
 );
 
-export default withRouter(connect(
-  mapStateToProps, 
-  mapDispatchToProps
-)(App));
+export default withRouter(
+  connect(
+    mapStateToProps, 
+    mapDispatchToProps
+  )(App)
+);

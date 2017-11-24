@@ -22,13 +22,13 @@ const CreatorCard = ({ id, fullName, comics: { items }, thumbnail: { path, exten
           <nav className="level is-mobile">
             <div className="level-left">
               <a className="level-item">
-                <span className="icon is-small" style={{ marginRight: '5px' }}>
+                <span className="icon is-small right-margin-5">
                   <i className="fa fa-bookmark" />
                 </span>
                 <span className="is-small">Save</span>
               </a>
               <a className="level-item">
-                <span className="icon is-small" style={{ marginRight: '5px' }}>
+                <span className="icon is-small right-margin-5">
                   <i className="fa fa-info-circle" />
                 </span>
                 <span className="is-small">Details</span>
