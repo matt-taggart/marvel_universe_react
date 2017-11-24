@@ -50,9 +50,9 @@ const SelectedCharacter = ({
             </small>
             <br />
             <small>
-              { profileUrl && <span><a href={profileUrl}> Profile </a></span> }
-              { wikiUrl && <span>.<a href={wikiUrl}> Wiki </a></span> }
-              { comicUrl && <span>.<a href={comicUrl}> Comics </a></span> }
+              { profileUrl && <span><a href={profileUrl} target="_blank"> Profile </a></span> }
+              { wikiUrl && <span>.<a href={wikiUrl} target="_blank"> Wiki </a></span> }
+              { comicUrl && <span>.<a href={comicUrl} target="_blank"> Comics </a></span> }
             </small>
           </p>
         </div>
