@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SideBar from './sidebar';
+import SideBar from '../navigation/sidebar';
 
 const Main = ({ children }) => (
   <div className="section">

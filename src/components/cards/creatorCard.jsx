@@ -17,10 +17,7 @@ const CreatorCard = ({ id, fullName, comics: { items }, thumbnail: { path, exten
               <br />
             </p>
             { items.length ? <p><em>Comics:</em></p> : null }
-            {
-              items
-                .map(comic => <p>{ comic.name }</p>)
-            }
+            { items.map(comic => <p>{ comic.name }</p>) }
           </div>
           <nav className="level is-mobile">
             <div className="level-left">

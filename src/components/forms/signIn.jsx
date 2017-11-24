@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { validateCredentials } from '../utils/validators';
-import renderField from '../components/renderField';
+import { validateCredentials } from '../../utils/validators';
+import renderField from '../forms/renderField';
 
 const SignIn = ({ handleSubmit, display, signIn }) => {
   const submit = ({ email, password }) => {

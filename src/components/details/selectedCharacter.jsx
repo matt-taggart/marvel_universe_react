@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DetailListWrapper from '../components/detailListWrapper';
-import ComicItem from '../components/comicItem';
-import SeriesItem from '../components/seriesItem';
-import EventItem from '../components/eventItem';
+import DetailListWrapper from './detailListWrapper';
+import ComicItem from './comicItem';
+import SeriesItem from './seriesItem';
+import EventItem from './eventItem';
 
 const SelectedCharacter = ({
   name,

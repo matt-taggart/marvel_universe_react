@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { validateRegistration } from '../utils/validators';
-import renderField from '../components/renderField';
-import renderGroupField from '../components/renderGroupField';
-import renderDropdown from '../components/renderDropdown';
+import { validateRegistration } from '../../utils/validators';
+import renderField from '../forms/renderField';
+import renderGroupField from '../forms/renderGroupField';
+import renderDropdown from '../forms/renderDropdown';
 
 const Register = ({ handleSubmit, display, register, isLoading }) => {
   const submit = ({ name, email, password, age, gender }) => {
