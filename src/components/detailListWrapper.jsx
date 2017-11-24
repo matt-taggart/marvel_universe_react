@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DetailListWrapper = ({ children }) => (
+const DetailListWrapper = ({ heading, children }) => (
   <article className="media">
     <div className="media-content">
       <div className="content">
         <p>
-          <strong>Series</strong>
+          <strong>{ heading }</strong>
           <br />
           { children }
         </p>
@@ -16,6 +16,7 @@ const DetailListWrapper = ({ children }) => (
 );
 
 DetailListWrapper.propTypes = {
+  heading: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,

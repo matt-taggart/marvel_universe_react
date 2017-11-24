@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DetailListWrapper from '../components/detailListWrapper';
-import ListItem from '../components/listItem';
+import ComicItem from '../components/comicItem';
+import SeriesItem from '../components/seriesItem';
+import EventItem from '../components/eventItem';
 
 const SelectedCharacter = ({
   name,
@@ -9,14 +11,20 @@ const SelectedCharacter = ({
   thumbnail: { path, extension },
   comics,
   series,
-  stories,
+  events,
   urls,
 }) => {
 // NOTE: Usually want to provide unique key rather than array index
-// when composing a list of components, but Marvel API doesn't provide one :(
+// when composing a list of components, but Marvel API doesn't provide one :( 
+
+  const ComicList = comics.items
+    .map((item, key) => <ComicItem {...item} key={key} />);
 
   const SeriesList = series.items
-    .map((item, key) => <ListItem {...item} key={key} />);
+    .map((item, key) => <SeriesItem {...item} key={key} />);
+
+  const EventList = events.items
+    .map((item, key) => <EventItem {...item} key={key} />);
 
   return (
     <article className="media">
@@ -35,9 +43,23 @@ const SelectedCharacter = ({
           </p>
         </div>
         {
+          comics.available > 0 && (
+            <DetailListWrapper heading="Comics">
+              { ComicList }
+            </DetailListWrapper>
+          )
+        }
+        {
           series.available > 0 && (
-            <DetailListWrapper>
+            <DetailListWrapper heading="Series">
               { SeriesList }
+            </DetailListWrapper>
+          )
+        }
+        {
+          events.available > 0 && (
+            <DetailListWrapper heading="Events">
+              { EventList }
             </DetailListWrapper>
           )
         }
@@ -55,8 +77,8 @@ SelectedCharacter.propTypes = {
   }).isRequired,
   comics: PropTypes.arrayOf(PropTypes.object).isRequired,
   series: PropTypes.arrayOf(PropTypes.object).isRequired,
-  stories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  events: PropTypes.arrayOf(PropTypes.object).isRequired,
   urls: PropTypes.arrayOf(PropTypes.object).isRequired,
-}
+};
 
 export default SelectedCharacter;
