@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SeriesItem from '../components/seriesItem';
+import DetailListWrapper from '../components/detailListWrapper';
+import ListItem from '../components/listItem';
 
 const SelectedCharacter = ({
   name,
@@ -15,7 +16,7 @@ const SelectedCharacter = ({
 // when composing a list of components, but Marvel API doesn't provide one :(
 
   const SeriesList = series.items
-    .map((item, key) => <SeriesItem {...item} key={key} />);
+    .map((item, key) => <ListItem {...item} key={key} />);
 
   return (
     <article className="media">
@@ -34,18 +35,10 @@ const SelectedCharacter = ({
           </p>
         </div>
         {
-          series.available > 1 && (
-            <article className="media">
-              <div className="media-content">
-                <div className="content">
-                  <p>
-                    <strong>Series</strong>
-                    <br />
-                    { SeriesList }
-                  </p>
-                </div>
-              </div>
-            </article>
+          series.available > 0 && (
+            <DetailListWrapper>
+              { SeriesList }
+            </DetailListWrapper>
           )
         }
       </div>
