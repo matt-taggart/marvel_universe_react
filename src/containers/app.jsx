@@ -59,7 +59,7 @@ class App extends Component {
       signIn,
       register,
     } = this.props;
-    
+
     return (
       <div>
         <Nav history={history} user={user} />

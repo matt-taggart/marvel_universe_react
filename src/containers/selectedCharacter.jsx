@@ -26,6 +26,10 @@ const SelectedCharacter = ({
   const EventList = events.items
     .map((item, key) => <EventItem {...item} key={key} />);
 
+  const profileUrl = urls[0] && urls[0].url;
+  const wikiUrl = urls[1] && urls[1].url;
+  const comicUrl = urls[2] && urls[2].url;
+
   return (
     <article className="media">
       <figure className="media-left">
@@ -40,6 +44,16 @@ const SelectedCharacter = ({
             <br />
             { description || 'Description not available' }
             <br />
+            <br />
+            <small>
+              <em>Official Links:</em>
+            </small>
+            <br />
+            <small>
+              { profileUrl && <span><a href={profileUrl}> Profile </a></span> }
+              { wikiUrl && <span>.<a href={wikiUrl}> Wiki </a></span> }
+              { comicUrl && <span>.<a href={comicUrl}> Comics </a></span> }
+            </small>
           </p>
         </div>
         {
