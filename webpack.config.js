@@ -16,6 +16,7 @@ module.exports = ({ production = false }) => ({
     path: resolve('dist'),
     filename: 'bundle.js',
     pathinfo: !production,
+    publicPath: '/',
   },
   devtool: production ? 'source-map' : 'eval',
   devServer: {
