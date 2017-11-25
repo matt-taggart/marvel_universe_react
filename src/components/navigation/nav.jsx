@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Immutable from 'immutable';
 
 const Nav = ({ user }) => (
   <nav className="navbar is-dark" aria-label="main navigation">
     <div className="navbar-brand">
       <div className="navbar-item">
-        <h1 className="title is-3">Marvel Universe</h1>
+        <h1 className="title is-3"><Link to="/">Marvel Universe</Link></h1>
       </div>
     </div>
     <div className="navbar-menu">
@@ -25,5 +27,9 @@ const Nav = ({ user }) => (
     </div>
   </nav>
 );
+
+Nav.propTypes = {
+  user: PropTypes.instanceOf(Immutable.Map).isRequired,
+};
 
 export default Nav;
