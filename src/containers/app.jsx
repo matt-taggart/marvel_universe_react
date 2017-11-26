@@ -13,16 +13,18 @@ import CharacterCard from '../components/cards/characterCard';
 import ComicCard from '../components/cards/comicCard';
 import CreatorCard from '../components/cards/creatorCard';
 import EventCard from '../components/cards/eventCard';
+import SelectedCharacter from '../components/details/selectedCharacter';
+import SelectedComic from '../components/details/selectedComic';
 import LoadingListComponent from './loadingListHOC';
 import LoadingItemComponent from './loadingItemHOC';
 import * as ApiActions from '../actions/api';
-import SelectedCharacter from '../components/details/selectedCharacter';
 
 const CharacterListFromAPI = LoadingListComponent(CharacterCard);
 const ComicListFromAPI = LoadingListComponent(ComicCard);
 const CreatorListFromAPI = LoadingListComponent(CreatorCard);
 const EventListFromAPI = LoadingListComponent(EventCard);
 const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
+const SelectedComicFromAPI = LoadingItemComponent(SelectedComic);
 
 class App extends Component {
   componentWillReceiveProps(nextProps) {
@@ -49,6 +51,9 @@ class App extends Component {
       getCreators,
       getEvents,
       getSelectedCharacter,
+      getSelectedComic,
+      getSelectedCreator,
+      getSelectedEvent,
       characters,
       comics,
       creators,
@@ -111,7 +116,7 @@ class App extends Component {
               render={props => (
                 <SelectedCharacterFromAPI
                   data={characters.get('selectedCharacter')}
-                  apiCall={getSelectedCharacter}                   
+                  apiCall={getSelectedCharacter}
                   match={props.match}
                   isLoading={display.get('loading')}
                 />
@@ -119,10 +124,23 @@ class App extends Component {
             />
             <Route
               path="/comics"
+              exact
               render={() => (
                 <ComicListFromAPI
                   list={comics.get('comics')}
                   apiCall={getComics}
+                  isLoading={display.get('loading')}
+                  history={history}
+                />
+              )}
+            />
+            <Route
+              path="/comics/:id"
+              render={props => (
+                <SelectedComicFromAPI
+                  data={comics.get('selectedComic')}
+                  apiCall={getSelectedComic}
+                  match={props.match}
                   isLoading={display.get('loading')}
                 />
               )}

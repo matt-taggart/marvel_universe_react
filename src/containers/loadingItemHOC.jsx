@@ -22,7 +22,7 @@ export default WrappedComponent => (
         return <LoadingSpinner />;
       }
 
-      return Object.keys(data).length && <WrappedComponent {...data} />
+      return Object.keys(data).length && <WrappedComponent {...data} />;
     }
   }
 );
