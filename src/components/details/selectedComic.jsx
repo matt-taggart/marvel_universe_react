@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DetailListWrapper from './detailListWrapper';
+import CreatorItem from './creatorItem';
 import CharacterItem from './characterItem';
 import SeriesItem from './seriesItem';
 import EventItem from './eventItem';
@@ -9,11 +10,14 @@ const SelectedComic = ({
   title,
   description,
   thumbnail: { path, extension },
+  creators,
   characters,
   series,
   events,
   urls,
 }) => {
+  const CreatorList = creators.items
+    .map((item, key) => <CreatorItem {...item} key={key} />);
 
   const CharacterList = characters.items
     .map((item, key) => <CharacterItem {...item} key={key} />);
@@ -56,6 +60,13 @@ const SelectedComic = ({
           />
         </DetailListWrapper>
         {
+          creators.available > 0 && (
+            <DetailListWrapper heading="Creators">
+              { CreatorList }
+            </DetailListWrapper>
+          )
+        }
+        {
           characters.available > 0 && (
             <DetailListWrapper heading="Characters">
               { CharacterList }
@@ -75,13 +86,14 @@ const SelectedComic = ({
 };
 
 SelectedComic.propTypes = {
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   thumbnail: PropTypes.shape({
     extension: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
   }).isRequired,
-  comics: PropTypes.arrayOf(PropTypes.object).isRequired,
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  creators: PropTypes.arrayOf(PropTypes.object).isRequired,
   series: PropTypes.arrayOf(PropTypes.object).isRequired,
   events: PropTypes.arrayOf(PropTypes.object).isRequired,
   urls: PropTypes.arrayOf(PropTypes.object).isRequired,
