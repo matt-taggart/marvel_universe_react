@@ -15,6 +15,7 @@ import CreatorCard from '../components/cards/creatorCard';
 import EventCard from '../components/cards/eventCard';
 import SelectedCharacter from '../components/details/selectedCharacter';
 import SelectedComic from '../components/details/selectedComic';
+import SelectedCreator from '../components/details/selectedCreator';
 import LoadingListComponent from './loadingListHOC';
 import LoadingItemComponent from './loadingItemHOC';
 import * as ApiActions from '../actions/api';
@@ -25,6 +26,7 @@ const CreatorListFromAPI = LoadingListComponent(CreatorCard);
 const EventListFromAPI = LoadingListComponent(EventCard);
 const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
 const SelectedComicFromAPI = LoadingItemComponent(SelectedComic);
+const SelectedCreatorFromAPI = LoadingItemComponent(SelectedCreator);
 
 class App extends Component {
   componentWillReceiveProps(nextProps) {
@@ -147,10 +149,23 @@ class App extends Component {
             />
             <Route
               path="/creators"
+              exact
               render={() => (
                 <CreatorListFromAPI
                   list={creators.get('creators')}
                   apiCall={getCreators}
+                  isLoading={display.get('loading')}
+                  history={history}
+                />
+              )}
+            />
+            <Route
+              path="/creators/:id"
+              render={props => (
+                <SelectedCreatorFromAPI
+                  data={creators.get('selectedCreator')}
+                  apiCall={getSelectedCreator}
+                  match={props.match}
                   isLoading={display.get('loading')}
                 />
               )}

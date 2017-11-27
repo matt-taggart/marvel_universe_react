@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CharacterCard = ({ id, name, description, thumbnail: { path, extension }, history }) => {
+const CharacterCard = ({
+  id,
+  name,
+  description,
+  thumbnail: { path, extension },
+  history,
+}) => {
   const selectCharacter = () => history.push(`/characters/${id}`);
   return (
     <div className="column is-half">
