@@ -73,7 +73,7 @@ class App extends Component {
       signIn,
       register,
     } = this.props;
-
+    console.log('SERIES', series);
     return (
       <div>
         <Nav history={history} user={user} />

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SeriesCard = ({
   id,
-  name,
+  title,
   description,
   thumbnail: { path, extension },
   history,
@@ -21,7 +21,7 @@ const SeriesCard = ({
           <div className="media-content">
             <div className="content">
               <p>
-                <strong>{ name }</strong>
+                <strong>{ title }</strong>
                 <br />
                 { description || 'No description available.' }
               </p>
@@ -53,7 +53,7 @@ const SeriesCard = ({
 
 SeriesCard.propTypes = {
   id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   thumbnail: PropTypes.shape({
     extension: PropTypes.string.isRequired,
