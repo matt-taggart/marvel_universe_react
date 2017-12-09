@@ -9,6 +9,7 @@ const SideBar = () => (
       <li><Link to="/comics">Comics</Link></li>
       <li><Link to="/creators">Creators</Link></li>
       <li><Link to="/events">Events</Link></li>
+      <li><Link to="/series">Series</Link></li>
     </ul>
   </aside>
 );

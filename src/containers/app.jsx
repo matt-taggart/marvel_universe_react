@@ -13,6 +13,7 @@ import CharacterCard from '../components/cards/characterCard';
 import ComicCard from '../components/cards/comicCard';
 import CreatorCard from '../components/cards/creatorCard';
 import EventCard from '../components/cards/eventCard';
+import SeriesCard from '../components/cards/seriesCard';
 import SelectedCharacter from '../components/details/selectedCharacter';
 import SelectedComic from '../components/details/selectedComic';
 import SelectedCreator from '../components/details/selectedCreator';
@@ -25,6 +26,7 @@ const CharacterListFromAPI = LoadingListComponent(CharacterCard);
 const ComicListFromAPI = LoadingListComponent(ComicCard);
 const CreatorListFromAPI = LoadingListComponent(CreatorCard);
 const EventListFromAPI = LoadingListComponent(EventCard);
+const SeriesListFromAPI = LoadingListComponent(SeriesCard);
 const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
 const SelectedComicFromAPI = LoadingItemComponent(SelectedComic);
 const SelectedCreatorFromAPI = LoadingItemComponent(SelectedCreator);
@@ -54,14 +56,17 @@ class App extends Component {
       getComics,
       getCreators,
       getEvents,
+      getSeries,
       getSelectedCharacter,
       getSelectedComic,
       getSelectedCreator,
       getSelectedEvent,
+      getSelectedSeries,
       characters,
       comics,
       creators,
       events,
+      series,
       user,
       display,
       history,
@@ -195,6 +200,18 @@ class App extends Component {
                 />
               )}
             />
+            <Route
+              path="/series"
+              exact
+              render={() => (
+                <SeriesListFromAPI
+                  list={series.get('series')}
+                  apiCall={getSeries}
+                  isLoading={display.get('loading')}
+                  history={history}
+                />
+              )}
+            />
             <Redirect from="/" to="/characters" />
             <Redirect to="/" />
           </Switch>
@@ -231,6 +248,7 @@ const mapStateToProps = state => ({
   events: state.events,
   display: state.display,
   user: state.user,
+  series: state.series,
 });
 
 const mapDispatchToProps = dispatch => (

@@ -5,13 +5,17 @@ axios.interceptors.response.use(
   error => Promise.reject(error.response.data),
 );
 
-export const fetchCharacters = () => axios.get('http://192.168.99.100:3000/characters');
-export const fetchComics = () => axios.get('http://192.168.99.100:3000/comics');
-export const fetchCreators = () => axios.get('http://192.168.99.100:3000/creators');
-export const fetchEvents = () => axios.get('http://192.168.99.100:3000/events');
-export const fetchSelectedCharacter = id => () => axios.get(`http://192.168.99.100:3000/characters/${id}`);
-export const fetchSelectedComic = id => () => axios.get(`http://192.168.99.100:3000/comics/${id}`);
-export const fetchSelectedCreator = id => () => axios.get(`http://192.168.99.100:3000/creators/${id}`);
-export const fetchSelectedEvent = id => () => axios.get(`http://192.168.99.100:3000/events/${id}`);
-export const signIn = credentials => axios.post('http://192.168.99.100:3000/login', { ...credentials });
-export const register = payload => axios.post('http://192.168.99.100:3000/users',  { ...payload });
+const baseUrl = 'http://192.168.99.100:3000';
+
+export const fetchCharacters = () => axios.get(`${baseUrl}/characters`);
+export const fetchComics = () => axios.get(`${baseUrl}/comics`);
+export const fetchCreators = () => axios.get(`${baseUrl}/creators`);
+export const fetchEvents = () => axios.get(`${baseUrl}/events`);
+export const fetchSeries = () => axios.get(`${baseUrl}/series`);
+export const fetchSelectedCharacter = id => () => axios.get(`${baseUrl}/characters/${id}`);
+export const fetchSelectedComic = id => () => axios.get(`${baseUrl}/comics/${id}`);
+export const fetchSelectedCreator = id => () => axios.get(`${baseUrl}/creators/${id}`);
+export const fetchSelectedEvent = id => () => axios.get(`${baseUrl}/events/${id}`);
+export const fetchSelectedSeries = id => () => axios.get(`${baseUrl}/series/${id}`);
+export const signIn = credentials => axios.post(`${baseUrl}/login`, { ...credentials });
+export const register = payload => axios.post(`${baseUrl}/users`,  { ...payload });

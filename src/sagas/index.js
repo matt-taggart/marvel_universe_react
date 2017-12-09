@@ -4,6 +4,7 @@ import creatorsSaga from './creators';
 import eventsSaga from './events';
 import authSaga from './auth';
 import userSaga from './user';
+import seriesSaga from './series';
 
 export default function* root() {
   yield [
@@ -13,5 +14,6 @@ export default function* root() {
     eventsSaga(),
     authSaga(),
     userSaga(),
+    seriesSaga(),
   ];
 }
