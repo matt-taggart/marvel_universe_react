@@ -55,7 +55,7 @@ export const validateRegistration = (name, email, password, age, gender) => {
 
   validateCredentials(email, password, errors);
 
-  if (name && !validator.isAlpha(name)) {
+  if (name && !validator.matches(name, /^[a-zA-Z ]*$/)) {
     errors.name = 'Name format is invalid.';
   }
 
