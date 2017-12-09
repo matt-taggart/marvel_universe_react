@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 const CreatorItem = ({ name, resourceURI }) => {
   const creatorId = resourceURI.slice(resourceURI.lastIndexOf('/') + 1);
   return (
-    <div className="btm-space">
-      <div>{ name }</div>
-      <small><Link to={`/creators/${creatorId}`}>Details</Link></small>
+    <div className="level">
+      <div className="level-left">
+        <div className="level-item">{ name }</div>
+        <small className="level-item">
+          <Link to={`/creators/${creatorId}`}>Details</Link>
+        </small>
+      </div>
     </div>
   );
 };

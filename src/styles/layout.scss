@@ -7,10 +7,18 @@ html, body {
   height: 100%;
 }
 
-.right-margin {
+.r-mar {
   margin-right: 0.5em;
 }
 
-.right-margin-5 {
+.r-mar-5 {
   margin-right: 5px;
+}
+
+.content {
+  .level {
+      &:first-of-type {
+        margin-top: 10px;
+      }
+  }
 }

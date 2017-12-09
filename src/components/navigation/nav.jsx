@@ -16,7 +16,7 @@ const Nav = ({ user }) => (
           { Object.keys(user.get('user')).length
             ? (
               <a className="title is-6">
-                <span className="right-margin"><i className="fa fa-user" /></span>
+                <span className="r-mar"><i className="fa fa-user" /></span>
                 <span>{ user.get('user').name }</span>
               </a>
             )

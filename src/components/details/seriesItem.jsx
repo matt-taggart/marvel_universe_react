@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 const SeriesItem = ({ name, resourceURI }) => {
   const seriesId = resourceURI.slice(resourceURI.lastIndexOf('/') + 1);
   return (
-    <div className="btm-space">
-      <div>{ name }</div>
-      <small><Link to={`/series/${seriesId}`}>Details</Link></small>
+    <div className="level">
+      <div className="level-left">
+        <div className="level-item">{ name }</div>
+        <small className="level-item">
+          <Link to={`/series/${seriesId}`}>Details</Link>
+        </small>
+      </div>
     </div>
   );
 };
