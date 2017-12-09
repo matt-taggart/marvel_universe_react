@@ -5,15 +5,17 @@ import CharacterItem from './characterItem';
 import ComicItem from './comicItem';
 import SeriesItem from './seriesItem';
 import CreatorItem from './creatorItem';
+import EventItem from './eventItem';
 
-const SelectedEvent = ({
+const SelectedSeries = ({
+  id,
   title,
   description,
   thumbnail: { path, extension },
-  characters,
-  series,
-  comics,
   creators,
+  characters,
+  comics,
+  events,
   urls,
 }) => {
   const CharacterList = characters.items
@@ -22,12 +24,12 @@ const SelectedEvent = ({
   const ComicList = comics.items
     .map((item, key) => <ComicItem {...item} key={key} />);
 
-  const SeriesList = series.items
-    .map((item, key) => <SeriesItem {...item} key={key} />);
+  const EventList = events.items
+    .map((item, key) => <EventItem {...item} key={key} />);
 
   const CreatorList = creators.items
     .map((item, key) => <CreatorItem {...item} key={key} />);
-
+  console.log('URLS', urls);
   const profileUrl = urls[0] && urls[0].url;
   const wikiUrl = urls[1] && urls[1].url;
 
@@ -71,9 +73,9 @@ const SelectedEvent = ({
           )
         }
         {
-          series.available > 0 && (
-            <DetailListWrapper heading="Series">
-              { SeriesList }
+          events.available > 0 && (
+            <DetailListWrapper heading="Events">
+              { EventList }
             </DetailListWrapper>
           )
         }
@@ -89,7 +91,7 @@ const SelectedEvent = ({
   );
 };
 
-SelectedEvent.propTypes = {
+SelectedSeries.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   thumbnail: PropTypes.shape({
@@ -103,4 +105,4 @@ SelectedEvent.propTypes = {
   urls: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default SelectedEvent;
+export default SelectedSeries;

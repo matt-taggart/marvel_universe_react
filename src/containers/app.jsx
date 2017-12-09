@@ -18,6 +18,7 @@ import SelectedCharacter from '../components/details/selectedCharacter';
 import SelectedComic from '../components/details/selectedComic';
 import SelectedCreator from '../components/details/selectedCreator';
 import SelectedEvent from '../components/details/selectedEvent';
+import SelectedSeries from '../components/details/selectedSeries';
 import LoadingListComponent from './loadingListHOC';
 import LoadingItemComponent from './loadingItemHOC';
 import * as ApiActions from '../actions/api';
@@ -31,6 +32,7 @@ const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
 const SelectedComicFromAPI = LoadingItemComponent(SelectedComic);
 const SelectedCreatorFromAPI = LoadingItemComponent(SelectedCreator);
 const SelectedEventFromAPI = LoadingItemComponent(SelectedEvent);
+const SelectedSeriesFromAPI = LoadingItemComponent(SelectedSeries);
 
 class App extends Component {
   componentWillReceiveProps(nextProps) {
@@ -209,6 +211,18 @@ class App extends Component {
                   apiCall={getSeries}
                   isLoading={display.get('loading')}
                   history={history}
+                />
+              )}
+            />
+            <Route
+              path="/series/:id"
+              exact
+              render={props => (
+                <SelectedSeriesFromAPI
+                  data={series.get('selectedSeries')}
+                  apiCall={getSelectedSeries}
+                  match={props.match}
+                  isLoading={display.get('loading')}
                 />
               )}
             />
