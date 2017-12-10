@@ -18,5 +18,5 @@ export const fetchSelectedComic = id => () => axios.get(`${baseUrl}/comics/${id}
 export const fetchSelectedCreator = id => () => axios.get(`${baseUrl}/creators/${id}`);
 export const fetchSelectedEvent = id => () => axios.get(`${baseUrl}/events/${id}`);
 export const fetchSelectedSeries = id => () => axios.get(`${baseUrl}/series/${id}`);
-export const signIn = credentials => axios(`${baseUrl}/login`, { ...credentials });
+export const signIn = credentials => axios.post(`${baseUrl}/login`, { ...credentials });
 export const register = payload => axios.post(`${baseUrl}/user`,  { ...payload });
