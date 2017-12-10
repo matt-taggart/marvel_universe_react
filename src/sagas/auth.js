@@ -1,5 +1,6 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 import * as Api from '../utils/api';
+import history from '../utils/history';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import { SIGN_IN_SUCCEEDED, SIGN_IN_ATTEMPT } from '../constants/auth';
 
@@ -16,6 +17,7 @@ function* signIn() {
 
     yield put({ type: SIGN_IN_SUCCEEDED, user: user.data });
     yield put({ type: LOADING, payload: false });
+    yield call(history.push, '/profile');
   } catch (e) {
     yield put({ type: LOADING, payload: false });
     yield put({ type: FETCH_FAILED, error: e });

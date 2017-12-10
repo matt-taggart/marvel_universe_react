@@ -2,7 +2,12 @@ import { call, put, takeEvery, select } from 'redux-saga/effects';
 import * as Api from '../utils/api';
 import history from '../utils/history';
 import { LOADING, FETCH_FAILED } from '../constants/display';
-import { REGISTRATION_SUCCEEDED, REGISTRATION_ATTEMPT } from '../constants/user';
+import {
+  REGISTRATION_SUCCEEDED,
+  REGISTRATION_ATTEMPT,
+  GET_USER,
+  USER_FETCH_SUCCEEDED,
+} from '../constants/user';
 
 function* registerUser() {
   try {
@@ -27,8 +32,23 @@ function* registerUser() {
   }
 }
 
-function* registerAttempt() {
-  yield takeEvery(REGISTRATION_ATTEMPT, registerUser);
+function* getUser() {
+  try {
+    yield put({ type: LOADING, payload: true });
+
+    const user = yield call(Api.fetchUser);
+
+    yield put({ type: USER_FETCH_SUCCEEDED, user: user.data });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
 }
 
-export default registerAttempt;
+function* userActions() {
+  yield takeEvery(REGISTRATION_ATTEMPT, registerUser);
+  yield takeEvery(GET_USER, getUser);
+}
+
+export default userActions;

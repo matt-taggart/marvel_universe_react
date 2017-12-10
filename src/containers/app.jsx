@@ -9,6 +9,7 @@ import Main from '../components/main/main';
 import SignIn from '../components/forms/signIn';
 import Register from '../components/forms/register';
 import RegistrationSuccessful from '../components/misc/registrationSuccessful';
+import Profile from '../components/profile/profile.jsx';
 import CharacterCard from '../components/cards/characterCard';
 import ComicCard from '../components/cards/comicCard';
 import CreatorCard from '../components/cards/creatorCard';
@@ -29,6 +30,7 @@ const CreatorListFromAPI = LoadingListComponent(CreatorCard);
 const EventListFromAPI = LoadingListComponent(EventCard);
 const SeriesListFromAPI = LoadingListComponent(SeriesCard);
 const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
+const CustomerProfile = LoadingItemComponent(Profile);
 const SelectedComicFromAPI = LoadingItemComponent(SelectedComic);
 const SelectedCreatorFromAPI = LoadingItemComponent(SelectedCreator);
 const SelectedEventFromAPI = LoadingItemComponent(SelectedEvent);
@@ -59,6 +61,7 @@ class App extends Component {
       getCreators,
       getEvents,
       getSeries,
+      getUser,
       getSelectedCharacter,
       getSelectedComic,
       getSelectedCreator,
@@ -75,7 +78,7 @@ class App extends Component {
       signIn,
       register,
     } = this.props;
-    console.log('SERIES', series);
+
     return (
       <div>
         <Nav history={history} user={user} />
@@ -97,6 +100,17 @@ class App extends Component {
                 <Register
                   register={register}
                   display={display}
+                  isLoading={display.get('loading')}
+                  history={history}
+                />
+              )}
+            />
+            <Route
+              path="/profile"
+              render={() => (
+                <CustomerProfile
+                  data={user}
+                  apiCall={getUser}
                   isLoading={display.get('loading')}
                   history={history}
                 />
@@ -240,7 +254,7 @@ App.propTypes = {
   getComics: PropTypes.func.isRequired,
   getCreators: PropTypes.func.isRequired,
   getEvents: PropTypes.func.isRequired,
-  getSeries: PropTypes.func.isRequired,  
+  getSeries: PropTypes.func.isRequired,
   getSelectedCharacter: PropTypes.func.isRequired,
   getSelectedComic: PropTypes.func.isRequired,
   getSelectedCreator: PropTypes.func.isRequired,
