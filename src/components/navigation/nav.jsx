@@ -13,7 +13,7 @@ const Nav = ({ user }) => (
     <div className="navbar-menu">
       <div className="navbar-end">
         <div className="navbar-item">
-          { Object.keys(user.get('user')).length
+          { user.get('signedIn') && Object.keys(user.get('user')).length
             ? (
               <a className="title is-6">
                 <span className="r-mar"><i className="fa fa-user" /></span>
