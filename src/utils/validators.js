@@ -15,6 +15,26 @@ export const validateCredentials = (email, password, err = {}) => {
     errors.email = 'Invalid email address.';
   }
 
+  return errors;
+};
+
+export const validateRegistration = (name, email, password, age, gender) => {
+  const errors = {};
+
+  if (!name) {
+    errors.name = 'Name must be provided.';
+  }
+
+  if (!age) {
+    errors.age = 'Age must be provided.';
+  }
+
+  if (!gender) {
+    errors.gender = 'Gender must be provided.';
+  }
+
+  validateCredentials(email, password, errors);
+
   if (password && !validator.isLength(password, { min: 8 })) {
     errors.password = 'Password must be at least eight characters.';
     return errors;
@@ -35,25 +55,6 @@ export const validateCredentials = (email, password, err = {}) => {
     return errors;
   }
 
-  return errors;
-};
-
-export const validateRegistration = (name, email, password, age, gender) => {
-  const errors = {};
-
-  if (!name) {
-    errors.name = 'Name must be provided.';
-  }
-
-  if (!age) {
-    errors.age = 'Age must be provided.';
-  }
-
-  if (!gender) {
-    errors.gender = 'Gender must be provided.';
-  }
-
-  validateCredentials(email, password, errors);
 
   if (name && !validator.matches(name, /^[a-zA-Z ]*$/)) {
     errors.name = 'Name format is invalid.';
