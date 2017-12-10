@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => {
+export default ({ id, email, name }) => {
   return (
     <div>
       <div>Hello world!!!</div>
