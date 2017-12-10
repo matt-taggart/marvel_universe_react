@@ -12,28 +12,32 @@ const Nav = ({ user }) => (
     </div>
     <div className="navbar-menu">
       <div className="navbar-end">
-        <div className="navbar-item has-dropdown is-hoverable">
-          { user.get('signedIn') && Object.keys(user.get('user')).length
-            ? ([
+        { user.get('signedIn') && Object.keys(user.get('user')).length
+          ? (
+            <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link">
                 <span className="r-mar"><i className="fa fa-user" /></span>
                 <span>{ user.get('user').name }</span>
-              </a>,
+              </a>
               <div className="navbar-dropdown is-boxed">
-                <a className="navbar-item" href="/documentation/overview/start/">
+                <Link className="navbar-item" to="/">
                   Home
-                </a>
-                <a className="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
+                </Link>
+                <Link className="navbar-item" to="/profile">
                   Profile
-                </a>
-                <a className="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+                </Link>
+                <Link className="navbar-item" to="/">
                   Logout
-                </a>
-              </div>,
-            ])
-            : <Link to="/sign-in" className="title is-6">Sign In</Link>
-          }
-        </div>
+                </Link>
+              </div>
+            </div>
+          )
+          : (
+            <div className="navbar-item">
+              <Link to="/sign-in" className="title is-6">Sign In</Link>
+            </div>
+          )
+        }
       </div>
     </div>
   </nav>
