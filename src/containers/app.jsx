@@ -240,6 +240,7 @@ App.propTypes = {
   getComics: PropTypes.func.isRequired,
   getCreators: PropTypes.func.isRequired,
   getEvents: PropTypes.func.isRequired,
+  getSeries: PropTypes.func.isRequired,  
   getSelectedCharacter: PropTypes.func.isRequired,
   getSelectedComic: PropTypes.func.isRequired,
   getSelectedCreator: PropTypes.func.isRequired,

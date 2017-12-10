@@ -29,7 +29,7 @@ const SelectedSeries = ({
 
   const CreatorList = creators.items
     .map((item, key) => <CreatorItem {...item} key={key} />);
-  console.log('URLS', urls);
+
   const profileUrl = urls[0] && urls[0].url;
   const wikiUrl = urls[1] && urls[1].url;
 

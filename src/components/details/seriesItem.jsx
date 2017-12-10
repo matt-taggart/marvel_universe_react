@@ -7,7 +7,7 @@ const SeriesItem = ({ name, resourceURI }) => {
   return (
     <div className="level">
       <div className="level-left">
-        <div className="level-item">{ name }</div>
+        <div className="level-item center-mobile">{ name }</div>
         <small className="level-item">
           <Link to={`/series/${seriesId}`}>Details</Link>
         </small>

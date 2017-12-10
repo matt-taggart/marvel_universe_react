@@ -33,7 +33,7 @@ const EventCard = ({
             </div>
             <nav className="level is-mobile">
               <div className="level-left">
-                <a className="level-item">
+                <a className="level-item icon-sm-screen">
                   <span className="icon is-small r-mar-5">
                     <i className="fa fa-bookmark" />
                   </span>

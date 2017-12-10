@@ -12,6 +12,11 @@ const Main = ({ children }) => (
         </div>
       </div>
     </div>
+    {/* <article className="message is-success" style={{ position: 'fixed', top: '40px', right: '35px' }}>
+      <div className="message-body">
+        Item successfully added.
+      </div>
+    </article> */}
   </div>
 );
 

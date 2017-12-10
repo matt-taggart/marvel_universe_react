@@ -7,3 +7,9 @@
 .btm-space {
   margin-bottom: 0.6em;
 }
+
+.icon-sm-screen {
+  @media screen and (max-width: 768px) {
+    margin-right: 10px;
+  }
+}
