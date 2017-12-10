@@ -109,7 +109,7 @@ class App extends Component {
               path="/profile"
               render={() => (
                 <CustomerProfile
-                  data={user}
+                  data={user.get('user')}
                   apiCall={getUser}
                   isLoading={display.get('loading')}
                   history={history}
@@ -255,6 +255,7 @@ App.propTypes = {
   getCreators: PropTypes.func.isRequired,
   getEvents: PropTypes.func.isRequired,
   getSeries: PropTypes.func.isRequired,
+  getUser: PropTypes.func.isRequired,
   getSelectedCharacter: PropTypes.func.isRequired,
   getSelectedComic: PropTypes.func.isRequired,
   getSelectedCreator: PropTypes.func.isRequired,
