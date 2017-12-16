@@ -62,6 +62,7 @@ class App extends Component {
       getEvents,
       getSeries,
       getUser,
+      logout,
       getSelectedCharacter,
       getSelectedComic,
       getSelectedCreator,
@@ -81,7 +82,11 @@ class App extends Component {
 
     return (
       <div>
-        <Nav history={history} user={user} />
+        <Nav
+          history={history}
+          user={user}
+          logout={logout}
+        />
         <Main>
           <Switch>
             <Route
@@ -256,6 +261,7 @@ App.propTypes = {
   getEvents: PropTypes.func.isRequired,
   getSeries: PropTypes.func.isRequired,
   getUser: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
   getSelectedCharacter: PropTypes.func.isRequired,
   getSelectedComic: PropTypes.func.isRequired,
   getSelectedCreator: PropTypes.func.isRequired,

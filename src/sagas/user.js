@@ -3,9 +3,9 @@ import * as Api from '../utils/api';
 import history from '../utils/history';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import {
-  REGISTRATION_SUCCEEDED,
   REGISTRATION_ATTEMPT,
   GET_USER,
+  REGISTRATION_SUCCEEDED,  
   USER_FETCH_SUCCEEDED,
 } from '../constants/user';
 

@@ -20,3 +20,4 @@ export const fetchSelectedEvent = id => () => axios.get(`${baseUrl}/events/${id}
 export const fetchSelectedSeries = id => () => axios.get(`${baseUrl}/series/${id}`);
 export const signIn = credentials => axios.post(`${baseUrl}/login`, { ...credentials });
 export const register = payload => axios.post(`${baseUrl}/user`,  { ...payload });
+export const logout = () => axios.delete(`${baseUrl}/logout`, { withCredentials: true });

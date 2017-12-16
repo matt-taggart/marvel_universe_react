@@ -1,2 +1,4 @@
 export const SIGN_IN_ATTEMPT = 'SIGN_IN_ATTEMPT';
 export const SIGN_IN_SUCCEEDED = 'SIGN_IN_SUCCEDED';
+export const LOGOUT = 'LOGOUT';
+export const LOGOUT_SUCCEEDED = 'LOGOUT_USER_SUCCEEDED';

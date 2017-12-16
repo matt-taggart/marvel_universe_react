@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Immutable from 'immutable';
 
-const Nav = ({ user }) => (
+const Nav = ({ user, logout }) => (
   <nav className="navbar is-dark" aria-label="main navigation">
     <div className="navbar-brand">
       <div className="navbar-item">
@@ -26,9 +26,9 @@ const Nav = ({ user }) => (
                 <Link className="navbar-item" to="/profile">
                   Profile
                 </Link>
-                <Link className="navbar-item" to="/">
+                <a className="navbar-item" onClick={logout} role="navigation">
                   Logout
-                </Link>
+                </a>
               </div>
             </div>
           )

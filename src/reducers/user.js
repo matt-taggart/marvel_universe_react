@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { SIGN_IN_SUCCEEDED } from '../constants/auth';
+import { SIGN_IN_SUCCEEDED, LOGOUT_SUCCEEDED } from '../constants/auth';
 import { REGISTRATION_SUCCEEDED, USER_FETCH_SUCCEEDED } from '../constants/user';
 
 const initialState = new Map({
@@ -19,6 +19,8 @@ export default (state = initialState, action) => {
       return state
         .set('user', action.user)
         .set('signedIn', true);
+    case LOGOUT_SUCCEEDED:
+      return initialState;
     default:
       return state;
   }
