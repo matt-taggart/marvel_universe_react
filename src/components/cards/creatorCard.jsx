@@ -7,8 +7,10 @@ const CreatorCard = ({
   comics: { items },
   thumbnail: { path, extension },
   history,
+  saveResource,
 }) => {
   const selectCreator = () => history.push(`/creators/${id}`);
+  const saveResourceApiCall = () => saveResource({ id, resourceType: history.location.pathname.slice(1) });
   return (
     <div className="column is-half">
       <div className="box">
@@ -33,7 +35,7 @@ const CreatorCard = ({
                   <span className="icon is-small r-mar-5">
                     <i className="fa fa-bookmark" />
                   </span>
-                  <span className="is-small">Save</span>
+                  <span className="is-small" role="presentation" onClick={saveResourceApiCall}>Save</span>
                 </a>
                 <a className="level-item">
                   <span className="icon is-small r-mar-5">
@@ -61,6 +63,7 @@ CreatorCard.propTypes = {
     path: PropTypes.string.isRequired,
   }).isRequired,
   history: PropTypes.object.isRequired,
+  saveResource: PropTypes.func.isRequired,
 };
 
 export default CreatorCard;

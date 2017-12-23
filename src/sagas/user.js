@@ -7,6 +7,8 @@ import {
   GET_USER,
   REGISTRATION_SUCCEEDED,  
   USER_FETCH_SUCCEEDED,
+  SAVE_RESOURCE,
+  SAVE_RESOURCE_SUCCEEDED,
 } from '../constants/user';
 
 function* registerUser() {
@@ -46,9 +48,23 @@ function* getUser() {
   }
 }
 
+function* saveResource({ resourceType, id }) {
+  try {
+    yield put({ type: LOADING, payload: true });
+    yield call(Api.saveResource({ resourceType, id }));
+
+    yield put({ type: SAVE_RESOURCE_SUCCEEDED });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* userActions() {
   yield takeEvery(REGISTRATION_ATTEMPT, registerUser);
   yield takeEvery(GET_USER, getUser);
+  yield takeEvery(SAVE_RESOURCE, saveResource);
 }
 
 export default userActions;

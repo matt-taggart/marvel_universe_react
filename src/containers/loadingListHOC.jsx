@@ -16,7 +16,7 @@ export default WrappedComponent => (
       history: PropTypes.object.isRequired,
     }
     render() {
-      const { isLoading, list, history } = this.props;
+      const { isLoading, list, history, saveResource } = this.props;
 
       if (isLoading) {
         return <LoadingSpinner />;
@@ -24,7 +24,7 @@ export default WrappedComponent => (
 
       return (
         <div className="columns is-multiline">
-          { list.map(item => <WrappedComponent {...item} history={history} key={item.id} />) }
+          { list.map(item => <WrappedComponent {...item} history={history} saveResource={saveResource} key={item.id} />) }
         </div>
       );
     }

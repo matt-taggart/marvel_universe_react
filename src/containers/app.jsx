@@ -9,7 +9,7 @@ import Main from '../components/main/main';
 import SignIn from '../components/forms/signIn';
 import Register from '../components/forms/register';
 import RegistrationSuccessful from '../components/misc/registrationSuccessful';
-import Profile from '../components/profile/profile.jsx';
+import Profile from '../components/profile/profile';
 import CharacterCard from '../components/cards/characterCard';
 import ComicCard from '../components/cards/comicCard';
 import CreatorCard from '../components/cards/creatorCard';
@@ -68,6 +68,7 @@ class App extends Component {
       getSelectedCreator,
       getSelectedEvent,
       getSelectedSeries,
+      saveResource,
       characters,
       comics,
       creators,
@@ -138,6 +139,7 @@ class App extends Component {
                   apiCall={getCharacters}
                   isLoading={display.get('loading')}
                   history={history}
+                  saveResource={saveResource}
                 />
               )}
             />
@@ -161,6 +163,7 @@ class App extends Component {
                   apiCall={getComics}
                   isLoading={display.get('loading')}
                   history={history}
+                  saveResource={saveResource}                  
                 />
               )}
             />
@@ -184,6 +187,7 @@ class App extends Component {
                   apiCall={getCreators}
                   isLoading={display.get('loading')}
                   history={history}
+                  saveResource={saveResource}                  
                 />
               )}
             />
@@ -207,6 +211,7 @@ class App extends Component {
                   apiCall={getEvents}
                   isLoading={display.get('loading')}
                   history={history}
+                  saveResource={saveResource}                  
                 />
               )}
             />
@@ -230,6 +235,7 @@ class App extends Component {
                   apiCall={getSeries}
                   isLoading={display.get('loading')}
                   history={history}
+                  saveResource={saveResource}                  
                 />
               )}
             />
@@ -267,6 +273,7 @@ App.propTypes = {
   getSelectedCreator: PropTypes.func.isRequired,
   getSelectedEvent: PropTypes.func.isRequired,
   getSelectedSeries: PropTypes.func.isRequired,
+  saveResource: PropTypes.func.isRequired,
   characters: PropTypes.instanceOf(Immutable.Map).isRequired,
   comics: PropTypes.instanceOf(Immutable.Map).isRequired,
   creators: PropTypes.instanceOf(Immutable.Map).isRequired,
