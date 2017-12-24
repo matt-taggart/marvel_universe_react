@@ -7,10 +7,11 @@ export default WrappedComponent => (
     componentDidMount() {
       const { apiCall, match } = this.props;
 
-      if (match)
+      if (match) {
         apiCall(match.params.id);
-      else
+      } else {
         apiCall();
+      }
     }
     static propTypes = {
       apiCall: PropTypes.func.isRequired,

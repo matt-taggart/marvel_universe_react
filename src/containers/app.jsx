@@ -9,32 +9,15 @@ import Main from '../components/main/main';
 import SignIn from '../components/forms/signIn';
 import Register from '../components/forms/register';
 import RegistrationSuccessful from '../components/misc/registrationSuccessful';
-import Profile from '../components/profile/profile';
-import CharacterCard from '../components/cards/characterCard';
-import ComicCard from '../components/cards/comicCard';
-import CreatorCard from '../components/cards/creatorCard';
-import EventCard from '../components/cards/eventCard';
-import SeriesCard from '../components/cards/seriesCard';
-import SelectedCharacter from '../components/details/selectedCharacter';
-import SelectedComic from '../components/details/selectedComic';
-import SelectedCreator from '../components/details/selectedCreator';
-import SelectedEvent from '../components/details/selectedEvent';
-import SelectedSeries from '../components/details/selectedSeries';
-import LoadingListComponent from './loadingListHOC';
-import LoadingItemComponent from './loadingItemHOC';
 import * as ApiActions from '../actions/api';
 
-const CharacterListFromAPI = LoadingListComponent(CharacterCard);
-const ComicListFromAPI = LoadingListComponent(ComicCard);
-const CreatorListFromAPI = LoadingListComponent(CreatorCard);
-const EventListFromAPI = LoadingListComponent(EventCard);
-const SeriesListFromAPI = LoadingListComponent(SeriesCard);
-const SelectedCharacterFromAPI = LoadingItemComponent(SelectedCharacter);
-const CustomerProfile = LoadingItemComponent(Profile);
-const SelectedComicFromAPI = LoadingItemComponent(SelectedComic);
-const SelectedCreatorFromAPI = LoadingItemComponent(SelectedCreator);
-const SelectedEventFromAPI = LoadingItemComponent(SelectedEvent);
-const SelectedSeriesFromAPI = LoadingItemComponent(SelectedSeries);
+import {
+  CharacterListWithData,
+  ComicListWithData,
+  CreatorListWithData,
+  EventListWithData,
+  SeriesListWithData,
+} from '../components/wrappedComponents';
 
 class App extends Component {
   componentWillReceiveProps(nextProps) {
@@ -111,7 +94,7 @@ class App extends Component {
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/profile"
               render={() => (
                 <CustomerProfile
@@ -121,7 +104,7 @@ class App extends Component {
                   history={history}
                 />
               )}
-            />
+            /> */}
             <Route
               path="/registration-successful"
               render={() => (
@@ -134,16 +117,17 @@ class App extends Component {
               path="/characters"
               exact
               render={() => (
-                <CharacterListFromAPI
-                  list={characters.get('characters')}
+                <CharacterListWithData
+                  data={characters.get('characters')}
                   apiCall={getCharacters}
+                  getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/characters/:id"
               render={props => (
                 <SelectedCharacterFromAPI
@@ -153,21 +137,22 @@ class App extends Component {
                   isLoading={display.get('loading')}
                 />
               )}
-            />
+            /> */}
             <Route
               path="/comics"
               exact
               render={() => (
-                <ComicListFromAPI
-                  list={comics.get('comics')}
+                <ComicListWithData
+                  data={comics.get('comics')}
                   apiCall={getComics}
+                  getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}                  
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/comics/:id"
               render={props => (
                 <SelectedComicFromAPI
@@ -177,21 +162,22 @@ class App extends Component {
                   isLoading={display.get('loading')}
                 />
               )}
-            />
+            /> */}
             <Route
               path="/creators"
               exact
               render={() => (
-                <CreatorListFromAPI
-                  list={creators.get('creators')}
+                <CreatorListWithData
+                  data={creators.get('creators')}
                   apiCall={getCreators}
+                  getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}                  
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/creators/:id"
               render={props => (
                 <SelectedCreatorFromAPI
@@ -201,21 +187,22 @@ class App extends Component {
                   isLoading={display.get('loading')}
                 />
               )}
-            />
+            /> */}
             <Route
               path="/events"
               exact
               render={() => (
-                <EventListFromAPI
-                  list={events.get('events')}
+                <EventListWithData
+                  data={events.get('events')}
                   apiCall={getEvents}
+                  getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}                  
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/events/:id"
               render={props => (
                 <SelectedEventFromAPI
@@ -225,21 +212,22 @@ class App extends Component {
                   isLoading={display.get('loading')}
                 />
               )}
-            />
+            /> */}
             <Route
               path="/series"
               exact
               render={() => (
-                <SeriesListFromAPI
-                  list={series.get('series')}
+                <SeriesListWithData
+                  data={series.get('series')}
                   apiCall={getSeries}
+                  getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
-                  saveResource={saveResource}                  
+                  saveResource={saveResource}
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/series/:id"
               exact
               render={props => (
@@ -250,7 +238,7 @@ class App extends Component {
                   isLoading={display.get('loading')}
                 />
               )}
-            />
+            /> */}
             <Redirect from="/" to="/characters" />
             <Redirect to="/" />
           </Switch>
