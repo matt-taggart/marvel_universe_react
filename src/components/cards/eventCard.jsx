@@ -13,7 +13,7 @@ const EventCard = ({
   saveResource,
 }) => {
   const selectEvent = () => history.push(`/events/${id}`);
-  const saveResourceApiCall = () => saveResource({ id, resourceType: history.location.pathname.slice(1) });
+  const saveResourceApiCall = () => saveResource({ id, name: title, resourceType: history.location.pathname.slice(1) });
   return (
     <div className="column is-half">
       <div className="box">

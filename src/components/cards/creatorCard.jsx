@@ -10,7 +10,7 @@ const CreatorCard = ({
   saveResource,
 }) => {
   const selectCreator = () => history.push(`/creators/${id}`);
-  const saveResourceApiCall = () => saveResource({ id, resourceType: history.location.pathname.slice(1) });
+  const saveResourceApiCall = () => saveResource({ id, name: fullName, resourceType: history.location.pathname.slice(1) });
   return (
     <div className="column is-half">
       <div className="box">

@@ -18,7 +18,7 @@ export const getSelectedComic = id => ({ type: GET_SELECTED_COMIC, id });
 export const getSelectedCreator = id => ({ type: GET_SELECTED_CREATOR, id });
 export const getSelectedEvent = id => ({ type: GET_SELECTED_EVENT, id });
 export const getSelectedSeries = id => ({ type: GET_SELECTED_SERIES, id });
-export const saveResource = ({ resourceType, id }) => ({ type: SAVE_RESOURCE, resourceType, id });
+export const saveResource = ({ resourceType, id, name }) => ({ type: SAVE_RESOURCE, resourceType, id, name });
 export const signIn = () => ({ type: SIGN_IN_ATTEMPT });
 export const register = () => ({ type: REGISTRATION_ATTEMPT });
 export const logout = () => ({ type: LOGOUT });
