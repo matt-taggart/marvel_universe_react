@@ -1,9 +1,17 @@
 import React from 'react';
+import { compose, lifecycle, branch, renderComponent } from 'recompose';
 import LoadingSpinner from '../components/misc/loadingSpinner';
-import { compose, branch, renderComponent } from 'recompose';
 
-export default branch(
-  props => Object.keys(props.data).length && props.isLoading,
-  renderComponent(LoadingSpinner),
+export default compose(
+  lifecycle({
+    componentDidMount() {
+      const { apiCall, getUser } = this.props;
+      apiCall();
+      getUser();
+    }
+  }),
+  branch(
+    props => props.isLoading || !Object.keys(props.data).length,
+    renderComponent(LoadingSpinner),
+  ),
 );
-

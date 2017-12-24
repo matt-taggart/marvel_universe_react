@@ -9,15 +9,12 @@ import Main from '../components/main/main';
 import SignIn from '../components/forms/signIn';
 import Register from '../components/forms/register';
 import RegistrationSuccessful from '../components/misc/registrationSuccessful';
+import CharacterList from '../components/list/characterList';
+import ComicList from '../components/list/comicList';
+import CreatorList from '../components/list/creatorList';
+import EventList from '../components/list/eventList';
+import SeriesList from '../components/list/seriesList';
 import * as ApiActions from '../actions/api';
-
-import {
-  CharacterListWithData,
-  ComicListWithData,
-  CreatorListWithData,
-  EventListWithData,
-  SeriesListWithData,
-} from '../components/wrappedComponents';
 
 class App extends Component {
   componentWillReceiveProps(nextProps) {
@@ -117,7 +114,7 @@ class App extends Component {
               path="/characters"
               exact
               render={() => (
-                <CharacterListWithData
+                <CharacterList
                   data={characters.get('characters')}
                   apiCall={getCharacters}
                   getUser={getUser}
@@ -142,7 +139,7 @@ class App extends Component {
               path="/comics"
               exact
               render={() => (
-                <ComicListWithData
+                <ComicList
                   data={comics.get('comics')}
                   apiCall={getComics}
                   getUser={getUser}
@@ -167,7 +164,7 @@ class App extends Component {
               path="/creators"
               exact
               render={() => (
-                <CreatorListWithData
+                <CreatorList
                   data={creators.get('creators')}
                   apiCall={getCreators}
                   getUser={getUser}
@@ -192,7 +189,7 @@ class App extends Component {
               path="/events"
               exact
               render={() => (
-                <EventListWithData
+                <EventList
                   data={events.get('events')}
                   apiCall={getEvents}
                   getUser={getUser}
@@ -217,7 +214,7 @@ class App extends Component {
               path="/series"
               exact
               render={() => (
-                <SeriesListWithData
+                <SeriesList
                   data={series.get('series')}
                   apiCall={getSeries}
                   getUser={getUser}
