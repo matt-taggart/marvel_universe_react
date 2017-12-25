@@ -2,7 +2,7 @@
   h1 {
     margin-bottom: 0.75rem;
   }
-  div {
+  .main-profile-content {
     margin: 0.25rem 0;    
     div {
       &:first-of-type {
@@ -14,5 +14,8 @@
         margin-right: 0.25rem;
       }
     }
+  }
+  .saved-content {
+    margin-bottom: 2em;
   }
 }

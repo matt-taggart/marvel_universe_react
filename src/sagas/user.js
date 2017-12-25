@@ -51,7 +51,7 @@ function* getUser() {
 function* saveResource({ resourceType, id, name }) {
   try {
     yield put({ type: LOADING, payload: true });
-    yield call(Api.saveResource({ resourceType, id, name }));
+    yield call(Api.saveResource, resourceType, id, name);
 
     yield put({ type: SAVE_RESOURCE_SUCCEEDED });
     yield put({ type: LOADING, payload: false });

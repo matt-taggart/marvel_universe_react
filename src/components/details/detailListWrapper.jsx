@@ -5,11 +5,11 @@ const DetailListWrapper = ({ heading, children }) => (
   <article className="media">
     <div className="media-content">
       <div className="content">
-        <p>
+        <div>
           <strong>{ heading }</strong>
           <br />
           { children }
-        </p>
+        </div>
       </div>
     </div>
   </article>

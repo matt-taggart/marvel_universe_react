@@ -93,10 +93,10 @@ SelectedCharacter.propTypes = {
       extension: PropTypes.string.isRequired,
       path: PropTypes.string.isRequired,
     }).isRequired,
-    comics: PropTypes.arrayOf(PropTypes.object).isRequired,
-    series: PropTypes.arrayOf(PropTypes.object).isRequired,
-    events: PropTypes.arrayOf(PropTypes.object).isRequired,
-    urls: PropTypes.arrayOf(PropTypes.object).isRequired,
+    comics: PropTypes.object.isRequired,
+    series: PropTypes.object.isRequired,
+    events: PropTypes.object.isRequired,
+    urls: PropTypes.array.isRequired,
   }).isRequired,
 };
 
