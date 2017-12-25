@@ -43,7 +43,7 @@ const SelectedEvent = ({
       </figure>
       <div className="media-content">
         <div className="content">
-          <p>
+          <div>
             <strong>{ title }</strong>
             <br />
             { description || 'Description not available' }
@@ -57,7 +57,7 @@ const SelectedEvent = ({
               { profileUrl && <span><a href={profileUrl} target="_blank"> Profile </a></span> }
               { wikiUrl && <span>.<a href={wikiUrl} target="_blank"> Wiki </a></span> }
             </small>
-          </p>
+          </div>
         </div>
         {
           characters.available > 0 && (

@@ -152,7 +152,7 @@ class App extends Component {
                   getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
-                  saveResource={saveResource}                  
+                  saveResource={saveResource}
                 />
               )}
             />
@@ -178,7 +178,7 @@ class App extends Component {
                   getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
-                  saveResource={saveResource}                  
+                  saveResource={saveResource}
                 />
               )}
             />
@@ -204,7 +204,7 @@ class App extends Component {
                   getUser={getUser}
                   isLoading={display.get('loading')}
                   history={history}
-                  saveResource={saveResource}                  
+                  saveResource={saveResource}
                 />
               )}
             />
@@ -302,6 +302,6 @@ const mapDispatchToProps = dispatch => (
 export default withRouter(
   connect(
     mapStateToProps, 
-    mapDispatchToProps
+    mapDispatchToProps,
   )(App)
 );

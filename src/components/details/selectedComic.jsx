@@ -40,7 +40,7 @@ const SelectedComic = ({
       </figure>
       <div className="media-content">
         <div className="content">
-          <p>
+          <div>
             <strong>{ title }</strong>
             <br />
             { description || 'Description not available' }
@@ -54,7 +54,7 @@ const SelectedComic = ({
               { seriesUrl && <span><a href={seriesUrl} target="_blank"> Series </a></span> }
               { comicsUrl && <span>.<a href={comicsUrl} target="_blank"> Comic </a></span> }
             </small>
-          </p>
+          </div>
         </div>
         <DetailListWrapper heading="Series">
           <SeriesItem

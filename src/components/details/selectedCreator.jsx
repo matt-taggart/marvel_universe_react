@@ -36,7 +36,7 @@ const SelectedCreator = ({
       </figure>
       <div className="media-content">
         <div className="content">
-          <p>
+          <div>
             <strong>{ fullName }</strong>
             <br />
             <small>
@@ -46,7 +46,7 @@ const SelectedCreator = ({
             <small>
               { profileUrl && <span><a href={profileUrl} target="_blank"> Profile </a></span> }
             </small>
-          </p>
+          </div>
         </div>
         {
           comics.available > 0 && (

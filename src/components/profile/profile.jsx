@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 
-const CustomerProfile = ({ data: { name, email, gender, age }}) => {
+const CustomerProfile = ({ data: { name, email, gender, age } }) => {
   return (
     <div className="Profile">
       <h1 className="has-text-centered is-size-3">My Profile</h1>
@@ -27,5 +28,15 @@ const CustomerProfile = ({ data: { name, email, gender, age }}) => {
     </div>
   );
 };
+
+CustomerProfile.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    gender: PropTypes.arrayOf(PropTypes.object).isRequired,
+    age: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
+};
+
 
 export default LoadingHOC(CustomerProfile);

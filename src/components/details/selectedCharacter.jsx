@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import DetailListWrapper from './detailListWrapper';
@@ -42,7 +42,7 @@ const ComicList = comics.items
       </figure>
       <div className="media-content">
         <div className="content">
-          <p>
+          <div>
             <strong>{ name }</strong>
             <br />
             { description || 'Description not available' }
@@ -57,7 +57,7 @@ const ComicList = comics.items
               { wikiUrl && <span>.<a href={wikiUrl} target="_blank"> Wiki </a></span> }
               { comicUrl && <span>.<a href={comicUrl} target="_blank"> Comics </a></span> }
             </small>
-          </p>
+          </div>
         </div>
         {
           comics.available > 0 && (
