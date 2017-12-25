@@ -5,7 +5,7 @@ import { LOADING, FETCH_FAILED, SHOW_FLASH_MESSAGE } from '../constants/display'
 import {
   REGISTRATION_ATTEMPT,
   GET_USER,
-  REGISTRATION_SUCCEEDED,  
+  REGISTRATION_SUCCEEDED,
   USER_FETCH_SUCCEEDED,
   SAVE_RESOURCE,
   SAVE_RESOURCE_SUCCEEDED,
@@ -48,10 +48,10 @@ function* getUser() {
   }
 }
 
-function* saveResource({ resourceType, id, name }) {
+function* saveResource({ payload }) {
   try {
     yield put({ type: LOADING, payload: true });
-    yield call(Api.saveResource, resourceType, id, name);
+    yield call(Api.saveResource, { ...payload });
 
     yield put({ type: SAVE_RESOURCE_SUCCEEDED });
     yield put({ type: SHOW_FLASH_MESSAGE });
