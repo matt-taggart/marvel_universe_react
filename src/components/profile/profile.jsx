@@ -1,6 +1,7 @@
 import React from 'react';
+import LoadingHOC from '../../containers/loadingHOC';
 
-export default ({ name, email, gender, age }) => {
+const CustomerProfile = ({ data: { name, email, gender, age }}) => {
   return (
     <div className="Profile">
       <h1 className="has-text-centered is-size-3">My Profile</h1>
@@ -26,3 +27,5 @@ export default ({ name, email, gender, age }) => {
     </div>
   );
 };
+
+export default LoadingHOC(CustomerProfile);

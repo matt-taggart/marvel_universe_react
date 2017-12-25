@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LoadingHOC from '../../containers/loadingHOC';
 import DetailListWrapper from './detailListWrapper';
 import CharacterItem from './characterItem';
 import ComicItem from './comicItem';
@@ -7,14 +8,16 @@ import SeriesItem from './seriesItem';
 import CreatorItem from './creatorItem';
 
 const SelectedEvent = ({
-  title,
-  description,
-  thumbnail: { path, extension },
-  characters,
-  series,
-  comics,
-  creators,
-  urls,
+  data: {
+    title,
+    description,
+    thumbnail: { path, extension },
+    characters,
+    series,
+    comics,
+    creators,
+    urls,
+  },
 }) => {
   const CharacterList = characters.items
     .map((item, key) => <CharacterItem {...item} key={key} />);
@@ -90,17 +93,19 @@ const SelectedEvent = ({
 };
 
 SelectedEvent.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  thumbnail: PropTypes.shape({
-    extension: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    thumbnail: PropTypes.shape({
+      extension: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    }).isRequired,
+    comics: PropTypes.arrayOf(PropTypes.object).isRequired,
+    series: PropTypes.arrayOf(PropTypes.object).isRequired,
+    characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+    creators: PropTypes.arrayOf(PropTypes.object).isRequired,
+    urls: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
-  comics: PropTypes.arrayOf(PropTypes.object).isRequired,
-  series: PropTypes.arrayOf(PropTypes.object).isRequired,
-  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
-  creators: PropTypes.arrayOf(PropTypes.object).isRequired,
-  urls: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default SelectedEvent;
+export default LoadingHOC(SelectedEvent);

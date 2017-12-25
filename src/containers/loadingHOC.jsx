@@ -5,8 +5,13 @@ import LoadingSpinner from '../components/misc/loadingSpinner';
 export default compose(
   lifecycle({
     componentDidMount() {
-      const { apiCall, getUser } = this.props;
-      apiCall();
+      const { apiCall, getUser, match } = this.props;
+      const id = match && match.params && match.params.id;
+
+      if (apiCall) {
+        apiCall(id);
+      }
+
       getUser();
     }
   }),
@@ -15,3 +20,4 @@ export default compose(
     renderComponent(LoadingSpinner),
   ),
 );
+

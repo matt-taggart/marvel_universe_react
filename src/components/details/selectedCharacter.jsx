@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import LoadingHOC from '../../containers/loadingHOC';
 import DetailListWrapper from './detailListWrapper';
 import ComicItem from './comicItem';
 import SeriesItem from './seriesItem';
 import EventItem from './eventItem';
 
 const SelectedCharacter = ({
-  name,
-  description,
-  thumbnail: { path, extension },
-  comics,
-  series,
-  events,
-  urls,
+  data: {
+    name,
+    description,
+    thumbnail: { path, extension },
+    comics,
+    series,
+    events,
+    urls,
+  },
 }) => {
 // NOTE: Usually want to provide unique key rather than array index
 // when composing a list of components, but Marvel API doesn't provide one :( 
 
-  const ComicList = comics.items
+const ComicList = comics.items
     .map((item, key) => <ComicItem {...item} key={key} />);
 
   const SeriesList = series.items
@@ -83,16 +86,18 @@ const SelectedCharacter = ({
 };
 
 SelectedCharacter.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  thumbnail: PropTypes.shape({
-    extension: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    thumbnail: PropTypes.shape({
+      extension: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    }).isRequired,
+    comics: PropTypes.arrayOf(PropTypes.object).isRequired,
+    series: PropTypes.arrayOf(PropTypes.object).isRequired,
+    events: PropTypes.arrayOf(PropTypes.object).isRequired,
+    urls: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
-  comics: PropTypes.arrayOf(PropTypes.object).isRequired,
-  series: PropTypes.arrayOf(PropTypes.object).isRequired,
-  events: PropTypes.arrayOf(PropTypes.object).isRequired,
-  urls: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default SelectedCharacter;
+export default LoadingHOC(SelectedCharacter);

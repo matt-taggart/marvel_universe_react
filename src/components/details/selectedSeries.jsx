@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LoadingHOC from '../../containers/loadingHOC';
 import DetailListWrapper from './detailListWrapper';
 import CharacterItem from './characterItem';
 import ComicItem from './comicItem';
@@ -8,15 +9,17 @@ import CreatorItem from './creatorItem';
 import EventItem from './eventItem';
 
 const SelectedSeries = ({
-  id,
-  title,
-  description,
-  thumbnail: { path, extension },
-  creators,
-  characters,
-  comics,
-  events,
-  urls,
+  data: {
+    id,
+    title,
+    description,
+    thumbnail: { path, extension },
+    creators,
+    characters,
+    comics,
+    events,
+    urls,
+  },
 }) => {
   const CharacterList = characters.items
     .map((item, key) => <CharacterItem {...item} key={key} />);
@@ -92,17 +95,19 @@ const SelectedSeries = ({
 };
 
 SelectedSeries.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  thumbnail: PropTypes.shape({
-    extension: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    thumbnail: PropTypes.shape({
+      extension: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    }).isRequired,
+    comics: PropTypes.arrayOf(PropTypes.object).isRequired,
+    series: PropTypes.arrayOf(PropTypes.object).isRequired,
+    characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+    creators: PropTypes.arrayOf(PropTypes.object).isRequired,
+    urls: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
-  comics: PropTypes.arrayOf(PropTypes.object).isRequired,
-  series: PropTypes.arrayOf(PropTypes.object).isRequired,
-  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
-  creators: PropTypes.arrayOf(PropTypes.object).isRequired,
-  urls: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default SelectedSeries;
+export default LoadingHOC(SelectedSeries);

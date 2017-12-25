@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LoadingHOC from '../../containers/loadingHOC';
 import DetailListWrapper from './detailListWrapper';
 import ComicItem from './comicItem';
 import SeriesItem from './seriesItem';
 import EventItem from './eventItem';
 
 const SelectedCreator = ({
-  fullName,
-  thumbnail: { path, extension },
-  comics,
-  series,
-  events,
-  urls,
+  data: {
+    fullName,
+    thumbnail: { path, extension },
+    comics,
+    series,
+    events,
+    urls,
+  },
 }) => {
   const ComicList = comics.items
     .map((item, key) => <ComicItem {...item} key={key} />);
@@ -72,15 +75,17 @@ const SelectedCreator = ({
 };
 
 SelectedCreator.propTypes = {
-  fullName: PropTypes.string.isRequired,
-  thumbnail: PropTypes.shape({
-    extension: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    fullName: PropTypes.string.isRequired,
+    thumbnail: PropTypes.shape({
+      extension: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    }).isRequired,
+    comics: PropTypes.arrayOf(PropTypes.object).isRequired,
+    series: PropTypes.arrayOf(PropTypes.object).isRequired,
+    events: PropTypes.arrayOf(PropTypes.object).isRequired,
+    urls: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
-  comics: PropTypes.arrayOf(PropTypes.object).isRequired,
-  series: PropTypes.arrayOf(PropTypes.object).isRequired,
-  events: PropTypes.arrayOf(PropTypes.object).isRequired,
-  urls: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default SelectedCreator;
+export default LoadingHOC(SelectedCreator);
