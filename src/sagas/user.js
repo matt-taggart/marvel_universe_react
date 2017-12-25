@@ -1,7 +1,7 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 import * as Api from '../utils/api';
 import history from '../utils/history';
-import { LOADING, FETCH_FAILED } from '../constants/display';
+import { LOADING, FETCH_FAILED, SHOW_FLASH_MESSAGE } from '../constants/display';
 import {
   REGISTRATION_ATTEMPT,
   GET_USER,
@@ -54,6 +54,7 @@ function* saveResource({ resourceType, id, name }) {
     yield call(Api.saveResource, resourceType, id, name);
 
     yield put({ type: SAVE_RESOURCE_SUCCEEDED });
+    yield put({ type: SHOW_FLASH_MESSAGE });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

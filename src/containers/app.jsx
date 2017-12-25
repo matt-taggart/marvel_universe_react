@@ -21,6 +21,7 @@ import SelectedCreator from '../components/details/selectedCreator';
 import SelectedEvent from '../components/details/selectedEvent';
 import SelectedSeries from '../components/details/selectedSeries';
 import * as ApiActions from '../actions/api';
+import hideFlashMessage from '../actions/display';
 
 class App extends Component {
   componentWillReceiveProps(nextProps) {
@@ -65,6 +66,7 @@ class App extends Component {
       history,
       signIn,
       register,
+      hideFlashMessage,
     } = this.props;
 
     return (
@@ -74,7 +76,10 @@ class App extends Component {
           user={user}
           logout={logout}
         />
-        <Main>
+        <Main
+          displayFlashMessage={display.get('displayFlashMessage')}
+          hideFlashMessage={hideFlashMessage}
+        >
           <Switch>
             <Route
               path="/sign-in"
@@ -295,9 +300,10 @@ const mapStateToProps = state => ({
   series: state.series,
 });
 
-const mapDispatchToProps = dispatch => (
-  bindActionCreators(ApiActions, dispatch)
-);
+const mapDispatchToProps = dispatch => ({
+  ...bindActionCreators(ApiActions, dispatch),
+  hideFlashMessage: () => dispatch(hideFlashMessage()),
+});
 
 export default withRouter(
   connect(

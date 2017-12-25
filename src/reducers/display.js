@@ -4,12 +4,15 @@ import {
   FETCH_FAILED,
   SET_APPLICATION_ERROR,
   CLEAR_API_ERRORS,
+  SHOW_FLASH_MESSAGE,
+  HIDE_FLASH_MESSAGE,
 } from '../constants/display';
 
 const initialState = new Map({
   loading: false,
   apiError: {},
   applicationError: {},
+  displayFlashMessage: false,
 });
 
 export default (state = initialState, action) => {
@@ -22,6 +25,10 @@ export default (state = initialState, action) => {
       return state.set('applicationError', action.error);
     case CLEAR_API_ERRORS:
       return state.set('apiError', initialState.get('apiError'));
+    case SHOW_FLASH_MESSAGE:
+      return state.set('displayFlashMessage', true);
+    case HIDE_FLASH_MESSAGE:
+      return state.set('displayFlashMessage', false);
     default:
       return state;
   }
