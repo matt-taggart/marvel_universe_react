@@ -2,9 +2,18 @@ import React from 'react';
 import LoadingHOC from '../../containers/loadingHOC';
 import CreatorCard from '../cards/creatorCard';
 
-const CreatorList = ({ item, history, saveResource, data }) => (
+const CreatorList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
   <div className="columns is-multiline">
-    { data.map(item => <CreatorCard {...item} history={history} saveResource={saveResource} key={item.id} />) }
+    { data.map(item => (
+      <CreatorCard
+        {...item}
+        history={history}
+        saveResource={saveResource}
+        showSaveItemErrorModal={showSaveItemErrorModal}
+        isSignedIn={isSignedIn}
+        key={item.id}
+      />
+    )) }
   </div>
 );
 

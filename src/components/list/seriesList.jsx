@@ -2,9 +2,18 @@ import React from 'react';
 import LoadingHOC from '../../containers/loadingHOC';
 import SeriesCard from '../cards/seriesCard';
 
-const SeriesList = ({ item, history, saveResource, data }) => (
+const SeriesList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
   <div className="columns is-multiline">
-    { data.map(item => <SeriesCard {...item} history={history} saveResource={saveResource} key={item.id} />) }
+    { data.map(item => (
+      <SeriesCard
+        {...item}
+        history={history}
+        saveResource={saveResource}
+        showSaveItemErrorModal={showSaveItemErrorModal}
+        isSignedIn={isSignedIn}
+        key={item.id}
+      />
+    )) }
   </div>
 );
 

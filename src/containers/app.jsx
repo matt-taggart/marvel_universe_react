@@ -166,6 +166,8 @@ class App extends Component {
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
+                  showSaveItemErrorModal={showSaveItemErrorModal}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -192,6 +194,8 @@ class App extends Component {
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
+                  showSaveItemErrorModal={showSaveItemErrorModal}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -218,6 +222,8 @@ class App extends Component {
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
+                  showSaveItemErrorModal={showSaveItemErrorModal}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -244,6 +250,8 @@ class App extends Component {
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
+                  showSaveItemErrorModal={showSaveItemErrorModal}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />

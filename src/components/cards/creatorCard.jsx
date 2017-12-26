@@ -8,9 +8,12 @@ const CreatorCard = ({
   thumbnail: { path, extension },
   history,
   saveResource,
+  showSaveItemErrorModal,
+  isSignedIn,
 }) => {
   const selectCreator = () => history.push(`/creators/${id}`);
   const saveResourceApiCall = () => saveResource({ id, name: fullName, resourceType: history.location.pathname.slice(1) });
+  const saveItemFunction = isSignedIn ? saveResourceApiCall : showSaveItemErrorModal;
   return (
     <div className="column is-half">
       <div className="box">
@@ -35,7 +38,7 @@ const CreatorCard = ({
                   <span className="icon is-small r-mar-5">
                     <i className="fa fa-bookmark" />
                   </span>
-                  <span className="is-small" role="presentation" onClick={saveResourceApiCall}>Save</span>
+                  <span className="is-small" role="presentation" onClick={saveItemFunction}>Save</span>
                 </a>
                 <a className="level-item">
                   <span className="icon is-small r-mar-5">
@@ -64,6 +67,8 @@ CreatorCard.propTypes = {
   }).isRequired,
   history: PropTypes.object.isRequired,
   saveResource: PropTypes.func.isRequired,
+  showSaveItemErrorModal: PropTypes.func.isRequired,
+  isSignedIn: PropTypes.bool.isRequired,
 };
 
 export default CreatorCard;
