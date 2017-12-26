@@ -35,6 +35,7 @@ const Main = ({ children, displayFlashMessage, hideFlashMessage }) => {
 Main.propTypes = {
   children: PropTypes.element.isRequired,
   displayFlashMessage: PropTypes.bool.isRequired,
+  hideFlashMessage: PropTypes.func.isRequired,
 };
 
 export default Main;

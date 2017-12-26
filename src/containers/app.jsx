@@ -20,6 +20,7 @@ import SelectedComic from '../components/details/selectedComic';
 import SelectedCreator from '../components/details/selectedCreator';
 import SelectedEvent from '../components/details/selectedEvent';
 import SelectedSeries from '../components/details/selectedSeries';
+import SaveItemErrorModal from '../components/modals/saveItemError';
 import * as ApiActions from '../actions/api';
 import hideFlashMessage from '../actions/display';
 
@@ -256,6 +257,7 @@ class App extends Component {
             <Redirect to="/" />
           </Switch>
         </Main>
+        <SaveItemErrorModal isOpen={true} />
       </div>
     );
   }
