@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import CreatorCard from '../cards/creatorCard';
 
@@ -16,5 +17,13 @@ const CreatorList = ({ history, saveResource, showSaveItemErrorModal, data, isSi
     )) }
   </div>
 );
+
+CreatorList.propTypes = {
+  history: PropTypes.object.isRequired,
+  saveResource: PropTypes.func.isRequired,
+  showSaveItemErrorModal: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
+  isSignedIn: PropTypes.bool.isRequired,
+};
 
 export default LoadingHOC(CreatorList);

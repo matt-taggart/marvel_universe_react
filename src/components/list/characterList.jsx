@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import CharacterCard from '../cards/characterCard';
 
@@ -16,5 +17,13 @@ const CharacterList = ({ history, saveResource, showSaveItemErrorModal, data, is
     )) }
   </div>
 );
+
+CharacterList.propTypes = {
+  history: PropTypes.object.isRequired,
+  saveResource: PropTypes.func.isRequired,
+  showSaveItemErrorModal: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
+  isSignedIn: PropTypes.bool.isRequired,
+};
 
 export default LoadingHOC(CharacterList);

@@ -322,9 +322,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators(ApiActions, dispatch),
-  hideFlashMessage: () => dispatch(DisplayActions.hideFlashMessage()),
-  showSaveItemErrorModal: () => dispatch(DisplayActions.showSaveItemErrorModal()),
-  hideSaveItemErrorModal: () => dispatch(DisplayActions.hideSaveItemErrorModal()),
+  ...bindActionCreators(DisplayActions, dispatch),
 });
 
 export default withRouter(

@@ -59,7 +59,7 @@ const SeriesCard = ({
 SeriesCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   thumbnail: PropTypes.shape({
     extension: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,

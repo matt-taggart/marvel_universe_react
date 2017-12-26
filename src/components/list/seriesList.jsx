@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import SeriesCard from '../cards/seriesCard';
 
@@ -16,6 +17,14 @@ const SeriesList = ({ history, saveResource, showSaveItemErrorModal, data, isSig
     )) }
   </div>
 );
+
+SeriesList.propTypes = {
+  history: PropTypes.object.isRequired,
+  saveResource: PropTypes.func.isRequired,
+  showSaveItemErrorModal: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
+  isSignedIn: PropTypes.bool.isRequired,
+};
 
 export default LoadingHOC(SeriesList);
 

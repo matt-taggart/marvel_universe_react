@@ -62,7 +62,7 @@ const EventCard = ({
 EventCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   start: PropTypes.string.isRequired,
   end: PropTypes.string.isRequired,
   thumbnail: PropTypes.shape({
