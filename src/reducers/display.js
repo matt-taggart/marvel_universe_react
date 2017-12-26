@@ -6,6 +6,8 @@ import {
   CLEAR_API_ERRORS,
   SHOW_FLASH_MESSAGE,
   HIDE_FLASH_MESSAGE,
+  SHOW_SAVE_ITEM_ERROR_MODAL,
+  HIDE_SAVE_ITEM_ERROR_MODAL,
 } from '../constants/display';
 
 const initialState = new Map({
@@ -13,6 +15,7 @@ const initialState = new Map({
   apiError: {},
   applicationError: {},
   displayFlashMessage: false,
+  showSaveItemErrorModal: false,
 });
 
 export default (state = initialState, action) => {
@@ -29,6 +32,10 @@ export default (state = initialState, action) => {
       return state.set('displayFlashMessage', true);
     case HIDE_FLASH_MESSAGE:
       return state.set('displayFlashMessage', false);
+    case SHOW_SAVE_ITEM_ERROR_MODAL:
+      return state.set('showSaveItemErrorModal', true);
+    case HIDE_SAVE_ITEM_ERROR_MODAL:
+      return state.set('showSaveItemErrorModal', false);
     default:
       return state;
   }

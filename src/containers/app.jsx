@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
 import Immutable from 'immutable';
 import Nav from '../components/navigation/nav';
 import Main from '../components/main/main';
@@ -21,10 +22,13 @@ import SelectedCreator from '../components/details/selectedCreator';
 import SelectedEvent from '../components/details/selectedEvent';
 import SelectedSeries from '../components/details/selectedSeries';
 import SaveItemErrorModal from '../components/modals/saveItemError';
+import * as DisplayActions from '../actions/display';
 import * as ApiActions from '../actions/api';
-import hideFlashMessage from '../actions/display';
 
 class App extends Component {
+  componentDidMount() {
+    Modal.setAppElement('body');
+  }
   componentWillReceiveProps(nextProps) {
     const { location, clearApiErrors } = this.props;
 
@@ -32,7 +36,6 @@ class App extends Component {
       clearApiErrors();
     }
   }
-
   componentDidCatch(error, info) {
     const { setApplicationError } = this.props;
 
@@ -68,6 +71,8 @@ class App extends Component {
       signIn,
       register,
       hideFlashMessage,
+      hideSaveItemErrorModal,
+      showSaveItemErrorModal,
     } = this.props;
 
     return (
@@ -133,6 +138,8 @@ class App extends Component {
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
+                  showSaveItemErrorModal={showSaveItemErrorModal}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -257,7 +264,10 @@ class App extends Component {
             <Redirect to="/" />
           </Switch>
         </Main>
-        <SaveItemErrorModal isOpen={true} />
+        <SaveItemErrorModal
+          isOpen={display.get('showSaveItemErrorModal')}
+          hideSaveItemErrorModal={hideSaveItemErrorModal}
+        />
       </div>
     );
   }
@@ -304,7 +314,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators(ApiActions, dispatch),
-  hideFlashMessage: () => dispatch(hideFlashMessage()),
+  hideFlashMessage: () => dispatch(DisplayActions.hideFlashMessage()),
+  showSaveItemErrorModal: () => dispatch(DisplayActions.showSaveItemErrorModal()),
+  hideSaveItemErrorModal: () => dispatch(DisplayActions.hideSaveItemErrorModal()),
 });
 
 export default withRouter(
