@@ -15,10 +15,10 @@ const Nav = ({ user, logout }) => (
         { user.get('signedIn') && Object.keys(user.get('user')).length
           ? (
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
+              <Link className="navbar-link" to="/profile">
                 <span className="r-mar"><i className="fa fa-user" /></span>
                 <span>{ user.get('user').name }</span>
-              </a>
+              </Link>
               <div className="navbar-dropdown is-boxed">
                 <Link className="navbar-item" to="/">
                   Home
@@ -45,6 +45,7 @@ const Nav = ({ user, logout }) => (
 
 Nav.propTypes = {
   user: PropTypes.instanceOf(Immutable.Map).isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 export default Nav;

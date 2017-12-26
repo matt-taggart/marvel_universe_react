@@ -12,7 +12,7 @@ const CharacterCard = ({
   const selectCharacter = () => history.push(`/characters/${id}`);
   const saveResourceApiCall = () => saveResource({ id, name, resourceType: history.location.pathname.slice(1) });
   return (
-    <div className="column is-half">  
+    <div className="column is-half">
       <div className="box">
         <article className="media">
           <div className="media-left">

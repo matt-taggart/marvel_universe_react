@@ -4,7 +4,7 @@ import SideBar from '../navigation/sidebar';
 
 const Main = ({ children, displayFlashMessage, hideFlashMessage }) => {
   const flashMessageClasses = displayFlashMessage
-    ? 'message flash-message is-success'
+    ? 'message flash-message is-success fadeIn'
     : 'message hide-flash-message flash-message is-success';
 
   if (displayFlashMessage) {
