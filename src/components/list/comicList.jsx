@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import ComicCard from '../cards/comicCard';
+import Search from '../search';
 
-const ComicList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
+const ComicList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => [
+  <Search placeholder="Search comics" />,
   <div className="columns is-multiline">
     { data.map(item => (
       <ComicCard
@@ -15,8 +17,8 @@ const ComicList = ({ history, saveResource, showSaveItemErrorModal, data, isSign
         key={item.id}
       />
     )) }
-  </div>
-);
+  </div>,
+];
 
 ComicList.propTypes = {
   history: PropTypes.object.isRequired,

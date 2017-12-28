@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import CreatorCard from '../cards/creatorCard';
+import Search from '../search';
 
-const CreatorList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
+const CreatorList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => [
+  <Search placeholder="Search creators" />,
   <div className="columns is-multiline">
     { data.map(item => (
       <CreatorCard
@@ -15,8 +17,8 @@ const CreatorList = ({ history, saveResource, showSaveItemErrorModal, data, isSi
         key={item.id}
       />
     )) }
-  </div>
-);
+  </div>,
+];
 
 CreatorList.propTypes = {
   history: PropTypes.object.isRequired,

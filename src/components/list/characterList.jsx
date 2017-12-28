@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import CharacterCard from '../cards/characterCard';
+import Search from '../search';
 
-const CharacterList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
+const CharacterList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => [
+  <Search placeholder="Search characters" />,
   <div className="columns is-multiline">
     { data.map(item => (
       <CharacterCard
@@ -15,8 +17,8 @@ const CharacterList = ({ history, saveResource, showSaveItemErrorModal, data, is
         key={item.id}
       />
     )) }
-  </div>
-);
+  </div>,
+];
 
 CharacterList.propTypes = {
   history: PropTypes.object.isRequired,

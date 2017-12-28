@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import EventCard from '../cards/eventCard';
+import Search from '../search';
 
-const EventList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
+const EventList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => [
+  <Search placeholder="Search events" />,
   <div className="columns is-multiline">
     { data.map(item => (
       <EventCard
@@ -15,8 +17,8 @@ const EventList = ({ history, saveResource, showSaveItemErrorModal, data, isSign
         key={item.id}
       />
     )) }
-  </div>
-);
+  </div>,
+];
 
 EventList.propTypes = {
   history: PropTypes.object.isRequired,
