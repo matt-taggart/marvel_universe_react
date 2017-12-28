@@ -38,13 +38,13 @@ const CreatorCard = ({
                   <span className="icon is-small r-mar-5">
                     <i className="fa fa-bookmark" />
                   </span>
-                  <span className="is-small" role="presentation" onClick={saveItemFunction}>Save</span>
+                  <span className="is-small save-btn" role="presentation" onClick={saveItemFunction}>Save</span>
                 </a>
                 <a className="level-item">
                   <span className="icon is-small r-mar-5">
                     <i className="fa fa-info-circle" />
                   </span>
-                  <span className="is-small" role="presentation" onClick={selectCreator}>Details</span>
+                  <span className="is-small details-btn" role="presentation" onClick={selectCreator}>Details</span>
                 </a>
               </div>
             </nav>
