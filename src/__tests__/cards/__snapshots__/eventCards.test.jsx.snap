@@ -1,0 +1,1612 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Event Card Renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventCard
+    description="Spider-Man is a fictional superhero by Marvel Comics"
+    end="01/01/2020"
+    history={
+      Object {
+        "location": Object {
+          "pathname": "/events/:id",
+        },
+        "push": [MockFunction],
+      }
+    }
+    id={123}
+    isSignedIn={true}
+    saveResource={[MockFunction]}
+    showSaveItemErrorModal={[MockFunction]}
+    start="01/01/2020"
+    thumbnail={
+      Object {
+        "extension": "com",
+        "path": "test",
+      }
+    }
+    title="Spiderman"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="box"
+      >
+        <article
+          className="media"
+        >
+          <div
+            className="media-left"
+          >
+            <figure
+              className="image is-64x64"
+            >
+              <img
+                alt="http://bulma.io/images/placeholders/128x128.png"
+                src="test.com"
+              />
+            </figure>
+          </div>
+          <div
+            className="media-content"
+          >
+            <div
+              className="content"
+            >
+              <p>
+                <strong>
+                  Spiderman
+                </strong>
+                <br />
+                Spider-Man is a fictional superhero by Marvel Comics
+              </p>
+              <p>
+                Start: 
+                <em>
+                  Wednesday, January 1st 2020
+                </em>
+              </p>
+              <p>
+                End: 
+                <em>
+                  Wednesday, January 1st 2020
+                </em>
+              </p>
+            </div>
+            <nav
+              className="level is-mobile"
+            >
+              <div
+                className="level-left"
+              >
+                <a
+                  className="level-item icon-sm-screen"
+                >
+                  <span
+                    className="icon is-small r-mar-5"
+                  >
+                    <i
+                      className="fa fa-bookmark"
+                    />
+                  </span>
+                  <span
+                    className="is-small save-btn"
+                    onClick={[Function]}
+                    role="presentation"
+                  >
+                    Save
+                  </span>
+                </a>
+                <a
+                  className="level-item"
+                >
+                  <span
+                    className="icon is-small r-mar-5"
+                  >
+                    <i
+                      className="fa fa-info-circle"
+                    />
+                  </span>
+                  <span
+                    className="is-small details-btn"
+                    onClick={[Function]}
+                    role="presentation"
+                  >
+                    Details
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>,
+      "className": "column is-half",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <article
+          className="media"
+        >
+          <div
+            className="media-left"
+          >
+            <figure
+              className="image is-64x64"
+            >
+              <img
+                alt="http://bulma.io/images/placeholders/128x128.png"
+                src="test.com"
+              />
+            </figure>
+          </div>
+          <div
+            className="media-content"
+          >
+            <div
+              className="content"
+            >
+              <p>
+                <strong>
+                  Spiderman
+                </strong>
+                <br />
+                Spider-Man is a fictional superhero by Marvel Comics
+              </p>
+              <p>
+                Start: 
+                <em>
+                  Wednesday, January 1st 2020
+                </em>
+              </p>
+              <p>
+                End: 
+                <em>
+                  Wednesday, January 1st 2020
+                </em>
+              </p>
+            </div>
+            <nav
+              className="level is-mobile"
+            >
+              <div
+                className="level-left"
+              >
+                <a
+                  className="level-item icon-sm-screen"
+                >
+                  <span
+                    className="icon is-small r-mar-5"
+                  >
+                    <i
+                      className="fa fa-bookmark"
+                    />
+                  </span>
+                  <span
+                    className="is-small save-btn"
+                    onClick={[Function]}
+                    role="presentation"
+                  >
+                    Save
+                  </span>
+                </a>
+                <a
+                  className="level-item"
+                >
+                  <span
+                    className="icon is-small r-mar-5"
+                  >
+                    <i
+                      className="fa fa-info-circle"
+                    />
+                  </span>
+                  <span
+                    className="is-small details-btn"
+                    onClick={[Function]}
+                    role="presentation"
+                  >
+                    Details
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>,
+        "className": "box",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="media-left"
+            >
+              <figure
+                className="image is-64x64"
+              >
+                <img
+                  alt="http://bulma.io/images/placeholders/128x128.png"
+                  src="test.com"
+                />
+              </figure>
+            </div>,
+            <div
+              className="media-content"
+            >
+              <div
+                className="content"
+              >
+                <p>
+                  <strong>
+                    Spiderman
+                  </strong>
+                  <br />
+                  Spider-Man is a fictional superhero by Marvel Comics
+                </p>
+                <p>
+                  Start: 
+                  <em>
+                    Wednesday, January 1st 2020
+                  </em>
+                </p>
+                <p>
+                  End: 
+                  <em>
+                    Wednesday, January 1st 2020
+                  </em>
+                </p>
+              </div>
+              <nav
+                className="level is-mobile"
+              >
+                <div
+                  className="level-left"
+                >
+                  <a
+                    className="level-item icon-sm-screen"
+                  >
+                    <span
+                      className="icon is-small r-mar-5"
+                    >
+                      <i
+                        className="fa fa-bookmark"
+                      />
+                    </span>
+                    <span
+                      className="is-small save-btn"
+                      onClick={[Function]}
+                      role="presentation"
+                    >
+                      Save
+                    </span>
+                  </a>
+                  <a
+                    className="level-item"
+                  >
+                    <span
+                      className="icon is-small r-mar-5"
+                    >
+                      <i
+                        className="fa fa-info-circle"
+                      />
+                    </span>
+                    <span
+                      className="is-small details-btn"
+                      onClick={[Function]}
+                      role="presentation"
+                    >
+                      Details
+                    </span>
+                  </a>
+                </div>
+              </nav>
+            </div>,
+          ],
+          "className": "media",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <figure
+                className="image is-64x64"
+              >
+                <img
+                  alt="http://bulma.io/images/placeholders/128x128.png"
+                  src="test.com"
+                />
+              </figure>,
+              "className": "media-left",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt="http://bulma.io/images/placeholders/128x128.png"
+                  src="test.com"
+                />,
+                "className": "image is-64x64",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "http://bulma.io/images/placeholders/128x128.png",
+                  "src": "test.com",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "figure",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="content"
+                >
+                  <p>
+                    <strong>
+                      Spiderman
+                    </strong>
+                    <br />
+                    Spider-Man is a fictional superhero by Marvel Comics
+                  </p>
+                  <p>
+                    Start: 
+                    <em>
+                      Wednesday, January 1st 2020
+                    </em>
+                  </p>
+                  <p>
+                    End: 
+                    <em>
+                      Wednesday, January 1st 2020
+                    </em>
+                  </p>
+                </div>,
+                <nav
+                  className="level is-mobile"
+                >
+                  <div
+                    className="level-left"
+                  >
+                    <a
+                      className="level-item icon-sm-screen"
+                    >
+                      <span
+                        className="icon is-small r-mar-5"
+                      >
+                        <i
+                          className="fa fa-bookmark"
+                        />
+                      </span>
+                      <span
+                        className="is-small save-btn"
+                        onClick={[Function]}
+                        role="presentation"
+                      >
+                        Save
+                      </span>
+                    </a>
+                    <a
+                      className="level-item"
+                    >
+                      <span
+                        className="icon is-small r-mar-5"
+                      >
+                        <i
+                          className="fa fa-info-circle"
+                        />
+                      </span>
+                      <span
+                        className="is-small details-btn"
+                        onClick={[Function]}
+                        role="presentation"
+                      >
+                        Details
+                      </span>
+                    </a>
+                  </div>
+                </nav>,
+              ],
+              "className": "media-content",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p>
+                      <strong>
+                        Spiderman
+                      </strong>
+                      <br />
+                      Spider-Man is a fictional superhero by Marvel Comics
+                    </p>,
+                    <p>
+                      Start: 
+                      <em>
+                        Wednesday, January 1st 2020
+                      </em>
+                    </p>,
+                    <p>
+                      End: 
+                      <em>
+                        Wednesday, January 1st 2020
+                      </em>
+                    </p>,
+                  ],
+                  "className": "content",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <strong>
+                          Spiderman
+                        </strong>,
+                        <br />,
+                        "Spider-Man is a fictional superhero by Marvel Comics",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Spiderman",
+                        },
+                        "ref": null,
+                        "rendered": "Spiderman",
+                        "type": "strong",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {},
+                        "ref": null,
+                        "rendered": null,
+                        "type": "br",
+                      },
+                      "Spider-Man is a fictional superhero by Marvel Comics",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Start: ",
+                        <em>
+                          Wednesday, January 1st 2020
+                        </em>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Start: ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Wednesday, January 1st 2020",
+                        },
+                        "ref": null,
+                        "rendered": "Wednesday, January 1st 2020",
+                        "type": "em",
+                      },
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "End: ",
+                        <em>
+                          Wednesday, January 1st 2020
+                        </em>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "End: ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Wednesday, January 1st 2020",
+                        },
+                        "ref": null,
+                        "rendered": "Wednesday, January 1st 2020",
+                        "type": "em",
+                      },
+                    ],
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="level-left"
+                  >
+                    <a
+                      className="level-item icon-sm-screen"
+                    >
+                      <span
+                        className="icon is-small r-mar-5"
+                      >
+                        <i
+                          className="fa fa-bookmark"
+                        />
+                      </span>
+                      <span
+                        className="is-small save-btn"
+                        onClick={[Function]}
+                        role="presentation"
+                      >
+                        Save
+                      </span>
+                    </a>
+                    <a
+                      className="level-item"
+                    >
+                      <span
+                        className="icon is-small r-mar-5"
+                      >
+                        <i
+                          className="fa fa-info-circle"
+                        />
+                      </span>
+                      <span
+                        className="is-small details-btn"
+                        onClick={[Function]}
+                        role="presentation"
+                      >
+                        Details
+                      </span>
+                    </a>
+                  </div>,
+                  "className": "level is-mobile",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <a
+                        className="level-item icon-sm-screen"
+                      >
+                        <span
+                          className="icon is-small r-mar-5"
+                        >
+                          <i
+                            className="fa fa-bookmark"
+                          />
+                        </span>
+                        <span
+                          className="is-small save-btn"
+                          onClick={[Function]}
+                          role="presentation"
+                        >
+                          Save
+                        </span>
+                      </a>,
+                      <a
+                        className="level-item"
+                      >
+                        <span
+                          className="icon is-small r-mar-5"
+                        >
+                          <i
+                            className="fa fa-info-circle"
+                          />
+                        </span>
+                        <span
+                          className="is-small details-btn"
+                          onClick={[Function]}
+                          role="presentation"
+                        >
+                          Details
+                        </span>
+                      </a>,
+                    ],
+                    "className": "level-left",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="icon is-small r-mar-5"
+                          >
+                            <i
+                              className="fa fa-bookmark"
+                            />
+                          </span>,
+                          <span
+                            className="is-small save-btn"
+                            onClick={[Function]}
+                            role="presentation"
+                          >
+                            Save
+                          </span>,
+                        ],
+                        "className": "level-item icon-sm-screen",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="fa fa-bookmark"
+                            />,
+                            "className": "icon is-small r-mar-5",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "fa fa-bookmark",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Save",
+                            "className": "is-small save-btn",
+                            "onClick": [Function],
+                            "role": "presentation",
+                          },
+                          "ref": null,
+                          "rendered": "Save",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "a",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="icon is-small r-mar-5"
+                          >
+                            <i
+                              className="fa fa-info-circle"
+                            />
+                          </span>,
+                          <span
+                            className="is-small details-btn"
+                            onClick={[Function]}
+                            role="presentation"
+                          >
+                            Details
+                          </span>,
+                        ],
+                        "className": "level-item",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="fa fa-info-circle"
+                            />,
+                            "className": "icon is-small r-mar-5",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "fa fa-info-circle",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Details",
+                            "className": "is-small details-btn",
+                            "onClick": [Function],
+                            "role": "presentation",
+                          },
+                          "ref": null,
+                          "rendered": "Details",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "a",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "nav",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "article",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="box"
+        >
+          <article
+            className="media"
+          >
+            <div
+              className="media-left"
+            >
+              <figure
+                className="image is-64x64"
+              >
+                <img
+                  alt="http://bulma.io/images/placeholders/128x128.png"
+                  src="test.com"
+                />
+              </figure>
+            </div>
+            <div
+              className="media-content"
+            >
+              <div
+                className="content"
+              >
+                <p>
+                  <strong>
+                    Spiderman
+                  </strong>
+                  <br />
+                  Spider-Man is a fictional superhero by Marvel Comics
+                </p>
+                <p>
+                  Start: 
+                  <em>
+                    Wednesday, January 1st 2020
+                  </em>
+                </p>
+                <p>
+                  End: 
+                  <em>
+                    Wednesday, January 1st 2020
+                  </em>
+                </p>
+              </div>
+              <nav
+                className="level is-mobile"
+              >
+                <div
+                  className="level-left"
+                >
+                  <a
+                    className="level-item icon-sm-screen"
+                  >
+                    <span
+                      className="icon is-small r-mar-5"
+                    >
+                      <i
+                        className="fa fa-bookmark"
+                      />
+                    </span>
+                    <span
+                      className="is-small save-btn"
+                      onClick={[Function]}
+                      role="presentation"
+                    >
+                      Save
+                    </span>
+                  </a>
+                  <a
+                    className="level-item"
+                  >
+                    <span
+                      className="icon is-small r-mar-5"
+                    >
+                      <i
+                        className="fa fa-info-circle"
+                      />
+                    </span>
+                    <span
+                      className="is-small details-btn"
+                      onClick={[Function]}
+                      role="presentation"
+                    >
+                      Details
+                    </span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>,
+        "className": "column is-half",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <article
+            className="media"
+          >
+            <div
+              className="media-left"
+            >
+              <figure
+                className="image is-64x64"
+              >
+                <img
+                  alt="http://bulma.io/images/placeholders/128x128.png"
+                  src="test.com"
+                />
+              </figure>
+            </div>
+            <div
+              className="media-content"
+            >
+              <div
+                className="content"
+              >
+                <p>
+                  <strong>
+                    Spiderman
+                  </strong>
+                  <br />
+                  Spider-Man is a fictional superhero by Marvel Comics
+                </p>
+                <p>
+                  Start: 
+                  <em>
+                    Wednesday, January 1st 2020
+                  </em>
+                </p>
+                <p>
+                  End: 
+                  <em>
+                    Wednesday, January 1st 2020
+                  </em>
+                </p>
+              </div>
+              <nav
+                className="level is-mobile"
+              >
+                <div
+                  className="level-left"
+                >
+                  <a
+                    className="level-item icon-sm-screen"
+                  >
+                    <span
+                      className="icon is-small r-mar-5"
+                    >
+                      <i
+                        className="fa fa-bookmark"
+                      />
+                    </span>
+                    <span
+                      className="is-small save-btn"
+                      onClick={[Function]}
+                      role="presentation"
+                    >
+                      Save
+                    </span>
+                  </a>
+                  <a
+                    className="level-item"
+                  >
+                    <span
+                      className="icon is-small r-mar-5"
+                    >
+                      <i
+                        className="fa fa-info-circle"
+                      />
+                    </span>
+                    <span
+                      className="is-small details-btn"
+                      onClick={[Function]}
+                      role="presentation"
+                    >
+                      Details
+                    </span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>,
+          "className": "box",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="media-left"
+              >
+                <figure
+                  className="image is-64x64"
+                >
+                  <img
+                    alt="http://bulma.io/images/placeholders/128x128.png"
+                    src="test.com"
+                  />
+                </figure>
+              </div>,
+              <div
+                className="media-content"
+              >
+                <div
+                  className="content"
+                >
+                  <p>
+                    <strong>
+                      Spiderman
+                    </strong>
+                    <br />
+                    Spider-Man is a fictional superhero by Marvel Comics
+                  </p>
+                  <p>
+                    Start: 
+                    <em>
+                      Wednesday, January 1st 2020
+                    </em>
+                  </p>
+                  <p>
+                    End: 
+                    <em>
+                      Wednesday, January 1st 2020
+                    </em>
+                  </p>
+                </div>
+                <nav
+                  className="level is-mobile"
+                >
+                  <div
+                    className="level-left"
+                  >
+                    <a
+                      className="level-item icon-sm-screen"
+                    >
+                      <span
+                        className="icon is-small r-mar-5"
+                      >
+                        <i
+                          className="fa fa-bookmark"
+                        />
+                      </span>
+                      <span
+                        className="is-small save-btn"
+                        onClick={[Function]}
+                        role="presentation"
+                      >
+                        Save
+                      </span>
+                    </a>
+                    <a
+                      className="level-item"
+                    >
+                      <span
+                        className="icon is-small r-mar-5"
+                      >
+                        <i
+                          className="fa fa-info-circle"
+                        />
+                      </span>
+                      <span
+                        className="is-small details-btn"
+                        onClick={[Function]}
+                        role="presentation"
+                      >
+                        Details
+                      </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>,
+            ],
+            "className": "media",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <figure
+                  className="image is-64x64"
+                >
+                  <img
+                    alt="http://bulma.io/images/placeholders/128x128.png"
+                    src="test.com"
+                  />
+                </figure>,
+                "className": "media-left",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    alt="http://bulma.io/images/placeholders/128x128.png"
+                    src="test.com"
+                  />,
+                  "className": "image is-64x64",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "http://bulma.io/images/placeholders/128x128.png",
+                    "src": "test.com",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "figure",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="content"
+                  >
+                    <p>
+                      <strong>
+                        Spiderman
+                      </strong>
+                      <br />
+                      Spider-Man is a fictional superhero by Marvel Comics
+                    </p>
+                    <p>
+                      Start: 
+                      <em>
+                        Wednesday, January 1st 2020
+                      </em>
+                    </p>
+                    <p>
+                      End: 
+                      <em>
+                        Wednesday, January 1st 2020
+                      </em>
+                    </p>
+                  </div>,
+                  <nav
+                    className="level is-mobile"
+                  >
+                    <div
+                      className="level-left"
+                    >
+                      <a
+                        className="level-item icon-sm-screen"
+                      >
+                        <span
+                          className="icon is-small r-mar-5"
+                        >
+                          <i
+                            className="fa fa-bookmark"
+                          />
+                        </span>
+                        <span
+                          className="is-small save-btn"
+                          onClick={[Function]}
+                          role="presentation"
+                        >
+                          Save
+                        </span>
+                      </a>
+                      <a
+                        className="level-item"
+                      >
+                        <span
+                          className="icon is-small r-mar-5"
+                        >
+                          <i
+                            className="fa fa-info-circle"
+                          />
+                        </span>
+                        <span
+                          className="is-small details-btn"
+                          onClick={[Function]}
+                          role="presentation"
+                        >
+                          Details
+                        </span>
+                      </a>
+                    </div>
+                  </nav>,
+                ],
+                "className": "media-content",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p>
+                        <strong>
+                          Spiderman
+                        </strong>
+                        <br />
+                        Spider-Man is a fictional superhero by Marvel Comics
+                      </p>,
+                      <p>
+                        Start: 
+                        <em>
+                          Wednesday, January 1st 2020
+                        </em>
+                      </p>,
+                      <p>
+                        End: 
+                        <em>
+                          Wednesday, January 1st 2020
+                        </em>
+                      </p>,
+                    ],
+                    "className": "content",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <strong>
+                            Spiderman
+                          </strong>,
+                          <br />,
+                          "Spider-Man is a fictional superhero by Marvel Comics",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Spiderman",
+                          },
+                          "ref": null,
+                          "rendered": "Spiderman",
+                          "type": "strong",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {},
+                          "ref": null,
+                          "rendered": null,
+                          "type": "br",
+                        },
+                        "Spider-Man is a fictional superhero by Marvel Comics",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Start: ",
+                          <em>
+                            Wednesday, January 1st 2020
+                          </em>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Start: ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Wednesday, January 1st 2020",
+                          },
+                          "ref": null,
+                          "rendered": "Wednesday, January 1st 2020",
+                          "type": "em",
+                        },
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "End: ",
+                          <em>
+                            Wednesday, January 1st 2020
+                          </em>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "End: ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Wednesday, January 1st 2020",
+                          },
+                          "ref": null,
+                          "rendered": "Wednesday, January 1st 2020",
+                          "type": "em",
+                        },
+                      ],
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <div
+                      className="level-left"
+                    >
+                      <a
+                        className="level-item icon-sm-screen"
+                      >
+                        <span
+                          className="icon is-small r-mar-5"
+                        >
+                          <i
+                            className="fa fa-bookmark"
+                          />
+                        </span>
+                        <span
+                          className="is-small save-btn"
+                          onClick={[Function]}
+                          role="presentation"
+                        >
+                          Save
+                        </span>
+                      </a>
+                      <a
+                        className="level-item"
+                      >
+                        <span
+                          className="icon is-small r-mar-5"
+                        >
+                          <i
+                            className="fa fa-info-circle"
+                          />
+                        </span>
+                        <span
+                          className="is-small details-btn"
+                          onClick={[Function]}
+                          role="presentation"
+                        >
+                          Details
+                        </span>
+                      </a>
+                    </div>,
+                    "className": "level is-mobile",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <a
+                          className="level-item icon-sm-screen"
+                        >
+                          <span
+                            className="icon is-small r-mar-5"
+                          >
+                            <i
+                              className="fa fa-bookmark"
+                            />
+                          </span>
+                          <span
+                            className="is-small save-btn"
+                            onClick={[Function]}
+                            role="presentation"
+                          >
+                            Save
+                          </span>
+                        </a>,
+                        <a
+                          className="level-item"
+                        >
+                          <span
+                            className="icon is-small r-mar-5"
+                          >
+                            <i
+                              className="fa fa-info-circle"
+                            />
+                          </span>
+                          <span
+                            className="is-small details-btn"
+                            onClick={[Function]}
+                            role="presentation"
+                          >
+                            Details
+                          </span>
+                        </a>,
+                      ],
+                      "className": "level-left",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="icon is-small r-mar-5"
+                            >
+                              <i
+                                className="fa fa-bookmark"
+                              />
+                            </span>,
+                            <span
+                              className="is-small save-btn"
+                              onClick={[Function]}
+                              role="presentation"
+                            >
+                              Save
+                            </span>,
+                          ],
+                          "className": "level-item icon-sm-screen",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="fa fa-bookmark"
+                              />,
+                              "className": "icon is-small r-mar-5",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "fa fa-bookmark",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Save",
+                              "className": "is-small save-btn",
+                              "onClick": [Function],
+                              "role": "presentation",
+                            },
+                            "ref": null,
+                            "rendered": "Save",
+                            "type": "span",
+                          },
+                        ],
+                        "type": "a",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="icon is-small r-mar-5"
+                            >
+                              <i
+                                className="fa fa-info-circle"
+                              />
+                            </span>,
+                            <span
+                              className="is-small details-btn"
+                              onClick={[Function]}
+                              role="presentation"
+                            >
+                              Details
+                            </span>,
+                          ],
+                          "className": "level-item",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="fa fa-info-circle"
+                              />,
+                              "className": "icon is-small r-mar-5",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "fa fa-info-circle",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Details",
+                              "className": "is-small details-btn",
+                              "onClick": [Function],
+                              "role": "presentation",
+                            },
+                            "ref": null,
+                            "rendered": "Details",
+                            "type": "span",
+                          },
+                        ],
+                        "type": "a",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  "type": "nav",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "article",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
