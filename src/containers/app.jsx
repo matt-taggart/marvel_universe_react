@@ -22,6 +22,7 @@ import SelectedCreator from '../components/details/selectedCreator';
 import SelectedEvent from '../components/details/selectedEvent';
 import SelectedSeries from '../components/details/selectedSeries';
 import SaveItemErrorModal from '../components/modals/saveItemError';
+import Search from '../components/search';
 import * as DisplayActions from '../actions/display';
 import * as ApiActions from '../actions/api';
 
@@ -59,6 +60,7 @@ class App extends Component {
       getSelectedCreator,
       getSelectedEvent,
       getSelectedSeries,
+      searchCharacters,
       saveResource,
       characters,
       comics,
@@ -130,18 +132,23 @@ class App extends Component {
             <Route
               path="/characters"
               exact
-              render={() => (
+              render={() => [
+                <Search
+                  placeholder="Search characters"
+                  searchFunc={searchCharacters}
+                />,
                 <CharacterList
                   data={characters.get('characters')}
                   apiCall={getCharacters}
                   getUser={getUser}
+                  searchCharacters={searchCharacters}
                   isLoading={display.get('loading')}
                   history={history}
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
-                />
-              )}
+                />,
+              ]}
             />
             <Route
               path="/characters/:id"

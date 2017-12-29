@@ -6,6 +6,8 @@ import {
   SELECTED_CHARACTER_FETCH_SUCCEEDED,
   GET_CHARACTERS,
   GET_SELECTED_CHARACTER,
+  SEARCH_CHARACTERS,
+  CHARACTERS_SEARCH_SUCCEEDED,
 } from '../constants/characters';
 
 function* fetchCharacters() {
@@ -34,9 +36,23 @@ function* fetchSelectedCharacter({ id }) {
   }
 }
 
+function* searchCharacters({ searchTerm }) {
+  try {
+    yield put({ type: LOADING, payload: true });
+    const characters = yield call(Api.searchCharacters, searchTerm);
+
+    yield put({ type: CHARACTERS_SEARCH_SUCCEEDED, characters: characters.data.data });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getCharacters() {
   yield takeEvery(GET_CHARACTERS, fetchCharacters);
   yield takeEvery(GET_SELECTED_CHARACTER, fetchSelectedCharacter);
+  yield takeEvery(SEARCH_CHARACTERS, searchCharacters);
 }
 
 export default getCharacters;

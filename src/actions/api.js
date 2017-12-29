@@ -1,4 +1,4 @@
-import { GET_CHARACTERS, GET_SELECTED_CHARACTER } from '../constants/characters';
+import { GET_CHARACTERS, GET_SELECTED_CHARACTER, SEARCH_CHARACTERS } from '../constants/characters';
 import { GET_COMICS, GET_SELECTED_COMIC } from '../constants/comics';
 import { GET_CREATORS, GET_SELECTED_CREATOR } from '../constants/creators';
 import { GET_EVENTS, GET_SELECTED_EVENT } from '../constants/events';
@@ -24,3 +24,4 @@ export const register = () => ({ type: REGISTRATION_ATTEMPT });
 export const logout = () => ({ type: LOGOUT });
 export const setApplicationError = error => ({ type: SET_APPLICATION_ERROR, error });
 export const clearApiErrors = () => ({ type: CLEAR_API_ERRORS });
+export const searchCharacters = e => ({ type: SEARCH_CHARACTERS, searchTerm: e.target.value });
