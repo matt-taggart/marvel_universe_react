@@ -24,4 +24,4 @@ export const saveResource = ({ resourceType, id, name }) => axios.post(`${baseUr
 export const signIn = credentials => axios.post(`${baseUrl}/login`, { ...credentials });
 export const register = payload => axios.post(`${baseUrl}/user`,  { ...payload });
 export const logout = () => axios.delete(`${baseUrl}/logout`);
-export const searchCharacters = searchTerm => axios.get(`${baseUrl}/characters?nameStartsWith=${searchTerm}`);
+export const searchCharacters = searchTerm => axios.get(`${baseUrl}/characters${searchTerm && `?nameStartsWith=${searchTerm}`}`);
