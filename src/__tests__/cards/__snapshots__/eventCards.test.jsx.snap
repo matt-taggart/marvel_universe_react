@@ -6,7 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EventCard
     description="Spider-Man is a fictional superhero by Marvel Comics"
-    end="01/01/2020"
+    end="2013-06-28T16:31:24-0400"
     history={
       Object {
         "location": Object {
@@ -19,7 +19,7 @@ ShallowWrapper {
     isSignedIn={true}
     saveResource={[MockFunction]}
     showSaveItemErrorModal={[MockFunction]}
-    start="01/01/2020"
+    start="2013-06-28T16:31:24-0400"
     thumbnail={
       Object {
         "extension": "com",
@@ -74,13 +74,13 @@ ShallowWrapper {
               <p>
                 Start: 
                 <em>
-                  Wednesday, January 1st 2020
+                  Friday, June 28th 2013
                 </em>
               </p>
               <p>
                 End: 
                 <em>
-                  Wednesday, January 1st 2020
+                  Friday, June 28th 2013
                 </em>
               </p>
             </div>
@@ -170,13 +170,13 @@ ShallowWrapper {
               <p>
                 Start: 
                 <em>
-                  Wednesday, January 1st 2020
+                  Friday, June 28th 2013
                 </em>
               </p>
               <p>
                 End: 
                 <em>
-                  Wednesday, January 1st 2020
+                  Friday, June 28th 2013
                 </em>
               </p>
             </div>
@@ -263,13 +263,13 @@ ShallowWrapper {
                 <p>
                   Start: 
                   <em>
-                    Wednesday, January 1st 2020
+                    Friday, June 28th 2013
                   </em>
                 </p>
                 <p>
                   End: 
                   <em>
-                    Wednesday, January 1st 2020
+                    Friday, June 28th 2013
                   </em>
                 </p>
               </div>
@@ -386,13 +386,13 @@ ShallowWrapper {
                   <p>
                     Start: 
                     <em>
-                      Wednesday, January 1st 2020
+                      Friday, June 28th 2013
                     </em>
                   </p>
                   <p>
                     End: 
                     <em>
-                      Wednesday, January 1st 2020
+                      Friday, June 28th 2013
                     </em>
                   </p>
                 </div>,
@@ -461,13 +461,13 @@ ShallowWrapper {
                     <p>
                       Start: 
                       <em>
-                        Wednesday, January 1st 2020
+                        Friday, June 28th 2013
                       </em>
                     </p>,
                     <p>
                       End: 
                       <em>
-                        Wednesday, January 1st 2020
+                        Friday, June 28th 2013
                       </em>
                     </p>,
                   ],
@@ -522,7 +522,7 @@ ShallowWrapper {
                       "children": Array [
                         "Start: ",
                         <em>
-                          Wednesday, January 1st 2020
+                          Friday, June 28th 2013
                         </em>,
                       ],
                     },
@@ -534,10 +534,10 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "children": "Wednesday, January 1st 2020",
+                          "children": "Friday, June 28th 2013",
                         },
                         "ref": null,
-                        "rendered": "Wednesday, January 1st 2020",
+                        "rendered": "Friday, June 28th 2013",
                         "type": "em",
                       },
                     ],
@@ -551,7 +551,7 @@ ShallowWrapper {
                       "children": Array [
                         "End: ",
                         <em>
-                          Wednesday, January 1st 2020
+                          Friday, June 28th 2013
                         </em>,
                       ],
                     },
@@ -563,10 +563,10 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "children": "Wednesday, January 1st 2020",
+                          "children": "Friday, June 28th 2013",
                         },
                         "ref": null,
-                        "rendered": "Wednesday, January 1st 2020",
+                        "rendered": "Friday, June 28th 2013",
                         "type": "em",
                       },
                     ],
@@ -857,13 +857,13 @@ ShallowWrapper {
                 <p>
                   Start: 
                   <em>
-                    Wednesday, January 1st 2020
+                    Friday, June 28th 2013
                   </em>
                 </p>
                 <p>
                   End: 
                   <em>
-                    Wednesday, January 1st 2020
+                    Friday, June 28th 2013
                   </em>
                 </p>
               </div>
@@ -953,13 +953,13 @@ ShallowWrapper {
                 <p>
                   Start: 
                   <em>
-                    Wednesday, January 1st 2020
+                    Friday, June 28th 2013
                   </em>
                 </p>
                 <p>
                   End: 
                   <em>
-                    Wednesday, January 1st 2020
+                    Friday, June 28th 2013
                   </em>
                 </p>
               </div>
@@ -1046,13 +1046,13 @@ ShallowWrapper {
                   <p>
                     Start: 
                     <em>
-                      Wednesday, January 1st 2020
+                      Friday, June 28th 2013
                     </em>
                   </p>
                   <p>
                     End: 
                     <em>
-                      Wednesday, January 1st 2020
+                      Friday, June 28th 2013
                     </em>
                   </p>
                 </div>
@@ -1169,13 +1169,13 @@ ShallowWrapper {
                     <p>
                       Start: 
                       <em>
-                        Wednesday, January 1st 2020
+                        Friday, June 28th 2013
                       </em>
                     </p>
                     <p>
                       End: 
                       <em>
-                        Wednesday, January 1st 2020
+                        Friday, June 28th 2013
                       </em>
                     </p>
                   </div>,
@@ -1244,13 +1244,13 @@ ShallowWrapper {
                       <p>
                         Start: 
                         <em>
-                          Wednesday, January 1st 2020
+                          Friday, June 28th 2013
                         </em>
                       </p>,
                       <p>
                         End: 
                         <em>
-                          Wednesday, January 1st 2020
+                          Friday, June 28th 2013
                         </em>
                       </p>,
                     ],
@@ -1305,7 +1305,7 @@ ShallowWrapper {
                         "children": Array [
                           "Start: ",
                           <em>
-                            Wednesday, January 1st 2020
+                            Friday, June 28th 2013
                           </em>,
                         ],
                       },
@@ -1317,10 +1317,10 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "host",
                           "props": Object {
-                            "children": "Wednesday, January 1st 2020",
+                            "children": "Friday, June 28th 2013",
                           },
                           "ref": null,
-                          "rendered": "Wednesday, January 1st 2020",
+                          "rendered": "Friday, June 28th 2013",
                           "type": "em",
                         },
                       ],
@@ -1334,7 +1334,7 @@ ShallowWrapper {
                         "children": Array [
                           "End: ",
                           <em>
-                            Wednesday, January 1st 2020
+                            Friday, June 28th 2013
                           </em>,
                         ],
                       },
@@ -1346,10 +1346,10 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "host",
                           "props": Object {
-                            "children": "Wednesday, January 1st 2020",
+                            "children": "Friday, June 28th 2013",
                           },
                           "ref": null,
-                          "rendered": "Wednesday, January 1st 2020",
+                          "rendered": "Friday, June 28th 2013",
                           "type": "em",
                         },
                       ],
