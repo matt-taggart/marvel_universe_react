@@ -159,6 +159,7 @@ class App extends Component {
                   getUser={getUser}
                   match={props.match}
                   isLoading={display.get('loading')}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -187,6 +188,7 @@ class App extends Component {
                   getUser={getUser}
                   match={props.match}
                   isLoading={display.get('loading')}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -215,6 +217,7 @@ class App extends Component {
                   getUser={getUser}
                   match={props.match}
                   isLoading={display.get('loading')}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -243,6 +246,7 @@ class App extends Component {
                   getUser={getUser}
                   match={props.match}
                   isLoading={display.get('loading')}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
@@ -272,6 +276,7 @@ class App extends Component {
                   getUser={getUser}
                   match={props.match}
                   isLoading={display.get('loading')}
+                  isSignedIn={user.get('signedIn')}
                 />
               )}
             />
