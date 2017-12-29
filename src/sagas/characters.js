@@ -1,4 +1,5 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import {
@@ -52,7 +53,7 @@ function* searchCharacters({ searchTerm }) {
 function* getCharacters() {
   yield takeEvery(GET_CHARACTERS, fetchCharacters);
   yield takeEvery(GET_SELECTED_CHARACTER, fetchSelectedCharacter);
-  yield takeEvery(SEARCH_CHARACTERS, searchCharacters);
+  yield takeLatest(SEARCH_CHARACTERS, searchCharacters);
 }
 
 export default getCharacters;
