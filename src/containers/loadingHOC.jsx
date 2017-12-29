@@ -1,6 +1,7 @@
 import React from 'react';
-import { compose, lifecycle, branch, renderComponent, renderNothing } from 'recompose';
+import { compose, lifecycle, branch, renderComponent } from 'recompose';
 import LoadingSpinner from '../components/misc/loadingSpinner';
+import NoResultsFound from '../components/misc/noResultsFound';
 
 export default compose(
   lifecycle({
@@ -23,7 +24,6 @@ export default compose(
   ),
   branch(
     props => !Object.keys(props.data).length,
-    renderNothing,
+    renderComponent(NoResultsFound),
   )
 );
-
