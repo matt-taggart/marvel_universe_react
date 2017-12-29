@@ -39,6 +39,7 @@ function* fetchSelectedCharacter({ id }) {
 
 function* searchCharacters({ searchTerm }) {
   try {
+    yield call(delay, 750);    
     yield put({ type: LOADING, payload: true });
     const characters = yield call(Api.searchCharacters, searchTerm);
 
