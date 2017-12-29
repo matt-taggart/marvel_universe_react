@@ -1,4 +1,5 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import {
@@ -6,6 +7,8 @@ import {
   SELECTED_EVENT_FETCH_SUCCEEDED,
   GET_EVENTS,
   GET_SELECTED_EVENT,
+  SEARCH_EVENTS,
+  EVENTS_SEARCH_SUCCEEDED,
 } from '../constants/events';
 
 function* fetchEvents() {
@@ -34,9 +37,24 @@ function* fetchSelectedEvent({ id }) {
   }
 }
 
+function* searchEvents({ searchTerm }) {
+  try {
+    yield call(delay, 500);
+    yield put({ type: LOADING, payload: true });
+    const events = yield call(Api.searchEvents, searchTerm);
+
+    yield put({ type: EVENTS_SEARCH_SUCCEEDED, events: events.data.data });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getEvents() {
   yield takeEvery(GET_EVENTS, fetchEvents);
   yield takeEvery(GET_SELECTED_EVENT, fetchSelectedEvent);
+  yield takeLatest(SEARCH_EVENTS, searchEvents);
 }
 
 export default getEvents;

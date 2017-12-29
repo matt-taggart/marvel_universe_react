@@ -4,8 +4,7 @@ import LoadingHOC from '../../containers/loadingHOC';
 import SeriesCard from '../cards/seriesCard';
 import Search from '../search';
 
-const SeriesList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => [
-  <Search placeholder="Search series" />,
+const SeriesList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
   <div className="columns is-multiline">
     { data.map(item => (
       <SeriesCard
@@ -17,8 +16,8 @@ const SeriesList = ({ history, saveResource, showSaveItemErrorModal, data, isSig
         key={item.id}
       />
     )) }
-  </div>,
-];
+  </div>
+);
 
 SeriesList.propTypes = {
   history: PropTypes.object.isRequired,

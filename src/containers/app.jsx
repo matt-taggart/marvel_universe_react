@@ -61,6 +61,10 @@ class App extends Component {
       getSelectedEvent,
       getSelectedSeries,
       searchCharacters,
+      searchComics,
+      searchCreators,
+      searchEvents,
+      searchSeries,
       saveResource,
       characters,
       comics,
@@ -166,7 +170,11 @@ class App extends Component {
             <Route
               path="/comics"
               exact
-              render={() => (
+              render={() => [
+                <Search
+                  placeholder="Search comics"
+                  searchFunc={searchComics}
+                />,
                 <ComicList
                   data={comics.get('comics')}
                   apiCall={getComics}
@@ -176,8 +184,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
-                />
-              )}
+                />,
+              ]}
             />
             <Route
               path="/comics/:id"
@@ -195,7 +203,11 @@ class App extends Component {
             <Route
               path="/creators"
               exact
-              render={() => (
+              render={() => [
+                <Search
+                  placeholder="Search creators"
+                  searchFunc={searchCreators}
+                />,
                 <CreatorList
                   data={creators.get('creators')}
                   apiCall={getCreators}
@@ -205,8 +217,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
-                />
-              )}
+                />,
+              ]}
             />
             <Route
               path="/creators/:id"
@@ -224,7 +236,11 @@ class App extends Component {
             <Route
               path="/events"
               exact
-              render={() => (
+              render={() => [
+                <Search
+                  placeholder="Search events"
+                  searchFunc={searchEvents}
+                />,
                 <EventList
                   data={events.get('events')}
                   apiCall={getEvents}
@@ -234,8 +250,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
-                />
-              )}
+                />,
+              ]}
             />
             <Route
               path="/events/:id"
@@ -253,7 +269,11 @@ class App extends Component {
             <Route
               path="/series"
               exact
-              render={() => (
+              render={() => [
+                <Search
+                  placeholder="Search series"
+                  searchFunc={searchSeries}
+                />,
                 <SeriesList
                   data={series.get('series')}
                   apiCall={getSeries}
@@ -263,8 +283,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
-                />
-              )}
+                />,
+              ]}
             />
             <Route
               path="/series/:id"

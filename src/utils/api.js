@@ -25,3 +25,7 @@ export const signIn = credentials => axios.post(`${baseUrl}/login`, { ...credent
 export const register = payload => axios.post(`${baseUrl}/user`,  { ...payload });
 export const logout = () => axios.delete(`${baseUrl}/logout`);
 export const searchCharacters = searchTerm => axios.get(`${baseUrl}/characters${searchTerm && `?nameStartsWith=${searchTerm}`}`);
+export const searchComics = searchTerm => axios.get(`${baseUrl}/comics${searchTerm && `?titleStartsWith=${searchTerm}`}`);
+export const searchCreators = searchTerm => axios.get(`${baseUrl}/creators${searchTerm && `?nameStartsWith=${searchTerm}`}`);
+export const searchEvents = searchTerm => axios.get(`${baseUrl}/events${searchTerm && `?nameStartsWith=${searchTerm}`}`);
+export const searchSeries = searchTerm => axios.get(`${baseUrl}/series${searchTerm && `?titleStartsWith=${searchTerm}`}`);

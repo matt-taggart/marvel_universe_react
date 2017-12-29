@@ -1,4 +1,5 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import {
@@ -6,6 +7,8 @@ import {
   SELECTED_COMIC_FETCH_SUCCEEDED,
   GET_COMICS,
   GET_SELECTED_COMIC,
+  SEARCH_COMICS,
+  COMICS_SEARCH_SUCCEEDED,
 } from '../constants/comics';
 
 function* fetchComics() {
@@ -34,9 +37,24 @@ function* fetchSelectedComic({ id }) {
   }
 }
 
+function* searchComics({ searchTerm }) {
+  try {
+    yield call(delay, 500);
+    yield put({ type: LOADING, payload: true });
+    const comics = yield call(Api.searchComics, searchTerm);
+
+    yield put({ type: COMICS_SEARCH_SUCCEEDED, comics: comics.data.data });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getComics() {
   yield takeEvery(GET_COMICS, fetchComics);
   yield takeEvery(GET_SELECTED_COMIC, fetchSelectedComic);
+  yield takeLatest(SEARCH_COMICS, searchComics);
 }
 
 export default getComics;
