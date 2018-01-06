@@ -12,7 +12,7 @@ import * as DisplayConstants from '../../constants/display';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Test Actions', () => {
+describe('Test API Actions', () => {
   const id = 123;
   const payload = {
     id: 123,
