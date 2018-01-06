@@ -1,63 +1,63 @@
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Map } from 'immutable';
-import reducer from '../../reducers/characters';
+import reducer from '../../reducers/series';
 import { 
-  CHARACTERS_FETCH_SUCCEEDED,
-  SELECTED_CHARACTER_FETCH_SUCCEEDED,
-  CHARACTERS_SEARCH_SUCCEEDED,
-} from '../../constants/characters';
+  SERIES_FETCH_SUCCEEDED,
+  SELECTED_SERIES_FETCH_SUCCEEDED,
+  SERIES_SEARCH_SUCCEEDED,
+} from '../../constants/series';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Characters Reducer', () => {
+describe('Series Reducer', () => {
   const initialState = new Map({
-    characters: [],
-    selectedCharacter: {},
+    series: [],
+    selectedSeries: {},
   });
 
   it('Should return the inital state', () => {    
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  it('Should handle CHARACTERS_FETCH_SUCCEEDED', () => {
+  it('Should handle SERIES_FETCH_SUCCEEDED', () => {
     expect(
       reducer(new Map(), {
-        type: CHARACTERS_FETCH_SUCCEEDED,
-        characters: [
+        type: SERIES_FETCH_SUCCEEDED,
+        series: [
           { id: 1, name: 'spiderman' },
         ],
       }),
     ).toEqual(new Map({
-      characters: [
+      series: [
         { id: 1, name: 'spiderman' },
       ],
     }));
   });
 
-  it('Should handle CHARACTERS_SEARCH_SUCCEEDED', () => {
+  it('Should handle SERIES_SEARCH_SUCCEEDED', () => {
     expect(
       reducer(new Map(), {
-        type: CHARACTERS_SEARCH_SUCCEEDED,
-        characters: [
+        type: SERIES_SEARCH_SUCCEEDED,
+        series: [
           { id: 1, name: 'spiderman' },
         ],
       }),
     ).toEqual(new Map({
-      characters: [
+      series: [
         { id: 1, name: 'spiderman' },
       ],
     }));
   });
 
-  it('Should handle SELECTED_CHARACTER_FETCH_SUCCEEDED', () => {
+  it('Should handle SELECTED_SERIES_FETCH_SUCCEEDED', () => {
     expect(
       reducer(new Map(), {
-        type: SELECTED_CHARACTER_FETCH_SUCCEEDED,
-        character: { id: 1, name: 'spiderman' },
+        type: SELECTED_SERIES_FETCH_SUCCEEDED,
+        series: { id: 1, name: 'spiderman' },
       }),
     ).toEqual(new Map({
-      selectedCharacter: { id: 1, name: 'spiderman' },
+      selectedSeries: { id: 1, name: 'spiderman' },
     }));
   });
 });
