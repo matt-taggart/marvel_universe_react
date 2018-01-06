@@ -6,7 +6,7 @@ import SeriesCard from '../../components/cards/seriesCard';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Series Card', () => {
+describe('Series Card', () => {
   const props = {
     id: 123,
     title: 'Spiderman',
@@ -24,7 +24,7 @@ describe('Test Series Card', () => {
     isSignedIn: true,
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <SeriesCard
         id={props.id}
@@ -40,7 +40,7 @@ describe('Test Series Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Call save button on click', () => {
+  it('Should call save button on click', () => {
     const wrapper = shallow(
       <SeriesCard
         id={props.id}
@@ -63,7 +63,7 @@ describe('Test Series Card', () => {
       });
   });
 
-  it('Call more details button on click', () => {
+  it('Should call more details button on click', () => {
     const wrapper = shallow(
       <SeriesCard
         id={props.id}

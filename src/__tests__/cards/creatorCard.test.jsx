@@ -6,7 +6,7 @@ import CreatorCard from '../../components/cards/creatorCard';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Creator Card', () => {
+describe('Creator Card', () => {
   const props = {
     id: 123,
     fullName: 'Stan Lee',
@@ -24,7 +24,7 @@ describe('Test Creator Card', () => {
     isSignedIn: true,
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <CreatorCard
         id={props.id}
@@ -40,7 +40,7 @@ describe('Test Creator Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Call save button on click', () => {
+  it('Should call save button on click', () => {
     const wrapper = shallow(
       <CreatorCard
         id={props.id}
@@ -63,7 +63,7 @@ describe('Test Creator Card', () => {
       });
   });
 
-  it('Call more details button on click', () => {
+  it('Should call more details button on click', () => {
     const wrapper = shallow(
       <CreatorCard
         id={props.id}

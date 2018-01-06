@@ -6,7 +6,7 @@ import EventCard from '../../components/cards/eventCard';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Event Card', () => {
+describe('Event Card', () => {
   const props = {
     id: 123,
     title: 'Spiderman',
@@ -26,7 +26,7 @@ describe('Test Event Card', () => {
     isSignedIn: true,
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <EventCard
         id={props.id}
@@ -44,7 +44,7 @@ describe('Test Event Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Call save button on click', () => {
+  it('Should call save button on click', () => {
     const wrapper = shallow(
       <EventCard
         id={props.id}
@@ -69,7 +69,7 @@ describe('Test Event Card', () => {
       });
   });
 
-  it('Call more details button on click', () => {
+  it('Should call more details button on click', () => {
     const wrapper = shallow(
       <EventCard
         id={props.id}

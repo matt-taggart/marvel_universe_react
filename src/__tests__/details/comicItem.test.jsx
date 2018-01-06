@@ -6,13 +6,13 @@ import ComicItem from '../../components/details/comicItem';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Comic Item', () => {
+describe('Comic Item', () => {
   const props = {
     name: 'Spiderman',
     resourceURI: '/marvel.com/1234',
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <ComicItem
         name={props.name}
@@ -22,7 +22,7 @@ describe('Test Comic Item', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Link to correct url', () => {
+  it('Should link to correct url', () => {
     const wrapper = shallow(
       <ComicItem
         name={props.name}

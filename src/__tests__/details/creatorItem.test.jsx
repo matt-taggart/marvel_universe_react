@@ -6,13 +6,13 @@ import CreatorItem from '../../components/details/creatorItem';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Creator Item', () => {
+describe('Creator Item', () => {
   const props = {
     name: 'Spiderman',
     resourceURI: '/marvel.com/1234',
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <CreatorItem
         name={props.name}
@@ -22,7 +22,7 @@ describe('Test Creator Item', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Link to correct url', () => {
+  it('Should link to correct url', () => {
     const wrapper = shallow(
       <CreatorItem
         name={props.name}

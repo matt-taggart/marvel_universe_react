@@ -5,8 +5,8 @@ import * as DisplayConstants from '../../constants/display';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Test Display Actions', () => {
-  it('Create an action for hiding flash messages', () => {
+describe('Display Actions', () => {
+  it('Should create an action for hiding flash messages', () => {
     const expectedAction = {
       type: DisplayConstants.HIDE_FLASH_MESSAGE,
     };
@@ -14,7 +14,7 @@ describe('Test Display Actions', () => {
     expect(DisplayActions.hideFlashMessage()).toEqual(expectedAction);
   });
 
-  it('Create an action for showing save item error modal', () => {
+  it('Should create an action for showing save item error modal', () => {
     const expectedAction = {
       type: DisplayConstants.SHOW_SAVE_ITEM_ERROR_MODAL,
     };
@@ -22,7 +22,7 @@ describe('Test Display Actions', () => {
     expect(DisplayActions.showSaveItemErrorModal()).toEqual(expectedAction);
   });
 
-  it('Create an action for hiding save item error modal', () => {
+  it('Should create an action for hiding save item error modal', () => {
     const expectedAction = {
       type: DisplayConstants.HIDE_SAVE_ITEM_ERROR_MODAL,
     };

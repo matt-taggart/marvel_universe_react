@@ -12,7 +12,7 @@ import * as DisplayConstants from '../../constants/display';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Test API Actions', () => {
+describe('API Actions', () => {
   const id = 123;
   const payload = {
     id: 123,
@@ -25,7 +25,7 @@ describe('Test API Actions', () => {
     },
   };
 
-  it('Create an action to get characters', () => {
+  it('Should create an action to get characters', () => {
     const expectedAction = {
       type: CharacterConstants.GET_CHARACTERS,
     };
@@ -33,7 +33,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getCharacters()).toEqual(expectedAction);
   });
 
-  it('Create an action to get comics', () => {
+  it('Should create an action to get comics', () => {
     const expectedAction = {
       type: ComicConstants.GET_COMICS,
     };
@@ -41,7 +41,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getComics()).toEqual(expectedAction);
   });
 
-  it('Create an action to get creators', () => {
+  it('Should create an action to get creators', () => {
     const expectedAction = {
       type: CreatorConstants.GET_CREATORS,
     };
@@ -49,7 +49,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getCreators()).toEqual(expectedAction);
   });
 
-  it('Create an action to get events', () => {
+  it('Should create an action to get events', () => {
     const expectedAction = {
       type: EventConstants.GET_EVENTS,
     };
@@ -57,7 +57,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getEvents()).toEqual(expectedAction);
   });
 
-  it('Create an action to get series', () => {
+  it('Should create an action to get series', () => {
     const expectedAction = {
       type: SeriesConstants.GET_SERIES,
     };
@@ -65,7 +65,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getSeries()).toEqual(expectedAction);
   });
 
-  it('Create an action to get user', () => {
+  it('Should create an action to get user', () => {
     const expectedAction = {
       type: UserConstants.GET_USER,
     };
@@ -73,7 +73,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getUser()).toEqual(expectedAction);
   });
 
-  it('Create an action to selected character', () => {
+  it('Should create an action to selected character', () => {
     const expectedAction = {
       type: CharacterConstants.GET_SELECTED_CHARACTER,
       id,
@@ -82,7 +82,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getSelectedCharacter(id)).toEqual(expectedAction);
   });
 
-  it('Create an action to get selected comic', () => {
+  it('Should create an action to get selected comic', () => {
     const expectedAction = {
       type: ComicConstants.GET_SELECTED_COMIC,
       id,
@@ -91,7 +91,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getSelectedComic(id)).toEqual(expectedAction);
   });
 
-  it('Create an action to get selected creator', () => {
+  it('Should create an action to get selected creator', () => {
     const expectedAction = {
       type: CreatorConstants.GET_SELECTED_CREATOR,
       id,
@@ -100,7 +100,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getSelectedCreator(id)).toEqual(expectedAction);
   });
 
-  it('Create an action to get selected event', () => {
+  it('Should create an action to get selected event', () => {
     const expectedAction = {
       type: EventConstants.GET_SELECTED_EVENT,
       id,
@@ -109,7 +109,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getSelectedEvent(id)).toEqual(expectedAction);
   });
 
-  it('Create an action to get selected series', () => {
+  it('Should create an action to get selected series', () => {
     const expectedAction = {
       type: SeriesConstants.GET_SELECTED_SERIES,
       id,
@@ -118,7 +118,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.getSelectedSeries(id)).toEqual(expectedAction);
   });
 
-  it('Create an action to save resource', () => {
+  it('Should create an action to save resource', () => {
     const expectedAction = {
       type: UserConstants.SAVE_RESOURCE,
       payload,
@@ -127,7 +127,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.saveResource(payload)).toEqual(expectedAction);
   });
 
-  it('Create an action to sign in user', () => {
+  it('Should create an action to sign in user', () => {
     const expectedAction = {
       type: AuthConstants.SIGN_IN_ATTEMPT,
     };
@@ -135,7 +135,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.signIn()).toEqual(expectedAction);
   });
 
-  it('Create an action to register user', () => {
+  it('Should create an action to register user', () => {
     const expectedAction = {
       type: UserConstants.REGISTRATION_ATTEMPT,
     };
@@ -143,7 +143,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.register()).toEqual(expectedAction);
   });
 
-  it('Create an action to logout', () => {
+  it('Should create an action to logout', () => {
     const expectedAction = {
       type: AuthConstants.LOGOUT,
     };
@@ -151,7 +151,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.logout()).toEqual(expectedAction);
   });
 
-  it('Create an action to set application error', () => {
+  it('Should create an action to set application error', () => {
     const expectedAction = {
       type: DisplayConstants.SET_APPLICATION_ERROR,
       error: {
@@ -166,7 +166,7 @@ describe('Test API Actions', () => {
     })).toEqual(expectedAction);
   });
 
-  it('Create an action to clear api errors', () => {
+  it('Should create an action to clear api errors', () => {
     const expectedAction = {
       type: DisplayConstants.CLEAR_API_ERRORS,
     };
@@ -174,7 +174,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.clearApiErrors()).toEqual(expectedAction);
   });
 
-  it('Create an action to search characters', () => {
+  it('Should create an action to search characters', () => {
     const expectedAction = {
       type: CharacterConstants.SEARCH_CHARACTERS,
       searchTerm: 'test',
@@ -183,7 +183,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.searchCharacters(mockEvent)).toEqual(expectedAction);
   });
 
-  it('Create an action to search comics', () => {
+  it('Should create an action to search comics', () => {
     const expectedAction = {
       type: ComicConstants.SEARCH_COMICS,
       searchTerm: 'test',
@@ -192,7 +192,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.searchComics(mockEvent)).toEqual(expectedAction);
   });
 
-  it('Create an action to search creators', () => {
+  it('Should create an action to search creators', () => {
     const expectedAction = {
       type: CreatorConstants.SEARCH_CREATORS,
       searchTerm: 'test',
@@ -201,7 +201,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.searchCreators(mockEvent)).toEqual(expectedAction);
   });
 
-  it('Create an action to search events', () => {
+  it('Should create an action to search events', () => {
     const expectedAction = {
       type: EventConstants.SEARCH_EVENTS,
       searchTerm: 'test',
@@ -210,7 +210,7 @@ describe('Test API Actions', () => {
     expect(ApiActions.searchEvents(mockEvent)).toEqual(expectedAction);
   });
 
-  it('Create an action to search series', () => {
+  it('Should create an action to search series', () => {
     const expectedAction = {
       type: SeriesConstants.SEARCH_SERIES,
       searchTerm: 'test',

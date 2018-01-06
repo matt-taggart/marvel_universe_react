@@ -6,7 +6,7 @@ import ComicCard from '../../components/cards/comicCard';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Comic Card', () => {
+describe('Comic Card', () => {
   const props = {
     id: 123,
     title: 'Spiderman',
@@ -26,7 +26,7 @@ describe('Test Comic Card', () => {
     isSignedIn: true,
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <ComicCard
         id={props.id}
@@ -44,7 +44,7 @@ describe('Test Comic Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Call save button on click when logged in', () => {
+  it('Should call save button on click when logged in', () => {
     const wrapper = shallow(
       <ComicCard
         id={props.id}
@@ -69,7 +69,7 @@ describe('Test Comic Card', () => {
       });
   });
 
-  it('Call more details button on click', () => {
+  it('Should call more details button on click', () => {
     const wrapper = shallow(
       <ComicCard
         id={props.id}

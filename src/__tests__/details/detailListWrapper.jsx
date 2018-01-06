@@ -6,8 +6,8 @@ import DetailListWrapper from '../../components/details/detailListWrapper';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Detail List Wrapper', () => {
-  it('Renders correctly', () => {
+describe('Detail List Wrapper', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <DetailListWrapper heading="Spiderman">
         <div>Hello world!</div>

@@ -6,7 +6,7 @@ import CharacterCard from '../../components/cards/characterCard';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Test Character Card', () => {
+describe('Character Card', () => {
   const props = {
     id: 123,
     name: 'Spiderman',
@@ -23,7 +23,7 @@ describe('Test Character Card', () => {
     isSignedIn: true,
   };
 
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const wrapper = shallow(
       <CharacterCard
         id={props.id}
@@ -38,7 +38,7 @@ describe('Test Character Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Call save button on click', () => {
+  it('Should call save button on click', () => {
     const wrapper = shallow(
       <CharacterCard
         id={props.id}
@@ -60,7 +60,7 @@ describe('Test Character Card', () => {
       });
   });
 
-  it('Call more details button on click', () => {
+  it('Should call more details button on click', () => {
     const wrapper = shallow(
       <CharacterCard
         id={props.id}
