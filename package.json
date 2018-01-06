@@ -12,7 +12,8 @@
     "build:dev": "webpack --env.dev",
     "dev": "webpack-dev-server --env.dev --hot",
     "start": "webpack-dev-server --env.dev --hot",
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "dependencies": {
     "axios": "^0.16.2",
