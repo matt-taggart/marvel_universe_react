@@ -16,7 +16,7 @@ describe('Comics Reducer', () => {
     selectedComic: {},
   });
 
-  it('Should return the inital state', () => {    
+  it('Should return the initial state', () => {    
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
