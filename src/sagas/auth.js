@@ -3,7 +3,7 @@ import * as Api from '../utils/api';
 import history from '../utils/history';
 import { LOADING, FETCH_FAILED } from '../constants/display';
 import {
-  SIGN_IN_SUCCEEDED, 
+  SIGN_IN_SUCCEEDED,
   SIGN_IN_ATTEMPT,
   LOGOUT,
   LOGOUT_SUCCEEDED,

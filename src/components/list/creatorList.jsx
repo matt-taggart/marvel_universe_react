@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import CreatorCard from '../cards/creatorCard';
-import Search from '../search';
 
 const CreatorList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
   <div className="columns is-multiline">

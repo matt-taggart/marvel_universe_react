@@ -7,7 +7,7 @@ import { REGISTRATION_SUCCEEDED, USER_FETCH_SUCCEEDED } from '../../constants/us
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe.only('User Reducer', () => {
+describe('User Reducer', () => {
   const initialState = new Map({
     user: {},
     signedIn: false,

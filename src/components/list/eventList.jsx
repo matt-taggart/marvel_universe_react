@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import EventCard from '../cards/eventCard';
-import Search from '../search';
 
 const EventList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
   <div className="columns is-multiline">

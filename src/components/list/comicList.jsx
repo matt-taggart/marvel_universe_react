@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingHOC from '../../containers/loadingHOC';
 import ComicCard from '../cards/comicCard';
-import Search from '../search';
 
 const ComicList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
   <div className="columns is-multiline">
