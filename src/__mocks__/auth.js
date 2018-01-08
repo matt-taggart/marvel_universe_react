@@ -37,7 +37,7 @@ export const signIn = function* signIn() {
     yield put({ type: LOADING, payload: false });
     yield put({ type: FETCH_FAILED, error: e });
   }
-}
+};
 
 export const logout = function* logout() {
   try {
@@ -50,4 +50,4 @@ export const logout = function* logout() {
     yield put({ type: LOADING, payload: false });
     yield put({ type: FETCH_FAILED, error: e });
   }
-}
+};

@@ -2,7 +2,7 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { call, takeEvery } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
-import { signIn, logout } from '../../__mocks__';
+import { signIn, logout } from '../../__mocks__/auth';
 
 Enzyme.configure({ adapter: new Adapter() });
 

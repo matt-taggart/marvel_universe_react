@@ -9,6 +9,7 @@ import {
   LOGOUT_SUCCEEDED,
 } from '../constants/auth';
 
+//TO DO: Add dependency injection in order to use mocks
 function* signIn() {
   try {
     yield put({ type: LOADING, payload: true });
