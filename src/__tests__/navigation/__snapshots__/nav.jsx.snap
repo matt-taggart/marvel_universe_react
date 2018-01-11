@@ -1,0 +1,968 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Component Should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Nav
+    logout={[MockFunction]}
+    user={
+      Immutable.Map {
+        "user": Object {
+          "age": 25,
+          "name": "Timmy",
+        },
+        "signedIn": true,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "aria-label": "main navigation",
+      "children": Array [
+        <div
+          className="navbar-brand"
+        >
+          <div
+            className="navbar-item"
+          >
+            <h1
+              className="title is-3"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Marvel Universe
+              </Link>
+            </h1>
+          </div>
+        </div>,
+        <div
+          className="navbar-menu"
+        >
+          <div
+            className="navbar-end"
+          >
+            <div
+              className="navbar-item has-dropdown is-hoverable"
+            >
+              <Link
+                className="navbar-link"
+                replace={false}
+                to="/profile"
+              >
+                <span
+                  className="r-mar"
+                >
+                  <i
+                    className="fa fa-user"
+                  />
+                </span>
+                <span>
+                  Timmy
+                </span>
+              </Link>
+              <div
+                className="navbar-dropdown is-boxed"
+              >
+                <Link
+                  className="navbar-item"
+                  replace={false}
+                  to="/"
+                >
+                  Home
+                </Link>
+                <Link
+                  className="navbar-item"
+                  replace={false}
+                  to="/profile"
+                >
+                  Profile
+                </Link>
+                <a
+                  className="navbar-item"
+                  onClick={[MockFunction]}
+                  role="navigation"
+                >
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>,
+      ],
+      "className": "navbar is-dark",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="navbar-item"
+          >
+            <h1
+              className="title is-3"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Marvel Universe
+              </Link>
+            </h1>
+          </div>,
+          "className": "navbar-brand",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h1
+              className="title is-3"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Marvel Universe
+              </Link>
+            </h1>,
+            "className": "navbar-item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Link
+                replace={false}
+                to="/"
+              >
+                Marvel Universe
+              </Link>,
+              "className": "title is-3",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Marvel Universe",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Marvel Universe",
+              "type": [Function],
+            },
+            "type": "h1",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="navbar-end"
+          >
+            <div
+              className="navbar-item has-dropdown is-hoverable"
+            >
+              <Link
+                className="navbar-link"
+                replace={false}
+                to="/profile"
+              >
+                <span
+                  className="r-mar"
+                >
+                  <i
+                    className="fa fa-user"
+                  />
+                </span>
+                <span>
+                  Timmy
+                </span>
+              </Link>
+              <div
+                className="navbar-dropdown is-boxed"
+              >
+                <Link
+                  className="navbar-item"
+                  replace={false}
+                  to="/"
+                >
+                  Home
+                </Link>
+                <Link
+                  className="navbar-item"
+                  replace={false}
+                  to="/profile"
+                >
+                  Profile
+                </Link>
+                <a
+                  className="navbar-item"
+                  onClick={[MockFunction]}
+                  role="navigation"
+                >
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>,
+          "className": "navbar-menu",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="navbar-item has-dropdown is-hoverable"
+            >
+              <Link
+                className="navbar-link"
+                replace={false}
+                to="/profile"
+              >
+                <span
+                  className="r-mar"
+                >
+                  <i
+                    className="fa fa-user"
+                  />
+                </span>
+                <span>
+                  Timmy
+                </span>
+              </Link>
+              <div
+                className="navbar-dropdown is-boxed"
+              >
+                <Link
+                  className="navbar-item"
+                  replace={false}
+                  to="/"
+                >
+                  Home
+                </Link>
+                <Link
+                  className="navbar-item"
+                  replace={false}
+                  to="/profile"
+                >
+                  Profile
+                </Link>
+                <a
+                  className="navbar-item"
+                  onClick={[MockFunction]}
+                  role="navigation"
+                >
+                  Logout
+                </a>
+              </div>
+            </div>,
+            "className": "navbar-end",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Link
+                  className="navbar-link"
+                  replace={false}
+                  to="/profile"
+                >
+                  <span
+                    className="r-mar"
+                  >
+                    <i
+                      className="fa fa-user"
+                    />
+                  </span>
+                  <span>
+                    Timmy
+                  </span>
+                </Link>,
+                <div
+                  className="navbar-dropdown is-boxed"
+                >
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/profile"
+                  >
+                    Profile
+                  </Link>
+                  <a
+                    className="navbar-item"
+                    onClick={[MockFunction]}
+                    role="navigation"
+                  >
+                    Logout
+                  </a>
+                </div>,
+              ],
+              "className": "navbar-item has-dropdown is-hoverable",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <span
+                      className="r-mar"
+                    >
+                      <i
+                        className="fa fa-user"
+                      />
+                    </span>,
+                    <span>
+                      Timmy
+                    </span>,
+                  ],
+                  "className": "navbar-link",
+                  "replace": false,
+                  "to": "/profile",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="fa fa-user"
+                      />,
+                      "className": "r-mar",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "fa fa-user",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Timmy",
+                    },
+                    "ref": null,
+                    "rendered": "Timmy",
+                    "type": "span",
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      className="navbar-item"
+                      replace={false}
+                      to="/"
+                    >
+                      Home
+                    </Link>,
+                    <Link
+                      className="navbar-item"
+                      replace={false}
+                      to="/profile"
+                    >
+                      Profile
+                    </Link>,
+                    <a
+                      className="navbar-item"
+                      onClick={[MockFunction]}
+                      role="navigation"
+                    >
+                      Logout
+                    </a>,
+                  ],
+                  "className": "navbar-dropdown is-boxed",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Home",
+                      "className": "navbar-item",
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Home",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Profile",
+                      "className": "navbar-item",
+                      "replace": false,
+                      "to": "/profile",
+                    },
+                    "ref": null,
+                    "rendered": "Profile",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Logout",
+                      "className": "navbar-item",
+                      "onClick": [MockFunction],
+                      "role": "navigation",
+                    },
+                    "ref": null,
+                    "rendered": "Logout",
+                    "type": "a",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "aria-label": "main navigation",
+        "children": Array [
+          <div
+            className="navbar-brand"
+          >
+            <div
+              className="navbar-item"
+            >
+              <h1
+                className="title is-3"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Marvel Universe
+                </Link>
+              </h1>
+            </div>
+          </div>,
+          <div
+            className="navbar-menu"
+          >
+            <div
+              className="navbar-end"
+            >
+              <div
+                className="navbar-item has-dropdown is-hoverable"
+              >
+                <Link
+                  className="navbar-link"
+                  replace={false}
+                  to="/profile"
+                >
+                  <span
+                    className="r-mar"
+                  >
+                    <i
+                      className="fa fa-user"
+                    />
+                  </span>
+                  <span>
+                    Timmy
+                  </span>
+                </Link>
+                <div
+                  className="navbar-dropdown is-boxed"
+                >
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/profile"
+                  >
+                    Profile
+                  </Link>
+                  <a
+                    className="navbar-item"
+                    onClick={[MockFunction]}
+                    role="navigation"
+                  >
+                    Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>,
+        ],
+        "className": "navbar is-dark",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="navbar-item"
+            >
+              <h1
+                className="title is-3"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Marvel Universe
+                </Link>
+              </h1>
+            </div>,
+            "className": "navbar-brand",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h1
+                className="title is-3"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Marvel Universe
+                </Link>
+              </h1>,
+              "className": "navbar-item",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  replace={false}
+                  to="/"
+                >
+                  Marvel Universe
+                </Link>,
+                "className": "title is-3",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Marvel Universe",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Marvel Universe",
+                "type": [Function],
+              },
+              "type": "h1",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="navbar-end"
+            >
+              <div
+                className="navbar-item has-dropdown is-hoverable"
+              >
+                <Link
+                  className="navbar-link"
+                  replace={false}
+                  to="/profile"
+                >
+                  <span
+                    className="r-mar"
+                  >
+                    <i
+                      className="fa fa-user"
+                    />
+                  </span>
+                  <span>
+                    Timmy
+                  </span>
+                </Link>
+                <div
+                  className="navbar-dropdown is-boxed"
+                >
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/profile"
+                  >
+                    Profile
+                  </Link>
+                  <a
+                    className="navbar-item"
+                    onClick={[MockFunction]}
+                    role="navigation"
+                  >
+                    Logout
+                  </a>
+                </div>
+              </div>
+            </div>,
+            "className": "navbar-menu",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="navbar-item has-dropdown is-hoverable"
+              >
+                <Link
+                  className="navbar-link"
+                  replace={false}
+                  to="/profile"
+                >
+                  <span
+                    className="r-mar"
+                  >
+                    <i
+                      className="fa fa-user"
+                    />
+                  </span>
+                  <span>
+                    Timmy
+                  </span>
+                </Link>
+                <div
+                  className="navbar-dropdown is-boxed"
+                >
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    className="navbar-item"
+                    replace={false}
+                    to="/profile"
+                  >
+                    Profile
+                  </Link>
+                  <a
+                    className="navbar-item"
+                    onClick={[MockFunction]}
+                    role="navigation"
+                  >
+                    Logout
+                  </a>
+                </div>
+              </div>,
+              "className": "navbar-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className="navbar-link"
+                    replace={false}
+                    to="/profile"
+                  >
+                    <span
+                      className="r-mar"
+                    >
+                      <i
+                        className="fa fa-user"
+                      />
+                    </span>
+                    <span>
+                      Timmy
+                    </span>
+                  </Link>,
+                  <div
+                    className="navbar-dropdown is-boxed"
+                  >
+                    <Link
+                      className="navbar-item"
+                      replace={false}
+                      to="/"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      className="navbar-item"
+                      replace={false}
+                      to="/profile"
+                    >
+                      Profile
+                    </Link>
+                    <a
+                      className="navbar-item"
+                      onClick={[MockFunction]}
+                      role="navigation"
+                    >
+                      Logout
+                    </a>
+                  </div>,
+                ],
+                "className": "navbar-item has-dropdown is-hoverable",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <span
+                        className="r-mar"
+                      >
+                        <i
+                          className="fa fa-user"
+                        />
+                      </span>,
+                      <span>
+                        Timmy
+                      </span>,
+                    ],
+                    "className": "navbar-link",
+                    "replace": false,
+                    "to": "/profile",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="fa fa-user"
+                        />,
+                        "className": "r-mar",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fa fa-user",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Timmy",
+                      },
+                      "ref": null,
+                      "rendered": "Timmy",
+                      "type": "span",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <Link
+                        className="navbar-item"
+                        replace={false}
+                        to="/"
+                      >
+                        Home
+                      </Link>,
+                      <Link
+                        className="navbar-item"
+                        replace={false}
+                        to="/profile"
+                      >
+                        Profile
+                      </Link>,
+                      <a
+                        className="navbar-item"
+                        onClick={[MockFunction]}
+                        role="navigation"
+                      >
+                        Logout
+                      </a>,
+                    ],
+                    "className": "navbar-dropdown is-boxed",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Home",
+                        "className": "navbar-item",
+                        "replace": false,
+                        "to": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Home",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Profile",
+                        "className": "navbar-item",
+                        "replace": false,
+                        "to": "/profile",
+                      },
+                      "ref": null,
+                      "rendered": "Profile",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Logout",
+                        "className": "navbar-item",
+                        "onClick": [MockFunction],
+                        "role": "navigation",
+                      },
+                      "ref": null,
+                      "rendered": "Logout",
+                      "type": "a",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "nav",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
