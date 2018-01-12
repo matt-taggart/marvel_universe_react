@@ -18,7 +18,8 @@ Enzyme.configure({ adapter: new Adapter() });
 describe.only('Display Reducer', () => {
   const initialState = new Map({
     loading: false,
-    apiError: {},
+    apiError: false,
+    apiErrorPayload: {},
     applicationError: {},
     displayFlashMessage: false,
     showSaveItemErrorModal: false,
@@ -50,7 +51,8 @@ describe.only('Display Reducer', () => {
         },
       }),
     ).toEqual(new Map({
-      apiError: { 
+      apiError: true,
+      apiErrorPayload: { 
         statusCode: 401,
         error: 'Unauthorized',
         message: 'Invalid password',
@@ -81,7 +83,7 @@ describe.only('Display Reducer', () => {
         type: CLEAR_API_ERRORS,
       }),
     ).toEqual(new Map({
-      apiError: {},
+      apiError: false,
     }));
   });
 

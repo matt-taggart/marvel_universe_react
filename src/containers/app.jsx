@@ -22,6 +22,7 @@ import SelectedCreator from '../components/details/selectedCreator';
 import SelectedEvent from '../components/details/selectedEvent';
 import SelectedSeries from '../components/details/selectedSeries';
 import SaveItemErrorModal from '../components/modals/saveItemError';
+import ServerErrorModal from '../components/modals/serverError';
 import Search from '../components/search';
 import * as DisplayActions from '../actions/display';
 import * as ApiActions from '../actions/api';
@@ -78,6 +79,7 @@ class App extends Component {
       register,
       hideFlashMessage,
       hideSaveItemErrorModal,
+      hideServerErrorModal,
       showSaveItemErrorModal,
     } = this.props;
 
@@ -307,6 +309,10 @@ class App extends Component {
         <SaveItemErrorModal
           isOpen={display.get('showSaveItemErrorModal')}
           hideSaveItemErrorModal={hideSaveItemErrorModal}
+        />
+        <ServerErrorModal
+          isOpen={display.get('apiError')}
+          hideServerErrorModal={hideServerErrorModal}
         />
       </div>
     );

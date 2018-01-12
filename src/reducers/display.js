@@ -8,11 +8,13 @@ import {
   HIDE_FLASH_MESSAGE,
   SHOW_SAVE_ITEM_ERROR_MODAL,
   HIDE_SAVE_ITEM_ERROR_MODAL,
+  HIDE_SERVER_ERROR_MODAL,
 } from '../constants/display';
 
 const initialState = new Map({
   loading: false,
-  apiError: {},
+  apiError: false,
+  apiErrorPayload: {},
   applicationError: {},
   displayFlashMessage: false,
   showSaveItemErrorModal: false,
@@ -23,7 +25,9 @@ export default (state = initialState, action) => {
     case LOADING:
       return state.set('loading', action.payload);
     case FETCH_FAILED:
-      return state.set('apiError', action.error);
+      return state
+        .set('apiError', true)
+        .set('apiErrorPayload', action.error);
     case SET_APPLICATION_ERROR:
       return state.set('applicationError', action.error);
     case CLEAR_API_ERRORS:
@@ -36,6 +40,10 @@ export default (state = initialState, action) => {
       return state.set('showSaveItemErrorModal', true);
     case HIDE_SAVE_ITEM_ERROR_MODAL:
       return state.set('showSaveItemErrorModal', false);
+    case HIDE_SERVER_ERROR_MODAL:
+      return state
+        .set('apiError', false)
+        .set('apiErrorPayload', initialState.get('apiErrorPayload'));
     default:
       return state;
   }
