@@ -35,7 +35,7 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
               plugins: () => [require('autoprefixer')],
             },
           },
-          'sass-loader' // add sourceMap true?
+          'sass-loader', // add sourceMap true?
         ],
       },
     ],
@@ -64,9 +64,13 @@ exports.extractCSS = ({ include, exclude, use }) => {
         },
       ],
     },
-    plugins: [plugin]
+    plugins: [plugin],
   };
 };
+
+exports.purifyCSS = ({ paths }) => ({
+  plugins: [new PurifyCSSPlugin({ paths })],
+});
 
 exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {

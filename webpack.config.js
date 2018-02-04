@@ -20,12 +20,13 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         title: 'Project',
         minify: {
-          collapseWhitespace: false,
+          collapseWhitespace: true,
         },
         hash: true,
         template: join(__dirname, 'src', './index.ejs'),
       }),
       new webpack.NamedModulesPlugin(),
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -74,6 +75,9 @@ const productionConfig = merge([
       },
       'sass-loader',
     ],
+  }),
+  parts.purifyCSS({
+    paths: glob.sync(`${join(__dirname, 'src')}/**/*.js`, { nodir: true }),
   }),
   parts.loadImages({
     options: {
