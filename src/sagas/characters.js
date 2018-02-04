@@ -1,7 +1,11 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
-import { LOADING, FETCH_FAILED } from '../constants/display';
+import {
+  LOADING,
+  FETCH_FAILED,
+  SET_PAGINATION_DATA,
+} from '../constants/display';
 import {
   CHARACTERS_FETCH_SUCCEEDED,
   SELECTED_CHARACTER_FETCH_SUCCEEDED,
@@ -15,8 +19,10 @@ function* fetchCharacters() {
   try {
     yield put({ type: LOADING, payload: true });
     const characters = yield call(Api.fetchCharacters);
+    const { data, total, count } = characters.data;
 
-    yield put({ type: CHARACTERS_FETCH_SUCCEEDED, characters: characters.data.data });
+    yield put({ type: CHARACTERS_FETCH_SUCCEEDED, characters: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

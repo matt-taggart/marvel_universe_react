@@ -9,6 +9,7 @@ import {
   SHOW_SAVE_ITEM_ERROR_MODAL,
   HIDE_SAVE_ITEM_ERROR_MODAL,
   HIDE_SERVER_ERROR_MODAL,
+  SET_PAGINATION_DATA,
 } from '../constants/display';
 
 const initialState = new Map({
@@ -18,6 +19,8 @@ const initialState = new Map({
   applicationError: {},
   displayFlashMessage: false,
   showSaveItemErrorModal: false,
+  count: 0,
+  total: 0,
 });
 
 export default (state = initialState, action) => {
@@ -44,6 +47,10 @@ export default (state = initialState, action) => {
       return state
         .set('apiError', false)
         .set('apiErrorPayload', initialState.get('apiErrorPayload'));
+    case SET_PAGINATION_DATA:
+      return state
+        .set('count', action.count)
+        .set('total', action.total);
     default:
       return state;
   }
