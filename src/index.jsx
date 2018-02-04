@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import store from './store';
 import history from './utils/history';
 import App from './containers/app';
+import './style.scss'
 
 render(
   <Provider store={store}>
