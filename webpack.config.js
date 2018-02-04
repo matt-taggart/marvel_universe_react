@@ -76,9 +76,6 @@ const productionConfig = merge([
       'sass-loader',
     ],
   }),
-  parts.purifyCSS({
-    paths: glob.sync(`${join(__dirname, 'src')}/**/*.js`, { nodir: true }),
-  }),
   parts.loadImages({
     options: {
       limit: 15000,
