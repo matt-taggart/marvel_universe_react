@@ -9,7 +9,7 @@ axios.defaults.withCredentials = true;
 
 const baseUrl = 'http://192.168.99.100:3000';
 
-export const fetchCharacters = () => axios.get(`${baseUrl}/characters`);
+export const fetchCharacters = (offset = '') => axios.get(`${baseUrl}/characters${offset && `?offset=${offset}`}`);
 export const fetchComics = () => axios.get(`${baseUrl}/comics`);
 export const fetchCreators = () => axios.get(`${baseUrl}/creators`);
 export const fetchEvents = () => axios.get(`${baseUrl}/events`);

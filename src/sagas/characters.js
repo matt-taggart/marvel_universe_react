@@ -15,10 +15,10 @@ import {
   CHARACTERS_SEARCH_SUCCEEDED,
 } from '../constants/characters';
 
-function* fetchCharacters() {
+function* fetchCharacters({ offset }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const characters = yield call(Api.fetchCharacters);
+    const characters = yield call(Api.fetchCharacters, offset);
     const { data, total, count } = characters.data;
 
     yield put({ type: CHARACTERS_FETCH_SUCCEEDED, characters: data });

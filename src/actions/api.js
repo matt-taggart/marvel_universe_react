@@ -7,7 +7,7 @@ import { SIGN_IN_ATTEMPT, LOGOUT } from '../constants/auth';
 import { REGISTRATION_ATTEMPT, GET_USER, SAVE_RESOURCE } from '../constants/user';
 import { SET_APPLICATION_ERROR, CLEAR_API_ERRORS } from '../constants/display';
 
-export const getCharacters = () => ({ type: GET_CHARACTERS });
+export const getCharacters = offset => ({ type: GET_CHARACTERS, offset });
 export const getComics = () => ({ type: GET_COMICS });
 export const getCreators = () => ({ type: GET_CREATORS });
 export const getEvents = () => ({ type: GET_EVENTS });
