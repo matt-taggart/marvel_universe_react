@@ -1,7 +1,11 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
-import { LOADING, FETCH_FAILED } from '../constants/display';
+import {
+  LOADING,
+  FETCH_FAILED,
+  SET_PAGINATION_DATA,
+} from '../constants/display';
 import {
   COMICS_FETCH_SUCCEEDED,
   SELECTED_COMIC_FETCH_SUCCEEDED,
@@ -11,12 +15,14 @@ import {
   COMICS_SEARCH_SUCCEEDED,
 } from '../constants/comics';
 
-function* fetchComics() {
+function* fetchComics({ offset }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const comics = yield call(Api.fetchComics);
+    const comics = yield call(Api.fetchComics, offset);
+    const { data, total, count } = comics.data;
 
-    yield put({ type: COMICS_FETCH_SUCCEEDED, comics: comics.data.data });
+    yield put({ type: COMICS_FETCH_SUCCEEDED, comics: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

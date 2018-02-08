@@ -9,11 +9,11 @@ axios.defaults.withCredentials = true;
 
 const baseUrl = 'http://192.168.99.100:3000';
 
-export const fetchCharacters = (offset = '') => axios.get(`${baseUrl}/characters${offset && `?offset=${offset}`}`);
-export const fetchComics = () => axios.get(`${baseUrl}/comics`);
-export const fetchCreators = () => axios.get(`${baseUrl}/creators`);
-export const fetchEvents = () => axios.get(`${baseUrl}/events`);
-export const fetchSeries = () => axios.get(`${baseUrl}/series`);
+export const fetchCharacters = (offset = '') => axios.get(`${baseUrl}/characters` + `?offset=${offset}`);
+export const fetchComics = (offset = '') => axios.get(`${baseUrl}/comics` + `?offset=${offset}`);
+export const fetchCreators = (offset = '') => axios.get(`${baseUrl}/creators` + `?offset=${offset}`);
+export const fetchEvents = (offset = '') => axios.get(`${baseUrl}/events` + `?offset=${offset}`);
+export const fetchSeries = (offset = '') => axios.get(`${baseUrl}/series` + `?offset=${offset}`);
 export const fetchUser = () => axios.get(`${baseUrl}/user`);
 export const fetchSelectedCharacter = id => () => axios.get(`${baseUrl}/characters/${id}`);
 export const fetchSelectedComic = id => () => axios.get(`${baseUrl}/comics/${id}`);

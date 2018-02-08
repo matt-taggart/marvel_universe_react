@@ -10,6 +10,7 @@ import {
   HIDE_SAVE_ITEM_ERROR_MODAL,
   HIDE_SERVER_ERROR_MODAL,
   SET_PAGINATION_DATA,
+  CLEAR_API_DATA,
 } from '../constants/display';
 
 const initialState = new Map({
@@ -51,6 +52,10 @@ export default (state = initialState, action) => {
       return state
         .set('count', action.count)
         .set('total', action.total);
+    case CLEAR_API_DATA:
+      return state
+        .set('count', initialState.get('count'))
+        .set('total', initialState.get('total'));
     default:
       return state;
   }

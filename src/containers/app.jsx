@@ -189,6 +189,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
+                  display={display}
+                  clearApiData={clearApiData}
                 />,
               ]}
             />
@@ -222,6 +224,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
+                  display={display}
+                  clearApiData={clearApiData}
                 />,
               ]}
             />
@@ -255,6 +259,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
+                  display={display}
+                  clearApiData={clearApiData}
                 />,
               ]}
             />
@@ -288,6 +294,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
+                  display={display}
+                  clearApiData={clearApiData}
                 />,
               ]}
             />

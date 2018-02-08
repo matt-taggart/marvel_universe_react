@@ -1,7 +1,11 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
-import { LOADING, FETCH_FAILED } from '../constants/display';
+import {
+  LOADING,
+  FETCH_FAILED,
+  SET_PAGINATION_DATA,
+} from '../constants/display';
 import {
   EVENTS_FETCH_SUCCEEDED,
   SELECTED_EVENT_FETCH_SUCCEEDED,
@@ -11,12 +15,14 @@ import {
   EVENTS_SEARCH_SUCCEEDED,
 } from '../constants/events';
 
-function* fetchEvents() {
+function* fetchEvents({ offset }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const events = yield call(Api.fetchEvents);
+    const events = yield call(Api.fetchEvents, offset);
+    const { data, total, count } = events.data;
 
-    yield put({ type: EVENTS_FETCH_SUCCEEDED, events: events.data.data });
+    yield put({ type: EVENTS_FETCH_SUCCEEDED, events: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

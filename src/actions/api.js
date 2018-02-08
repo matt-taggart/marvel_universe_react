@@ -8,10 +8,10 @@ import { REGISTRATION_ATTEMPT, GET_USER, SAVE_RESOURCE } from '../constants/user
 import { SET_APPLICATION_ERROR, CLEAR_API_ERRORS } from '../constants/display';
 
 export const getCharacters = offset => ({ type: GET_CHARACTERS, offset });
-export const getComics = () => ({ type: GET_COMICS });
-export const getCreators = () => ({ type: GET_CREATORS });
-export const getEvents = () => ({ type: GET_EVENTS });
-export const getSeries = () => ({ type: GET_SERIES });
+export const getComics = offset => ({ type: GET_COMICS, offset });
+export const getCreators = offset => ({ type: GET_CREATORS, offset });
+export const getEvents = offset => ({ type: GET_EVENTS, offset });
+export const getSeries = offset => ({ type: GET_SERIES, offset });
 export const getUser = () => ({ type: GET_USER });
 export const getSelectedCharacter = id => ({ type: GET_SELECTED_CHARACTER, id });
 export const getSelectedComic = id => ({ type: GET_SELECTED_COMIC, id });

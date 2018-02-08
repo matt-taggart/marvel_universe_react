@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
     case CLEAR_API_DATA:
       return state
         .set('characters', initialState.get('characters'))
-        .set('selectedCharacters', initialState.get('selectedCharacter'));
+        .set('selectedCharacter', initialState.get('selectedCharacter'));
     default:
       return state;
   }

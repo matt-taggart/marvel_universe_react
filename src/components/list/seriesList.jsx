@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LoadingHOC from '../../containers/loadingHOC';
+import LoadWithInfiniteScroll from '../../containers/loadWithInfiniteScroll';
 import SeriesCard from '../cards/seriesCard';
 
 const SeriesList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
@@ -26,5 +26,4 @@ SeriesList.propTypes = {
   isSignedIn: PropTypes.bool.isRequired,
 };
 
-export default LoadingHOC(SeriesList);
-
+export default LoadWithInfiniteScroll(SeriesList);

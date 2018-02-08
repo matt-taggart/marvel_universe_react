@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LoadingHOC from '../../containers/loadingHOC';
+import LoadWithInfiniteScroll from '../../containers/loadWithInfiniteScroll';
 import EventCard from '../cards/eventCard';
 
 const EventList = ({ history, saveResource, showSaveItemErrorModal, data, isSignedIn }) => (
@@ -26,4 +26,4 @@ EventList.propTypes = {
   isSignedIn: PropTypes.bool.isRequired,
 };
 
-export default LoadingHOC(EventList);
+export default LoadWithInfiniteScroll(EventList);

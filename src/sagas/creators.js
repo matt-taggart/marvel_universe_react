@@ -1,7 +1,11 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import * as Api from '../utils/api';
-import { LOADING, FETCH_FAILED } from '../constants/display';
+import {
+  LOADING,
+  FETCH_FAILED,
+  SET_PAGINATION_DATA,
+} from '../constants/display';
 import {
   CREATORS_FETCH_SUCCEEDED,
   SELECTED_CREATOR_FETCH_SUCCEEDED,
@@ -11,12 +15,14 @@ import {
   CREATORS_SEARCH_SUCCEEDED,
 } from '../constants/creators';
 
-function* fetchCreators() {
+function* fetchCreators({ offset }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const creators = yield call(Api.fetchCreators);
+    const creators = yield call(Api.fetchCreators, offset);
+    const { data, total, count } = creators.data;
 
-    yield put({ type: CREATORS_FETCH_SUCCEEDED, creators: creators.data.data });
+    yield put({ type: CREATORS_FETCH_SUCCEEDED, creators: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });
