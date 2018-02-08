@@ -9,5 +9,5 @@
       "modules": false
     }]
   ],
-  "plugins": ["syntax-dynamic-import"]
+  "plugins": ["syntax-dynamic-import", "transform-class-properties"]
 }
