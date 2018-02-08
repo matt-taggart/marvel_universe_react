@@ -81,6 +81,7 @@ class App extends Component {
       hideSaveItemErrorModal,
       hideServerErrorModal,
       showSaveItemErrorModal,
+      clearApiData,
     } = this.props;
 
     return (
@@ -153,6 +154,8 @@ class App extends Component {
                   saveResource={saveResource}
                   showSaveItemErrorModal={showSaveItemErrorModal}
                   isSignedIn={user.get('signedIn')}
+                  display={display}
+                  clearApiData={clearApiData}
                 />,
               ]}
             />
@@ -351,6 +354,7 @@ App.propTypes = {
   signIn: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
   clearApiErrors: PropTypes.func.isRequired,
+  clearApiData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
