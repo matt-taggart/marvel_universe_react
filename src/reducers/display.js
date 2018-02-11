@@ -11,6 +11,7 @@ import {
   HIDE_SERVER_ERROR_MODAL,
   SET_PAGINATION_DATA,
   CLEAR_API_DATA,
+  SET_LETTER,
 } from '../constants/display';
 
 const initialState = new Map({
@@ -56,6 +57,8 @@ export default (state = initialState, action) => {
       return state
         .set('count', initialState.get('count'))
         .set('total', initialState.get('total'));
+    case SET_LETTER:
+      return state.set('letter', action.letter);
     default:
       return state;
   }

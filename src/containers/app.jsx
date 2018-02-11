@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import Immutable from 'immutable';
 import Nav from '../components/navigation/nav';
-import Main from '../components/main/main';
+import Main from '../components/main';
 import SignIn from '../components/forms/signIn';
 import Register from '../components/forms/register';
 import RegistrationSuccessful from '../components/misc/registrationSuccessful';
-import CustomerProfile from '../components/profile/profile';
+import CustomerProfile from '../components/profile';
 import CharacterList from '../components/list/characterList';
 import ComicList from '../components/list/comicList';
 import CreatorList from '../components/list/creatorList';
@@ -24,6 +24,7 @@ import SelectedSeries from '../components/details/selectedSeries';
 import SaveItemErrorModal from '../components/modals/saveItemError';
 import ServerErrorModal from '../components/modals/serverError';
 import Search from '../components/search';
+import PaginationBar from '../components/navigation/paginationBar';
 import * as DisplayActions from '../actions/display';
 import * as ApiActions from '../actions/api';
 
@@ -82,6 +83,7 @@ class App extends Component {
       hideServerErrorModal,
       showSaveItemErrorModal,
       clearApiData,
+      setLetter,
     } = this.props;
 
     return (
@@ -144,6 +146,7 @@ class App extends Component {
                   placeholder="Search characters"
                   searchFunc={searchCharacters}
                 />,
+                <PaginationBar setLetter={setLetter} display={display} />,
                 <CharacterList
                   data={characters.get('characters')}
                   apiCall={getCharacters}
