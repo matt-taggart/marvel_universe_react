@@ -4,9 +4,108 @@ import Ellipsis from '../misc/ellipsis';
 import LETTERS from '../../constants/letters'; 
 
 export default ({ setLetter, display }) => {
-  const componentsToRender = [];
+  let componentToRender = null;
   let currentIndex = 0;
   let prevIndex = 0;
+
+  const renderStartOfList = () => (
+    <ul className="pagination-list">
+      {
+        LETTERS
+          .slice(0, 5)
+          .map(letter => (
+            <PaginationLink
+              setLetter={setLetter}
+              letter={letter}
+              activeLetter={display.get('letter')}
+              key={letter}
+            />
+          ))
+      }
+      <Ellipsis />
+      {
+        LETTERS
+          .slice(25)
+          .map(letter => (
+            <PaginationLink
+              setLetter={setLetter}
+              letter={letter}
+              activeLetter={display.get('letter')}
+              key={letter}
+            />
+          ))
+      }
+    </ul>
+  );
+
+  const renderMiddleOfList = index => (
+    <ul className="pagination-list">
+      {
+        LETTERS
+          .slice(0, 1)
+          .map(letter => (
+            <PaginationLink
+              setLetter={setLetter}
+              letter={letter}
+              activeLetter={display.get('letter')}
+              key={letter}
+            />
+          ))
+      }
+      <Ellipsis />
+      {
+        LETTERS
+          .slice(index - 2, index + 3)
+          .map(letter => (
+            <PaginationLink
+              setLetter={setLetter}
+              letter={letter}
+              activeLetter={display.get('letter')}
+              key={letter}
+            />
+          ))
+      }
+      <Ellipsis />
+      {
+        LETTERS
+          .slice(25)
+          .map(letter => (
+            <PaginationLink
+              setLetter={setLetter}
+              letter={letter}
+              activeLetter={display.get('letter')}
+              key={letter}
+            />
+          ))
+      }
+    </ul>
+  );
+
+  const renderEndOfList = () => (
+    <ul className="pagination-list">
+      { LETTERS
+        .slice(0, 1)
+        .map(letter => (
+          <PaginationLink
+            setLetter={setLetter}
+            letter={letter}
+            activeLetter={display.get('letter')}
+            key={letter}
+          />
+        )) }
+      <Ellipsis />
+      { LETTERS
+        .slice(21, 26)
+        .map(letter => (
+          <PaginationLink
+            setLetter={setLetter}
+            letter={letter}
+            activeLetter={display.get('letter')}
+            key={letter}
+          />
+        )) }
+    </ul>
+  );
 
   if (display.get('letter')) {
     currentIndex = LETTERS.findIndex(letter => (
@@ -17,174 +116,35 @@ export default ({ setLetter, display }) => {
     ));
   }
 
+
   if (currentIndex < 4) {
-    componentsToRender.push(LETTERS
-      .slice(0, 5)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(25)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
+    componentToRender = renderStartOfList();
   }
 
   if (currentIndex >= 4 && currentIndex < 21) {
-    componentsToRender.push(LETTERS
-      .slice(0, 1)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(currentIndex - 2, currentIndex + 3)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(25)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
+    componentToRender = renderMiddleOfList(currentIndex);
   }
-  console.log('PREV INDEX', prevIndex);
-  console.log('CURR INDEX', currentIndex);
 
   if (currentIndex === 21 && prevIndex < currentIndex) {
-    componentsToRender.push(LETTERS
-      .slice(0, 1)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(21, 26)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
+    componentToRender = renderEndOfList();
   }
 
   if (currentIndex === 21 && prevIndex > currentIndex) {
-    componentsToRender.push(LETTERS
-      .slice(0, 1)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(currentIndex - 2, currentIndex + 3)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(25)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
+    componentToRender = renderMiddleOfList(currentIndex);
   }
 
   if (currentIndex > 21) {
-    componentsToRender.push(LETTERS
-      .slice(0, 1)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
-
-    componentsToRender.push(<Ellipsis />);
-
-    componentsToRender.push(LETTERS
-      .slice(21, 26)
-      .map(letter => (
-        <PaginationLink
-          setLetter={setLetter}
-          letter={letter}
-          activeLetter={display.get('letter')}
-          key={letter}
-        />
-      )));
+    componentToRender = renderEndOfList();
   }
 
   const setPrevLetter = () => setLetter((LETTERS[currentIndex - 1] || 'A'));
   const setNextLetter = () => setLetter((LETTERS[currentIndex + 1] || 'Z'));
 
   return (
-    <nav className="pagination is-small" style={{ marginBottom: '2em' }} role="navigation" aria-label="pagination">
+    <nav className="pagination is-small" role="navigation" aria-label="pagination">
       <a className="pagination-previous" disabled={display.get('letter') === 'A'} onClick={setPrevLetter}>Previous</a>
       <a className="pagination-next" disabled={display.get('letter') === 'Z'} onClick={setNextLetter}>Next page</a>
-      <ul className="pagination-list">
-        { componentsToRender }
-      </ul>
+      { componentToRender }
     </nav>
   );
 };
