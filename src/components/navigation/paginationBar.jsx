@@ -108,9 +108,9 @@ export default ({ setLetter, display }) => {
   const setNextLetter = () => setLetter((LETTERS[currentIndex + 1] || 'Z'));
 
   return (
-    <nav className="pagination is-small " style={{ marginBottom: '2em' }} role="navigation" aria-label="pagination">
-      <a className="pagination-previous" onClick={setPrevLetter}>Previous</a>
-      <a className="pagination-next" onClick={setNextLetter}>Next page</a>
+    <nav className="pagination is-small" style={{ marginBottom: '2em' }} role="navigation" aria-label="pagination">
+      <a className="pagination-previous" disabled={display.get('letter') === 'A'} onClick={setPrevLetter}>Previous</a>
+      <a className="pagination-next" disabled={display.get('letter') === 'Z'} onClick={setNextLetter}>Next page</a>
       <ul className="pagination-list">
         { componentsToRender }
       </ul>
