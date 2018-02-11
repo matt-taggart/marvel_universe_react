@@ -60,7 +60,9 @@ export default (state = initialState, action) => {
         .set('count', initialState.get('count'))
         .set('total', initialState.get('total'));
     case SET_LETTER:
-      return state.set('letter', action.letter);
+      return state
+        .set('letter', action.letter)
+        .set('prevLetter', state.get('letter'));
     default:
       return state;
   }

@@ -6,10 +6,14 @@ import LETTERS from '../../constants/letters';
 export default ({ setLetter, display }) => {
   const componentsToRender = [];
   let currentIndex = 0;
+  let prevIndex = 0;
 
   if (display.get('letter')) {
     currentIndex = LETTERS.findIndex(letter => (
       letter === display.get('letter')
+    ));
+    prevIndex = LETTERS.findIndex(letter => (
+      letter === display.get('prevLetter')
     ));
   }
 
@@ -77,8 +81,75 @@ export default ({ setLetter, display }) => {
         />
       )));
   }
+  console.log('PREV INDEX', prevIndex);
+  console.log('CURR INDEX', currentIndex);
 
-  if (currentIndex >= 21) {
+  if (currentIndex === 21 && prevIndex < currentIndex) {
+    componentsToRender.push(LETTERS
+      .slice(0, 1)
+      .map(letter => (
+        <PaginationLink
+          setLetter={setLetter}
+          letter={letter}
+          activeLetter={display.get('letter')}
+          key={letter}
+        />
+      )));
+
+    componentsToRender.push(<Ellipsis />);
+
+    componentsToRender.push(LETTERS
+      .slice(21, 26)
+      .map(letter => (
+        <PaginationLink
+          setLetter={setLetter}
+          letter={letter}
+          activeLetter={display.get('letter')}
+          key={letter}
+        />
+      )));
+  }
+
+  if (currentIndex === 21 && prevIndex > currentIndex) {
+    componentsToRender.push(LETTERS
+      .slice(0, 1)
+      .map(letter => (
+        <PaginationLink
+          setLetter={setLetter}
+          letter={letter}
+          activeLetter={display.get('letter')}
+          key={letter}
+        />
+      )));
+
+    componentsToRender.push(<Ellipsis />);
+
+    componentsToRender.push(LETTERS
+      .slice(currentIndex - 2, currentIndex + 3)
+      .map(letter => (
+        <PaginationLink
+          setLetter={setLetter}
+          letter={letter}
+          activeLetter={display.get('letter')}
+          key={letter}
+        />
+      )));
+
+    componentsToRender.push(<Ellipsis />);
+
+    componentsToRender.push(LETTERS
+      .slice(25)
+      .map(letter => (
+        <PaginationLink
+          setLetter={setLetter}
+          letter={letter}
+          activeLetter={display.get('letter')}
+          key={letter}
+        />
+      )));
+  }
+
+  if (currentIndex > 21) {
     componentsToRender.push(LETTERS
       .slice(0, 1)
       .map(letter => (
