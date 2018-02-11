@@ -48,8 +48,10 @@ function* searchComics({ searchTerm }) {
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const comics = yield call(Api.searchComics, searchTerm);
+    const { data, total, count } = comics.data;
 
-    yield put({ type: COMICS_SEARCH_SUCCEEDED, comics: comics.data.data });
+    yield put({ type: COMICS_SEARCH_SUCCEEDED, comics: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

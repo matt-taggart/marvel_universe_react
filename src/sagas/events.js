@@ -48,8 +48,10 @@ function* searchEvents({ searchTerm }) {
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const events = yield call(Api.searchEvents, searchTerm);
+    const { data, total, count } = events.data;
 
-    yield put({ type: EVENTS_SEARCH_SUCCEEDED, events: events.data.data });
+    yield put({ type: EVENTS_SEARCH_SUCCEEDED, events: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

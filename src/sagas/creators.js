@@ -48,8 +48,10 @@ function* searchCreators({ searchTerm }) {
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const creators = yield call(Api.searchCreators, searchTerm);
+    const { data, total, count } = creators.data;
 
-    yield put({ type: CREATORS_SEARCH_SUCCEEDED, creators: creators.data.data });
+    yield put({ type: CREATORS_SEARCH_SUCCEEDED, creators: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

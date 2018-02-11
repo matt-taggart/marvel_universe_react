@@ -25,7 +25,7 @@ export default compose(
   InfiniteScrollHOC,
   LoadingHOC,
   branch(
-    props => props.loading && !Object.keys(props.data).length,
+    props => !props.display.get('loading') && !Object.keys(props.data).length,
     renderComponent(NoResultsFound),
-  )
+  ),
 );

@@ -48,8 +48,10 @@ function* searchSeries({ searchTerm }) {
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const series = yield call(Api.searchSeries, searchTerm);
+    const { data, total, count } = series.data;
 
-    yield put({ type: SERIES_SEARCH_SUCCEEDED, series: series.data.data });
+    yield put({ type: SERIES_SEARCH_SUCCEEDED, series: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });

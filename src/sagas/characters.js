@@ -48,8 +48,10 @@ function* searchCharacters({ searchTerm }) {
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const characters = yield call(Api.searchCharacters, searchTerm);
+    const { data, total, count } = characters.data;
 
-    yield put({ type: CHARACTERS_SEARCH_SUCCEEDED, characters: characters.data.data });
+    yield put({ type: CHARACTERS_SEARCH_SUCCEEDED, characters: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
     yield put({ type: LOADING, payload: false });
