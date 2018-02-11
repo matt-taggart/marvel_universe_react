@@ -21,6 +21,8 @@ const initialState = new Map({
   applicationError: {},
   displayFlashMessage: false,
   showSaveItemErrorModal: false,
+  prevLetter: null,
+  letter: null,
   count: 0,
   total: 0,
 });
