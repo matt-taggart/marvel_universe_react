@@ -8,3 +8,15 @@ nav {
     margin-bottom: 2em;
   }
 }
+
+button {
+  &.pagination {
+    &-previous, &-next {
+      &:focus {
+        border-color: #dbdbdb;
+      }
+      color: #00d1b2;
+      cursor: pointer;
+    }
+  }
+}

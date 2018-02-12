@@ -5,7 +5,7 @@ import LETTERS from '../../constants/letters';
 
 export default ({ setLetter, display }) => {
   let componentToRender = null;
-  let currentIndex = 0;
+  let currentIndex = -1;
   let prevIndex = 0;
 
   const renderStartOfList = () => (
@@ -125,12 +125,12 @@ export default ({ setLetter, display }) => {
     componentToRender = renderMiddleOfList(currentIndex);
   }
 
-  if (currentIndex === 21 && prevIndex < currentIndex) {
-    componentToRender = renderEndOfList();
-  }
-
   if (currentIndex === 21 && prevIndex > currentIndex) {
     componentToRender = renderMiddleOfList(currentIndex);
+  }
+
+  if (currentIndex === 21 && prevIndex < currentIndex) {
+    componentToRender = renderEndOfList();
   }
 
   if (currentIndex > 21) {
@@ -142,8 +142,8 @@ export default ({ setLetter, display }) => {
 
   return (
     <nav className="pagination is-small" role="navigation" aria-label="pagination">
-      <a className="pagination-previous" disabled={display.get('letter') === 'A'} onClick={setPrevLetter}>Previous</a>
-      <a className="pagination-next" disabled={display.get('letter') === 'Z'} onClick={setNextLetter}>Next page</a>
+      <button className="pagination-previous" disabled={!display.get('letter') || display.get('letter') === 'A'} onClick={setPrevLetter}>Previous</button>
+      <button className="pagination-next" disabled={display.get('letter') === 'Z'} onClick={setNextLetter}>Next page</button>
       { componentToRender }
     </nav>
   );
