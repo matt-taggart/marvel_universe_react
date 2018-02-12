@@ -1,15 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SideBar = () => (
+const SideBar = ({ currentPage }) => (
   <aside className="menu column is-one-quarter">
     <p className="menu-label">Browse</p>
     <ul className="menu-list">
-      <li><Link to="/">Characters</Link></li>
-      <li><Link to="/comics">Comics</Link></li>
-      <li><Link to="/creators">Creators</Link></li>
-      <li><Link to="/events">Events</Link></li>
-      <li><Link to="/series">Series</Link></li>
+      <li className={ currentPage === '/characters' ? 'has-text-weight-bold' : ''}>
+        <Link to="/">Characters</Link>
+      </li>
+      <li className={ currentPage === '/comics' ? 'has-text-weight-bold' : ''}>
+        <Link to="/comics">Comics</Link>
+      </li>
+      <li className={ currentPage === '/creators' ? 'has-text-weight-bold' : ''}>
+        <Link to="/creators">Creators</Link>
+      </li>
+      <li className={ currentPage === '/events' ? 'has-text-weight-bold' : ''}>
+        <Link to="/events">Events</Link>
+      </li>
+      <li className={ currentPage === '/series' ? 'has-text-weight-bold' : ''}>
+        <Link to="/series">Series</Link>
+      </li>
     </ul>
   </aside>
 );

@@ -100,6 +100,7 @@ class App extends Component {
         <Main
           displayFlashMessage={display.get('displayFlashMessage')}
           hideFlashMessage={hideFlashMessage}
+          currentPage={location.pathname}
         >
           <Switch>
             <Route
