@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({ setLetter, letter, activeLetter }) => {
-  const setLetterFunc = () => setLetter(letter);
+export default ({ setPaginationAndSearch, letter, activeLetter }) => {
+  const setLetterFunc = () => setPaginationAndSearch(letter);
   const letterClasses = (letter === activeLetter)
     ? 'pagination-link active-letter'
     : 'pagination-link';

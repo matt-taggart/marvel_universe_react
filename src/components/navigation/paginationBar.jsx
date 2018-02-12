@@ -3,7 +3,7 @@ import PaginationLink from './paginationLink';
 import Ellipsis from '../misc/ellipsis';
 import LETTERS from '../../constants/letters'; 
 
-export default ({ setLetter, display }) => {
+export default ({ setPaginationAndSearch, display }) => {
   let componentToRender = null;
   let currentIndex = -1;
   let prevIndex = 0;
@@ -15,7 +15,7 @@ export default ({ setLetter, display }) => {
           .slice(0, 5)
           .map(letter => (
             <PaginationLink
-              setLetter={setLetter}
+              setPaginationAndSearch={setPaginationAndSearch}
               letter={letter}
               activeLetter={display.get('letter')}
               key={letter}
@@ -28,7 +28,7 @@ export default ({ setLetter, display }) => {
           .slice(25)
           .map(letter => (
             <PaginationLink
-              setLetter={setLetter}
+              setPaginationAndSearch={setPaginationAndSearch}
               letter={letter}
               activeLetter={display.get('letter')}
               key={letter}
@@ -45,7 +45,7 @@ export default ({ setLetter, display }) => {
           .slice(0, 1)
           .map(letter => (
             <PaginationLink
-              setLetter={setLetter}
+              setPaginationAndSearch={setPaginationAndSearch}
               letter={letter}
               activeLetter={display.get('letter')}
               key={letter}
@@ -58,7 +58,7 @@ export default ({ setLetter, display }) => {
           .slice(index - 2, index + 3)
           .map(letter => (
             <PaginationLink
-              setLetter={setLetter}
+              setPaginationAndSearch={setPaginationAndSearch}
               letter={letter}
               activeLetter={display.get('letter')}
               key={letter}
@@ -71,7 +71,7 @@ export default ({ setLetter, display }) => {
           .slice(25)
           .map(letter => (
             <PaginationLink
-              setLetter={setLetter}
+              setPaginationAndSearch={setPaginationAndSearch}
               letter={letter}
               activeLetter={display.get('letter')}
               key={letter}
@@ -87,7 +87,7 @@ export default ({ setLetter, display }) => {
         .slice(0, 1)
         .map(letter => (
           <PaginationLink
-            setLetter={setLetter}
+            setPaginationAndSearch={setPaginationAndSearch}
             letter={letter}
             activeLetter={display.get('letter')}
             key={letter}
@@ -98,7 +98,7 @@ export default ({ setLetter, display }) => {
         .slice(21, 26)
         .map(letter => (
           <PaginationLink
-            setLetter={setLetter}
+            setPaginationAndSearch={setPaginationAndSearch}
             letter={letter}
             activeLetter={display.get('letter')}
             key={letter}
@@ -137,8 +137,8 @@ export default ({ setLetter, display }) => {
     componentToRender = renderEndOfList();
   }
 
-  const setPrevLetter = () => setLetter((LETTERS[currentIndex - 1] || 'A'));
-  const setNextLetter = () => setLetter((LETTERS[currentIndex + 1] || 'Z'));
+  const setPrevLetter = () => setPaginationAndSearch((LETTERS[currentIndex - 1] || 'A'));
+  const setNextLetter = () => setPaginationAndSearch((LETTERS[currentIndex + 1] || 'Z'));
 
   return (
     <nav className="pagination is-small" role="navigation" aria-label="pagination">

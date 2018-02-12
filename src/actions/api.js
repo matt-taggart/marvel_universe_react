@@ -1,8 +1,8 @@
-import { GET_CHARACTERS, GET_SELECTED_CHARACTER, SEARCH_CHARACTERS } from '../constants/characters';
-import { GET_COMICS, GET_SELECTED_COMIC, SEARCH_COMICS } from '../constants/comics';
-import { GET_CREATORS, GET_SELECTED_CREATOR, SEARCH_CREATORS } from '../constants/creators';
-import { GET_EVENTS, GET_SELECTED_EVENT, SEARCH_EVENTS } from '../constants/events';
-import { GET_SERIES, GET_SELECTED_SERIES, SEARCH_SERIES } from '../constants/series';
+import { GET_CHARACTERS, GET_SELECTED_CHARACTER, SEARCH_CHARACTERS, SEARCH_CHARACTERS_BY_LETTER } from '../constants/characters';
+import { GET_COMICS, GET_SELECTED_COMIC, SEARCH_COMICS, SEARCH_COMICS_BY_LETTER } from '../constants/comics';
+import { GET_CREATORS, GET_SELECTED_CREATOR, SEARCH_CREATORS, SEARCH_CREATORS_BY_LETTER } from '../constants/creators';
+import { GET_EVENTS, GET_SELECTED_EVENT, SEARCH_EVENTS, SEARCH_EVENTS_BY_LETTER } from '../constants/events';
+import { GET_SERIES, GET_SELECTED_SERIES, SEARCH_SERIES, SEARCH_SERIES_BY_LETTER } from '../constants/series';
 import { SIGN_IN_ATTEMPT, LOGOUT } from '../constants/auth';
 import { REGISTRATION_ATTEMPT, GET_USER, SAVE_RESOURCE } from '../constants/user';
 import { SET_APPLICATION_ERROR, CLEAR_API_ERRORS } from '../constants/display';
@@ -29,3 +29,8 @@ export const searchComics = e => ({ type: SEARCH_COMICS, searchTerm: e.target.va
 export const searchCreators = e => ({ type: SEARCH_CREATORS, searchTerm: e.target.value });
 export const searchEvents = e => ({ type: SEARCH_EVENTS, searchTerm: e.target.value });
 export const searchSeries = e => ({ type: SEARCH_SERIES, searchTerm: e.target.value });
+export const searchCharactersByLetter = letter => ({ type: SEARCH_CHARACTERS_BY_LETTER, searchTerm: letter });
+export const searchComicsByLetter = letter => ({ type: SEARCH_COMICS_BY_LETTER, searchTerm: letter });
+export const searchCreatorsByLetter = letter => ({ type: SEARCH_CREATORS_BY_LETTER, searchTerm: letter });
+export const searchEventsByLetter = letter => ({ type: SEARCH_EVENTS_BY_LETTER, searchTerm: letter });
+export const searchSeriesByLetter = letter => ({ type: SEARCH_SERIES_BY_LETTER, searchTerm: letter });

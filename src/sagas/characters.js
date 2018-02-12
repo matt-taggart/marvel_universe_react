@@ -5,6 +5,7 @@ import {
   LOADING,
   FETCH_FAILED,
   SET_PAGINATION_DATA,
+  SET_LETTER,
 } from '../constants/display';
 import {
   CHARACTERS_FETCH_SUCCEEDED,
@@ -13,6 +14,7 @@ import {
   GET_SELECTED_CHARACTER,
   SEARCH_CHARACTERS,
   CHARACTERS_SEARCH_SUCCEEDED,
+  SEARCH_CHARACTERS_BY_LETTER,
 } from '../constants/characters';
 
 function* fetchCharacters({ offset }) {
@@ -59,10 +61,27 @@ function* searchCharacters({ searchTerm }) {
   }
 }
 
+function* searchCharactersByLetter({ searchTerm }) {
+  try {
+    yield put({ type: SET_LETTER, letter: searchTerm });
+    yield put({ type: LOADING, payload: true });
+    const characters = yield call(Api.searchCharacters, searchTerm);
+    const { data, total, count } = characters.data;
+
+    yield put({ type: CHARACTERS_SEARCH_SUCCEEDED, characters: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getCharacters() {
   yield takeEvery(GET_CHARACTERS, fetchCharacters);
   yield takeEvery(GET_SELECTED_CHARACTER, fetchSelectedCharacter);
   yield takeLatest(SEARCH_CHARACTERS, searchCharacters);
+  yield takeLatest(SEARCH_CHARACTERS_BY_LETTER, searchCharactersByLetter);
 }
 
 export default getCharacters;

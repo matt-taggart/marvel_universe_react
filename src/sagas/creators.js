@@ -5,6 +5,7 @@ import {
   LOADING,
   FETCH_FAILED,
   SET_PAGINATION_DATA,
+  SET_LETTER,
 } from '../constants/display';
 import {
   CREATORS_FETCH_SUCCEEDED,
@@ -13,6 +14,7 @@ import {
   GET_SELECTED_CREATOR,
   SEARCH_CREATORS,
   CREATORS_SEARCH_SUCCEEDED,
+  SEARCH_CREATORS_BY_LETTER,
 } from '../constants/creators';
 
 function* fetchCreators({ offset }) {
@@ -59,10 +61,27 @@ function* searchCreators({ searchTerm }) {
   }
 }
 
+function* searchCreatorsByLetter({ searchTerm }) {
+  try {
+    yield put({ type: SET_LETTER, letter: searchTerm });
+    yield put({ type: LOADING, payload: true });
+    const creators = yield call(Api.searchCreators, searchTerm);
+    const { data, total, count } = creators.data;
+
+    yield put({ type: CREATORS_SEARCH_SUCCEEDED, creators: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getCreators() {
   yield takeEvery(GET_CREATORS, fetchCreators);
   yield takeEvery(GET_SELECTED_CREATOR, fetchSelectedCreator);
   yield takeLatest(SEARCH_CREATORS, searchCreators);
+  yield takeLatest(SEARCH_CREATORS_BY_LETTER, searchCreatorsByLetter);
 }
 
 export default getCreators;

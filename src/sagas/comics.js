@@ -5,6 +5,7 @@ import {
   LOADING,
   FETCH_FAILED,
   SET_PAGINATION_DATA,
+  SET_LETTER,
 } from '../constants/display';
 import {
   COMICS_FETCH_SUCCEEDED,
@@ -13,6 +14,7 @@ import {
   GET_SELECTED_COMIC,
   SEARCH_COMICS,
   COMICS_SEARCH_SUCCEEDED,
+  SEARCH_COMICS_BY_LETTER,
 } from '../constants/comics';
 
 function* fetchComics({ offset }) {
@@ -59,10 +61,27 @@ function* searchComics({ searchTerm }) {
   }
 }
 
+function* searchComicsByLetter({ searchTerm }) {
+  try {
+    yield put({ type: SET_LETTER, letter: searchTerm });
+    yield put({ type: LOADING, payload: true });
+    const comics = yield call(Api.searchComics, searchTerm);
+    const { data, total, count } = comics.data;
+
+    yield put({ type: COMICS_SEARCH_SUCCEEDED, comics: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getComics() {
   yield takeEvery(GET_COMICS, fetchComics);
   yield takeEvery(GET_SELECTED_COMIC, fetchSelectedComic);
   yield takeLatest(SEARCH_COMICS, searchComics);
+  yield takeLatest(SEARCH_COMICS_BY_LETTER, searchComicsByLetter);
 }
 
 export default getComics;

@@ -5,6 +5,7 @@ import {
   LOADING,
   FETCH_FAILED,
   SET_PAGINATION_DATA,
+  SET_LETTER,
 } from '../constants/display';
 import {
   EVENTS_FETCH_SUCCEEDED,
@@ -13,6 +14,7 @@ import {
   GET_SELECTED_EVENT,
   SEARCH_EVENTS,
   EVENTS_SEARCH_SUCCEEDED,
+  SEARCH_EVENTS_BY_LETTER,
 } from '../constants/events';
 
 function* fetchEvents({ offset }) {
@@ -59,10 +61,27 @@ function* searchEvents({ searchTerm }) {
   }
 }
 
+function* searchEventsByLetter({ searchTerm }) {
+  try {
+    yield put({ type: SET_LETTER, letter: searchTerm });
+    yield put({ type: LOADING, payload: true });
+    const events = yield call(Api.searchEvents, searchTerm);
+    const { data, total, count } = events.data;
+
+    yield put({ type: EVENTS_SEARCH_SUCCEEDED, events: data });
+    yield put({ type: SET_PAGINATION_DATA, total, count });
+    yield put({ type: LOADING, payload: false });
+  } catch (e) {
+    yield put({ type: LOADING, payload: false });
+    yield put({ type: FETCH_FAILED, error: e });
+  }
+}
+
 function* getEvents() {
   yield takeEvery(GET_EVENTS, fetchEvents);
   yield takeEvery(GET_SELECTED_EVENT, fetchSelectedEvent);
   yield takeLatest(SEARCH_EVENTS, searchEvents);
+  yield takeLatest(SEARCH_EVENTS_BY_LETTER, searchEventsByLetter);
 }
 
 export default getEvents;

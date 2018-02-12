@@ -67,6 +67,11 @@ class App extends Component {
       searchCreators,
       searchEvents,
       searchSeries,
+      searchCharactersByLetter,
+      searchComicsByLetter,
+      searchCreatorsByLetter,
+      searchEventsByLetter,
+      searchSeriesByLetter,
       saveResource,
       characters,
       comics,
@@ -83,7 +88,6 @@ class App extends Component {
       hideServerErrorModal,
       showSaveItemErrorModal,
       clearApiData,
-      setLetter,
     } = this.props;
 
     return (
@@ -146,7 +150,10 @@ class App extends Component {
                   placeholder="Search characters"
                   searchFunc={searchCharacters}
                 />,
-                <PaginationBar setLetter={setLetter} display={display} />,
+                <PaginationBar
+                  setPaginationAndSearch={searchCharactersByLetter}
+                  display={display}
+                />,
                 <CharacterList
                   data={characters.get('characters')}
                   apiCall={getCharacters}
