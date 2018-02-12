@@ -190,6 +190,10 @@ class App extends Component {
                   placeholder="Search comics"
                   searchFunc={searchComics}
                 />,
+                <PaginationBar
+                  setPaginationAndSearch={searchComicsByLetter}
+                  display={display}
+                />,
                 <ComicList
                   data={comics.get('comics')}
                   apiCall={getComics}
@@ -224,6 +228,10 @@ class App extends Component {
                 <Search
                   placeholder="Search creators"
                   searchFunc={searchCreators}
+                />,
+                <PaginationBar
+                  setPaginationAndSearch={searchCreatorsByLetter}
+                  display={display}
                 />,
                 <CreatorList
                   data={creators.get('creators')}
@@ -260,6 +268,10 @@ class App extends Component {
                   placeholder="Search events"
                   searchFunc={searchEvents}
                 />,
+                <PaginationBar
+                  setPaginationAndSearch={searchEventsByLetter}
+                  display={display}
+                />,
                 <EventList
                   data={events.get('events')}
                   apiCall={getEvents}
@@ -294,6 +306,10 @@ class App extends Component {
                 <Search
                   placeholder="Search series"
                   searchFunc={searchSeries}
+                />,
+                <PaginationBar
+                  setPaginationAndSearch={searchSeriesByLetter}
+                  display={display}
                 />,
                 <SeriesList
                   data={series.get('series')}
