@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const SideBar = ({ currentPage }) => (
   <aside className="menu column is-one-quarter">
@@ -23,5 +24,9 @@ const SideBar = ({ currentPage }) => (
     </ul>
   </aside>
 );
+
+SideBar.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+};
 
 export default SideBar;

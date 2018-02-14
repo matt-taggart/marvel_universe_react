@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Immutable from 'immutable';
 import PaginationLink from './paginationLink';
 import Ellipsis from '../misc/ellipsis';
-import LETTERS from '../../constants/letters'; 
+import LETTERS from '../../constants/letters';
 
-export default ({ setPaginationAndSearch, display }) => {
+const PaginationBar = ({ setPaginationAndSearch, display }) => {
   let componentToRender = null;
   let currentIndex = -1;
   let prevIndex = 0;
@@ -148,3 +150,10 @@ export default ({ setPaginationAndSearch, display }) => {
     </nav>
   );
 };
+
+PaginationBar.propTypes = {
+  setPaginationAndSearch: PropTypes.func.isRequired,
+  display: PropTypes.instanceOf(Immutable.Map).isRequired,
+};
+
+export default PaginationBar;

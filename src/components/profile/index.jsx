@@ -76,7 +76,6 @@ const CustomerProfile = ({ data: { name, email, gender, age, savedData } }) => {
         <div className="media-content">
           <div className="content">
             <div>
-              <strong></strong>
               <br />
               { savedCharacters && savedCharacters.length > 0 && (
                 <div className="saved-content">

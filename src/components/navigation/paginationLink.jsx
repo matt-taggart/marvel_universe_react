@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ setPaginationAndSearch, letter, activeLetter }) => {
+const PaginationLink = ({ setPaginationAndSearch, letter, activeLetter }) => {
   const setLetterFunc = () => setPaginationAndSearch(letter);
   const letterClasses = (letter === activeLetter)
     ? 'pagination-link active-letter'
@@ -11,3 +12,11 @@ export default ({ setPaginationAndSearch, letter, activeLetter }) => {
     </li>
   );
 };
+
+PaginationLink.propTypes = {
+  setPaginationAndSearch: PropTypes.func.isRequired,
+  letter: PropTypes.string.isRequired,
+  activeLetter: PropTypes.string.isRequired,
+};
+
+export default PaginationLink;

@@ -1,7 +1,7 @@
 import React from 'react';
+import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import history from '../../utils/history';
-import Modal from 'react-modal';
 
 const SaveItemErrorModal = ({ isOpen, hideSaveItemErrorModal }) => {
   const redirectToRegistrationPage = () => {
@@ -26,7 +26,7 @@ const SaveItemErrorModal = ({ isOpen, hideSaveItemErrorModal }) => {
       <h1 className="is-size-4 mar-t-2">Sorry!</h1>
       <div>
         <p>
-          You must be logged in to use this feature. Don't have an account yet? 
+          You must be logged in to use this feature. Don't have an account yet?
           <a role="button" onClick={redirectToRegistrationPage}> Click here to register. </a>
         </p>
       </div>
