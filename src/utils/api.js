@@ -24,11 +24,11 @@ export const saveResource = ({ resourceType, id, name }) => axios.post(`${baseUr
 export const signIn = credentials => axios.post(`${baseUrl}/login`, { ...credentials });
 export const register = payload => axios.post(`${baseUrl}/user`,  { ...payload });
 export const logout = () => axios.delete(`${baseUrl}/logout`);
-export const searchCharacters = searchTerm => axios.get(`${baseUrl}/characters` + `?nameStartsWith=${searchTerm}`);
-export const searchComics = searchTerm => axios.get(`${baseUrl}/comics` + `?titleStartsWith=${searchTerm}`);
-export const searchCreators = searchTerm => axios.get(`${baseUrl}/creators` + `?nameStartsWith=${searchTerm}`);
-export const searchEvents = searchTerm => axios.get(`${baseUrl}/events` + `?nameStartsWith=${searchTerm}`);
-export const searchSeries = searchTerm => axios.get(`${baseUrl}/series` + `?titleStartsWith=${searchTerm}`);
+export const searchCharacters = searchTerm => axios.get(`${baseUrl}/characters` + (searchTerm ? `?nameStartsWith=${searchTerm}` : ''));
+export const searchComics = searchTerm => axios.get(`${baseUrl}/comics` + (searchTerm ? `?titleStartsWith=${searchTerm}` : ''));
+export const searchCreators = searchTerm => axios.get(`${baseUrl}/creators` + (searchTerm ? `?nameStartsWith=${searchTerm}` : ''));
+export const searchEvents = searchTerm => axios.get(`${baseUrl}/events` + (searchTerm ? `?nameStartsWith=${searchTerm}` : ''));
+export const searchSeries = searchTerm => axios.get(`${baseUrl}/series` + (searchTerm ? `?titleStartsWith=${searchTerm}`: ''));
 export const searchCharactersByLetter = searchTerm => axios.get(`${baseUrl}/characters` + `?nameStartsWith=${searchTerm}`);
 export const searchComicsByLetter = searchTerm => axios.get(`${baseUrl}/comics` + `?titleStartsWith=${searchTerm}`);
 export const searchCreatorsByLetter = searchTerm => axios.get(`${baseUrl}/creators` + `?nameStartsWith=${searchTerm}`);

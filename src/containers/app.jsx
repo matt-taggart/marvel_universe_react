@@ -146,29 +146,31 @@ class App extends Component {
             <Route
               path="/characters"
               exact
-              render={() => [
-                <Search
-                  placeholder="Search characters"
-                  searchFunc={searchCharacters}
-                />,
-                <PaginationBar
-                  setPaginationAndSearch={searchCharactersByLetter}
-                  display={display}
-                />,
-                <CharacterList
-                  data={characters.get('characters')}
-                  apiCall={getCharacters}
-                  getUser={getUser}
-                  searchCharacters={searchCharacters}
-                  isLoading={display.get('loading')}
-                  history={history}
-                  saveResource={saveResource}
-                  showSaveItemErrorModal={showSaveItemErrorModal}
-                  isSignedIn={user.get('signedIn')}
-                  display={display}
-                  clearApiData={clearApiData}
-                />,
-              ]}
+              render={() => (
+                <div>
+                  <Search
+                    placeholder="Search characters"
+                    searchFunc={searchCharacters}
+                  />
+                  <PaginationBar
+                    setPaginationAndSearch={searchCharactersByLetter}
+                    display={display}
+                  />
+                  <CharacterList
+                    data={characters.get('characters')}
+                    apiCall={getCharacters}
+                    getUser={getUser}
+                    searchCharacters={searchCharacters}
+                    isLoading={display.get('loading')}
+                    history={history}
+                    saveResource={saveResource}
+                    showSaveItemErrorModal={showSaveItemErrorModal}
+                    isSignedIn={user.get('signedIn')}
+                    display={display}
+                    clearApiData={clearApiData}
+                  />
+                </div>
+              )}
             />
             <Route
               path="/characters/:id"
@@ -186,28 +188,30 @@ class App extends Component {
             <Route
               path="/comics"
               exact
-              render={() => [
-                <Search
-                  placeholder="Search comics"
-                  searchFunc={searchComics}
-                />,
-                <PaginationBar
-                  setPaginationAndSearch={searchComicsByLetter}
-                  display={display}
-                />,
-                <ComicList
-                  data={comics.get('comics')}
-                  apiCall={getComics}
-                  getUser={getUser}
-                  isLoading={display.get('loading')}
-                  history={history}
-                  saveResource={saveResource}
-                  showSaveItemErrorModal={showSaveItemErrorModal}
-                  isSignedIn={user.get('signedIn')}
-                  display={display}
-                  clearApiData={clearApiData}
-                />,
-              ]}
+              render={() => (
+                <div>
+                  <Search
+                    placeholder="Search comics"
+                    searchFunc={searchComics}
+                  />
+                  <PaginationBar
+                    setPaginationAndSearch={searchComicsByLetter}
+                    display={display}
+                  />
+                  <ComicList
+                    data={comics.get('comics')}
+                    apiCall={getComics}
+                    getUser={getUser}
+                    isLoading={display.get('loading')}
+                    history={history}
+                    saveResource={saveResource}
+                    showSaveItemErrorModal={showSaveItemErrorModal}
+                    isSignedIn={user.get('signedIn')}
+                    display={display}
+                    clearApiData={clearApiData}
+                  />
+                </div>
+              )}
             />
             <Route
               path="/comics/:id"
@@ -225,28 +229,30 @@ class App extends Component {
             <Route
               path="/creators"
               exact
-              render={() => [
-                <Search
-                  placeholder="Search creators"
-                  searchFunc={searchCreators}
-                />,
-                <PaginationBar
-                  setPaginationAndSearch={searchCreatorsByLetter}
-                  display={display}
-                />,
-                <CreatorList
-                  data={creators.get('creators')}
-                  apiCall={getCreators}
-                  getUser={getUser}
-                  isLoading={display.get('loading')}
-                  history={history}
-                  saveResource={saveResource}
-                  showSaveItemErrorModal={showSaveItemErrorModal}
-                  isSignedIn={user.get('signedIn')}
-                  display={display}
-                  clearApiData={clearApiData}
-                />,
-              ]}
+              render={() => (
+                <div>
+                  <Search
+                    placeholder="Search creators"
+                    searchFunc={searchCreators}
+                  />
+                  <PaginationBar
+                    setPaginationAndSearch={searchCreatorsByLetter}
+                    display={display}
+                  />
+                  <CreatorList
+                    data={creators.get('creators')}
+                    apiCall={getCreators}
+                    getUser={getUser}
+                    isLoading={display.get('loading')}
+                    history={history}
+                    saveResource={saveResource}
+                    showSaveItemErrorModal={showSaveItemErrorModal}
+                    isSignedIn={user.get('signedIn')}
+                    display={display}
+                    clearApiData={clearApiData}
+                  />
+                </div>
+              )}
             />
             <Route
               path="/creators/:id"
@@ -264,28 +270,30 @@ class App extends Component {
             <Route
               path="/events"
               exact
-              render={() => [
-                <Search
-                  placeholder="Search events"
-                  searchFunc={searchEvents}
-                />,
-                <PaginationBar
-                  setPaginationAndSearch={searchEventsByLetter}
-                  display={display}
-                />,
-                <EventList
-                  data={events.get('events')}
-                  apiCall={getEvents}
-                  getUser={getUser}
-                  isLoading={display.get('loading')}
-                  history={history}
-                  saveResource={saveResource}
-                  showSaveItemErrorModal={showSaveItemErrorModal}
-                  isSignedIn={user.get('signedIn')}
-                  display={display}
-                  clearApiData={clearApiData}
-                />,
-              ]}
+              render={() => (
+                <div>
+                  <Search
+                    placeholder="Search events"
+                    searchFunc={searchEvents}
+                  />
+                  <PaginationBar
+                    setPaginationAndSearch={searchEventsByLetter}
+                    display={display}
+                  />
+                  <EventList
+                    data={events.get('events')}
+                    apiCall={getEvents}
+                    getUser={getUser}
+                    isLoading={display.get('loading')}
+                    history={history}
+                    saveResource={saveResource}
+                    showSaveItemErrorModal={showSaveItemErrorModal}
+                    isSignedIn={user.get('signedIn')}
+                    display={display}
+                    clearApiData={clearApiData}
+                  />
+                </div>
+              )}
             />
             <Route
               path="/events/:id"
@@ -303,28 +311,30 @@ class App extends Component {
             <Route
               path="/series"
               exact
-              render={() => [
-                <Search
-                  placeholder="Search series"
-                  searchFunc={searchSeries}
-                />,
-                <PaginationBar
-                  setPaginationAndSearch={searchSeriesByLetter}
-                  display={display}
-                />,
-                <SeriesList
-                  data={series.get('series')}
-                  apiCall={getSeries}
-                  getUser={getUser}
-                  isLoading={display.get('loading')}
-                  history={history}
-                  saveResource={saveResource}
-                  showSaveItemErrorModal={showSaveItemErrorModal}
-                  isSignedIn={user.get('signedIn')}
-                  display={display}
-                  clearApiData={clearApiData}
-                />,
-              ]}
+              render={() => (
+                <div>
+                  <Search
+                    placeholder="Search series"
+                    searchFunc={searchSeries}
+                  />
+                  <PaginationBar
+                    setPaginationAndSearch={searchSeriesByLetter}
+                    display={display}
+                  />
+                  <SeriesList
+                    data={series.get('series')}
+                    apiCall={getSeries}
+                    getUser={getUser}
+                    isLoading={display.get('loading')}
+                    history={history}
+                    saveResource={saveResource}
+                    showSaveItemErrorModal={showSaveItemErrorModal}
+                    isSignedIn={user.get('signedIn')}
+                    display={display}
+                    clearApiData={clearApiData}
+                  />
+                </div>
+              )}
             />
             <Route
               path="/series/:id"
