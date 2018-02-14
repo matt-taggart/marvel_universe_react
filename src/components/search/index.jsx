@@ -6,7 +6,7 @@ const Search = ({ placeholder, searchFunc }) => (
     <div className="column is-three-fifths is-offset-one-fifth">
       <div className="field column search-field">
         <div className="control">
-          <input className="input is-medium" type="text" placeholder={placeholder} onChange={searchFunc} />
+          <input className="input" type="text" placeholder={placeholder} onChange={searchFunc} />
         </div>
       </div>
     </div>
