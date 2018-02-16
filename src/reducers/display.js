@@ -14,6 +14,7 @@ import {
   SET_SEARCH_TERM,
   CLEAR_SEARCH_TERM,
   SET_LETTER,
+  CLEAR_LETTER,
 } from '../constants/display';
 
 const initialState = new Map({
@@ -70,6 +71,8 @@ export default (state = initialState, action) => {
       return state
         .set('letter', action.letter)
         .set('prevLetter', state.get('letter'));
+    case CLEAR_LETTER:
+      return state.set('letter', initialState.get('letter'));
     default:
       return state;
   }

@@ -89,6 +89,7 @@ class App extends Component {
       showSaveItemErrorModal,
       clearApiData,
       clearSearchTerm,
+      clearLetter,
     } = this.props;
 
     return (
@@ -171,6 +172,7 @@ class App extends Component {
                     display={display}
                     clearApiData={clearApiData}
                     clearSearchTerm={clearSearchTerm}
+                    clearLetter={clearLetter}
                   />
                 </div>
               )}
@@ -214,6 +216,7 @@ class App extends Component {
                     display={display}
                     clearApiData={clearApiData}
                     clearSearchTerm={clearSearchTerm}
+                    clearLetter={clearLetter}
                   />
                 </div>
               )}
@@ -257,6 +260,7 @@ class App extends Component {
                     display={display}
                     clearApiData={clearApiData}
                     clearSearchTerm={clearSearchTerm}
+                    clearLetter={clearLetter}
                   />
                 </div>
               )}
@@ -300,6 +304,7 @@ class App extends Component {
                     display={display}
                     clearApiData={clearApiData}
                     clearSearchTerm={clearSearchTerm}
+                    clearLetter={clearLetter}
                   />
                 </div>
               )}
@@ -343,6 +348,7 @@ class App extends Component {
                     display={display}
                     clearApiData={clearApiData}
                     clearSearchTerm={clearSearchTerm}
+                    clearLetter={clearLetter}
                   />
                 </div>
               )}
