@@ -17,9 +17,6 @@ const SelectedCharacter = ({
     urls,
   },
 }) => {
-  // NOTE: Usually want to provide unique key rather than array index
-  // when composing a list of components, but Marvel API doesn't provide one :( 
-
   const ComicList = comics.items
     .map((item, key) => <ComicItem {...item} key={key} />);
 

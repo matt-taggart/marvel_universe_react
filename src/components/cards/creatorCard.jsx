@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CreatorCard = ({ 
+const CreatorCard = ({
   id,
   fullName,
   comics: { items },

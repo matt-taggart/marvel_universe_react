@@ -4,13 +4,11 @@ import LoadingHOC from '../../containers/loadingHOC';
 import DetailListWrapper from './detailListWrapper';
 import CharacterItem from './characterItem';
 import ComicItem from './comicItem';
-import SeriesItem from './seriesItem';
 import CreatorItem from './creatorItem';
 import EventItem from './eventItem';
 
 const SelectedSeries = ({
   data: {
-    id,
     title,
     description,
     thumbnail: { path, extension },

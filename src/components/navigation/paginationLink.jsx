@@ -16,7 +16,7 @@ const PaginationLink = ({ setPaginationAndSearch, letter, activeLetter }) => {
 PaginationLink.propTypes = {
   setPaginationAndSearch: PropTypes.func.isRequired,
   letter: PropTypes.string.isRequired,
-  activeLetter: PropTypes.string.isRequired,
+  activeLetter: PropTypes.string,
 };
 
 export default PaginationLink;
