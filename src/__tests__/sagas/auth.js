@@ -7,7 +7,6 @@ import { signIn, logout } from '../../__mocks__/auth';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Auth Sagas', () => {
-  //TODO: Add negative tests
   it('Should test sign in saga', async () => {   
     const dispatched = [];
 

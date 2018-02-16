@@ -5,6 +5,7 @@ import {
   LOADING,
   FETCH_FAILED,
   SET_SEARCH_TERM,
+  CLEAR_SEARCH_TERM,
   SET_PAGINATION_DATA,
   SET_LETTER,
 } from '../constants/display';
@@ -66,6 +67,7 @@ function* searchEvents({ searchTerm }) {
 function* searchEventsByLetter({ searchTerm }) {
   try {
     yield put({ type: SET_LETTER, letter: searchTerm });
+    yield put({ type: CLEAR_SEARCH_TERM });    
     yield put({ type: LOADING, payload: true });
     const events = yield call(Api.searchEvents, searchTerm);
     const { data, total, count } = events.data;
