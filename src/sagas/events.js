@@ -20,10 +20,10 @@ import {
   SEARCH_EVENTS_BY_LETTER,
 } from '../constants/events';
 
-function* fetchEvents({ offset }) {
+function* fetchEvents({ offset, searchTerm }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const events = yield call(Api.fetchEvents, offset);
+    const events = yield call(Api.fetchEvents, offset, searchTerm);
     const { data, total, count } = events.data;
 
     yield put({ type: EVENTS_FETCH_SUCCEEDED, events: data });

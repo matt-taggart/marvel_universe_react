@@ -7,11 +7,11 @@ import { SIGN_IN_ATTEMPT, LOGOUT } from '../constants/auth';
 import { REGISTRATION_ATTEMPT, GET_USER, SAVE_RESOURCE } from '../constants/user';
 import { SET_APPLICATION_ERROR, CLEAR_API_ERRORS } from '../constants/display';
 
-export const getCharacters = offset => ({ type: GET_CHARACTERS, offset });
-export const getComics = offset => ({ type: GET_COMICS, offset });
-export const getCreators = offset => ({ type: GET_CREATORS, offset });
-export const getEvents = offset => ({ type: GET_EVENTS, offset });
-export const getSeries = offset => ({ type: GET_SERIES, offset });
+export const getCharacters = (offset, searchTerm) => ({ type: GET_CHARACTERS, offset, searchTerm });
+export const getComics = (offset, searchTerm) => ({ type: GET_COMICS, offset, searchTerm });
+export const getCreators = (offset, searchTerm) => ({ type: GET_CREATORS, offset, searchTerm });
+export const getEvents = (offset, searchTerm) => ({ type: GET_EVENTS, offset, searchTerm });
+export const getSeries = (offset, searchTerm) => ({ type: GET_SERIES, offset, searchTerm });
 export const getUser = () => ({ type: GET_USER });
 export const getSelectedCharacter = id => ({ type: GET_SELECTED_CHARACTER, id });
 export const getSelectedComic = id => ({ type: GET_SELECTED_COMIC, id });

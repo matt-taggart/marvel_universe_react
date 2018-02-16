@@ -20,10 +20,10 @@ import {
   SEARCH_CREATORS_BY_LETTER,
 } from '../constants/creators';
 
-function* fetchCreators({ offset }) {
+function* fetchCreators({ offset, searchTerm }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const creators = yield call(Api.fetchCreators, offset);
+    const creators = yield call(Api.fetchCreators, offset, searchTerm);
     const { data, total, count } = creators.data;
 
     yield put({ type: CREATORS_FETCH_SUCCEEDED, creators: data });

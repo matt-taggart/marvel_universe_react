@@ -20,10 +20,10 @@ import {
   SEARCH_COMICS_BY_LETTER,
 } from '../constants/comics';
 
-function* fetchComics({ offset }) {
+function* fetchComics({ offset, searchTerm }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const comics = yield call(Api.fetchComics, offset);
+    const comics = yield call(Api.fetchComics, offset, searchTerm);
     const { data, total, count } = comics.data;
 
     yield put({ type: COMICS_FETCH_SUCCEEDED, comics: data });
@@ -69,7 +69,7 @@ function* searchComics({ searchTerm }) {
 function* searchComicsByLetter({ searchTerm }) {
   try {
     yield put({ type: SET_LETTER, letter: searchTerm });
-    yield put({ type: CLEAR_SEARCH_TERM });    
+    yield put({ type: CLEAR_SEARCH_TERM });
     yield put({ type: LOADING, payload: true });
     const comics = yield call(Api.searchComics, searchTerm);
     const { data, total, count } = comics.data;

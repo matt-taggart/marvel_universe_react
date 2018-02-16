@@ -20,10 +20,10 @@ import {
   SEARCH_SERIES_BY_LETTER,
 } from '../constants/series';
 
-function* fetchSeries({ offset }) {
+function* fetchSeries({ offset, searchTerm }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const series = yield call(Api.fetchSeries, offset);
+    const series = yield call(Api.fetchSeries, offset, searchTerm);
     const { data, total, count } = series.data;
 
     yield put({ type: SERIES_FETCH_SUCCEEDED, series: data });

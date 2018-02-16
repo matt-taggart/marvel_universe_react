@@ -10,15 +10,32 @@ const InfiniteScrollHOC = WrappedComponent => (
     componentWillUnmount() {
       window.removeEventListener('scroll', this.scrollToBottom, false);
     }
+    componentWillReceiveProps(nextProps) {
+      if (this.props.display.get('total') !== nextProps.display.get('total')) {
+        this.setState({ itemsLoaded: 0 });
+      }
+    }
+    makeApiCall = (apiCall, display, itemsLoaded) => {
+      let searchTerm = '';
+
+      if (display.get('searchTerm')) {
+        searchTerm = display.get('searchTerm')
+      }
+      if (display.get('letter')) {
+        searchTerm = display.get('letter');
+      }
+      apiCall(itemsLoaded, searchTerm);
+    }
     scrollToBottom = () => {
       const { display, apiCall } = this.props;
 
       if ((document.body.scrollHeight - window.innerHeight) === window.pageYOffset) {
-        if (display.get('count') < display.get('total')) {
+        const additionalResultsAvailable = display.get('count') < (display.get('total') - this.state.itemsLoaded)
+        if (additionalResultsAvailable && !display.get('loading')) {
           this.setState({
             itemsLoaded: this.state.itemsLoaded + display.get('count'),
           });
-          apiCall(this.state.itemsLoaded);
+          this.makeApiCall(apiCall, display, this.state.itemsLoaded);
         }
       }
     }

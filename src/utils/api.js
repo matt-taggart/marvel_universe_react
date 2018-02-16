@@ -9,11 +9,41 @@ axios.defaults.withCredentials = true;
 
 const baseUrl = process.env.API_URL;
 
-export const fetchCharacters = (offset = '') => axios.get(`${baseUrl}/characters` + `?offset=${offset}`);
-export const fetchComics = (offset = '') => axios.get(`${baseUrl}/comics` + `?offset=${offset}`);
-export const fetchCreators = (offset = '') => axios.get(`${baseUrl}/creators` + `?offset=${offset}`);
-export const fetchEvents = (offset = '') => axios.get(`${baseUrl}/events` + `?offset=${offset}`);
-export const fetchSeries = (offset = '') => axios.get(`${baseUrl}/series` + `?offset=${offset}`);
+export const fetchCharacters = (offset = '', searchTerm) => (
+  axios.get(
+    `${baseUrl}/characters` +
+    `?offset=${offset}` + 
+    (searchTerm ? `&nameStartsWith=${searchTerm}` : '')
+  )
+);
+export const fetchComics = (offset = '', searchTerm) => (
+  axios.get(
+    `${baseUrl}/comics` +
+    `?offset=${offset}` + 
+    (searchTerm ? `&titleStartsWith=${searchTerm}` : '')
+  )
+);
+export const fetchCreators = (offset = '', searchTerm) => (
+  axios.get(
+    `${baseUrl}/creators` +
+    `?offset=${offset}` + 
+    (searchTerm ? `&nameStartsWith=${searchTerm}` : '')
+  )
+);
+export const fetchEvents = (offset = '', searchTerm) => (
+  axios.get(
+    `${baseUrl}/events` +
+    `?offset=${offset}` + 
+    (searchTerm ? `&nameStartsWith=${searchTerm}` : '')
+  )
+);
+export const fetchSeries = (offset = '', searchTerm) => (
+  axios.get(
+    `${baseUrl}/series` +
+    `?offset=${offset}` + 
+    (searchTerm ? `&titleStartsWith=${searchTerm}` : '')
+  )
+);
 export const fetchUser = () => axios.get(`${baseUrl}/user`);
 export const fetchSelectedCharacter = id => () => axios.get(`${baseUrl}/characters/${id}`);
 export const fetchSelectedComic = id => () => axios.get(`${baseUrl}/comics/${id}`);

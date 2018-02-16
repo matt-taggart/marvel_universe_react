@@ -20,10 +20,10 @@ import {
   SEARCH_CHARACTERS_BY_LETTER,
 } from '../constants/characters';
 
-function* fetchCharacters({ offset }) {
+function* fetchCharacters({ offset, searchTerm }) {
   try {
     yield put({ type: LOADING, payload: true });
-    const characters = yield call(Api.fetchCharacters, offset);
+    const characters = yield call(Api.fetchCharacters, offset, searchTerm);
     const { data, total, count } = characters.data;
 
     yield put({ type: CHARACTERS_FETCH_SUCCEEDED, characters: data });
@@ -50,8 +50,8 @@ function* fetchSelectedCharacter({ id }) {
 
 function* searchCharacters({ searchTerm }) {
   try {
-    yield put({ type: SET_SEARCH_TERM, payload: searchTerm });   
-    yield put({ type: CLEAR_LETTER });     
+    yield put({ type: SET_SEARCH_TERM, payload: searchTerm });
+    yield put({ type: CLEAR_LETTER });
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const characters = yield call(Api.searchCharacters, searchTerm);
@@ -69,7 +69,7 @@ function* searchCharacters({ searchTerm }) {
 function* searchCharactersByLetter({ searchTerm }) {
   try {
     yield put({ type: SET_LETTER, letter: searchTerm });
-    yield put({ type: CLEAR_SEARCH_TERM });    
+    yield put({ type: CLEAR_SEARCH_TERM });
     yield put({ type: LOADING, payload: true });
     const characters = yield call(Api.searchCharacters, searchTerm);
     const { data, total, count } = characters.data;
