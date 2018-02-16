@@ -26,7 +26,7 @@ function* fetchCreators({ offset, searchTerm }) {
     const creators = yield call(Api.fetchCreators, offset, searchTerm);
     const { data, total, count } = creators.data;
 
-    yield put({ type: CREATORS_FETCH_SUCCEEDED, creators: data });
+    yield put({ type: CREATORS_FETCH_SUCCEEDED, creators: data.filter(v => v.fullName) });
     yield put({ type: SET_PAGINATION_DATA, total, count });
     yield put({ type: LOADING, payload: false });
   } catch (e) {
