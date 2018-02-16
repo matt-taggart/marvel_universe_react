@@ -7,7 +7,7 @@ axios.interceptors.response.use(
 
 axios.defaults.withCredentials = true;
 
-const baseUrl = 'http://192.168.99.100:3000';
+const baseUrl = process.env.API_URL;
 
 export const fetchCharacters = (offset = '') => axios.get(`${baseUrl}/characters` + `?offset=${offset}`);
 export const fetchComics = (offset = '') => axios.get(`${baseUrl}/comics` + `?offset=${offset}`);

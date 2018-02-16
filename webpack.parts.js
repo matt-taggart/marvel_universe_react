@@ -78,10 +78,10 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
         use: {
           loader: 'url-loader',
           options,
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 }); //look into compressing images with image-webpack-loader
 
 exports.loadFonts = ({ include, exclude, options } = {}) => ({

@@ -93,6 +93,7 @@ const productionConfig = merge([
     },
   }),
   parts.setVariable('process.env.NODE_ENV', 'production'),
+  parts.setVariable('process.env.API_URL', 'http://api.marveluniverse.info'),
 ]);
 
 const developmentConfig = merge([
@@ -105,6 +106,7 @@ const developmentConfig = merge([
   parts.generateSourceMaps({
     type: 'cheap-module-eval-source-map',
   }),
+  parts.setVariable('process.env.API_URL', 'http://192.168.99.100:3000'),
   {
     output: {
       publicPath: '/',
@@ -124,5 +126,4 @@ module.exports = env => {
   return merge(commonConfig, developmentConfig);
 };
 
-// TODO: Add webpack dashboard plugin
 // TODO: Add SourceMapDevToolPlugin
