@@ -4,6 +4,7 @@ import * as Api from '../utils/api';
 import {
   LOADING,
   FETCH_FAILED,
+  SET_SEARCH_TERM,
   SET_PAGINATION_DATA,
   SET_LETTER,
 } from '../constants/display';
@@ -47,6 +48,7 @@ function* fetchSelectedComic({ id }) {
 
 function* searchComics({ searchTerm }) {
   try {
+    yield put({ type: SET_SEARCH_TERM, payload: searchTerm });    
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const comics = yield call(Api.searchComics, searchTerm);

@@ -88,6 +88,7 @@ class App extends Component {
       hideServerErrorModal,
       showSaveItemErrorModal,
       clearApiData,
+      clearSearchTerm,
     } = this.props;
 
     return (
@@ -151,6 +152,7 @@ class App extends Component {
                   <Search
                     placeholder="Search characters"
                     searchFunc={searchCharacters}
+                    display={display}
                   />
                   <PaginationBar
                     setPaginationAndSearch={searchCharactersByLetter}
@@ -168,6 +170,7 @@ class App extends Component {
                     isSignedIn={user.get('signedIn')}
                     display={display}
                     clearApiData={clearApiData}
+                    clearSearchTerm={clearSearchTerm}
                   />
                 </div>
               )}
@@ -193,6 +196,7 @@ class App extends Component {
                   <Search
                     placeholder="Search comics"
                     searchFunc={searchComics}
+                    display={display}
                   />
                   <PaginationBar
                     setPaginationAndSearch={searchComicsByLetter}
@@ -209,6 +213,7 @@ class App extends Component {
                     isSignedIn={user.get('signedIn')}
                     display={display}
                     clearApiData={clearApiData}
+                    clearSearchTerm={clearSearchTerm}
                   />
                 </div>
               )}
@@ -234,6 +239,7 @@ class App extends Component {
                   <Search
                     placeholder="Search creators"
                     searchFunc={searchCreators}
+                    display={display}
                   />
                   <PaginationBar
                     setPaginationAndSearch={searchCreatorsByLetter}
@@ -250,6 +256,7 @@ class App extends Component {
                     isSignedIn={user.get('signedIn')}
                     display={display}
                     clearApiData={clearApiData}
+                    clearSearchTerm={clearSearchTerm}
                   />
                 </div>
               )}
@@ -275,6 +282,7 @@ class App extends Component {
                   <Search
                     placeholder="Search events"
                     searchFunc={searchEvents}
+                    display={display}
                   />
                   <PaginationBar
                     setPaginationAndSearch={searchEventsByLetter}
@@ -291,6 +299,7 @@ class App extends Component {
                     isSignedIn={user.get('signedIn')}
                     display={display}
                     clearApiData={clearApiData}
+                    clearSearchTerm={clearSearchTerm}
                   />
                 </div>
               )}
@@ -316,6 +325,7 @@ class App extends Component {
                   <Search
                     placeholder="Search series"
                     searchFunc={searchSeries}
+                    display={display}
                   />
                   <PaginationBar
                     setPaginationAndSearch={searchSeriesByLetter}
@@ -332,6 +342,7 @@ class App extends Component {
                     isSignedIn={user.get('signedIn')}
                     display={display}
                     clearApiData={clearApiData}
+                    clearSearchTerm={clearSearchTerm}
                   />
                 </div>
               )}
@@ -399,7 +410,6 @@ App.propTypes = {
   signIn: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
   clearApiErrors: PropTypes.func.isRequired,
-  clearApiData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

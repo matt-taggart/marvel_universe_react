@@ -20,6 +20,7 @@ export default compose(
     },
     componentWillUnmount() {
       this.props.clearApiData();
+      this.props.clearSearchTerm();
     }
   }),
   InfiniteScrollHOC,

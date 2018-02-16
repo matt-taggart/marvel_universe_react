@@ -11,6 +11,8 @@ import {
   HIDE_SERVER_ERROR_MODAL,
   SET_PAGINATION_DATA,
   CLEAR_API_DATA,
+  SET_SEARCH_TERM,
+  CLEAR_SEARCH_TERM,
   SET_LETTER,
 } from '../constants/display';
 
@@ -21,6 +23,7 @@ const initialState = new Map({
   applicationError: {},
   displayFlashMessage: false,
   showSaveItemErrorModal: false,
+  searchTerm: '',
   prevLetter: null,
   letter: null,
   count: 0,
@@ -51,6 +54,10 @@ export default (state = initialState, action) => {
       return state
         .set('apiError', false)
         .set('apiErrorPayload', initialState.get('apiErrorPayload'));
+    case SET_SEARCH_TERM:
+      return state.set('searchTerm', action.payload);
+    case CLEAR_SEARCH_TERM:
+      return state.set('searchTerm', initialState.get('searchTerm'));
     case SET_PAGINATION_DATA:
       return state
         .set('count', action.count)
