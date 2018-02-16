@@ -8,6 +8,7 @@ import {
   CLEAR_SEARCH_TERM,
   SET_PAGINATION_DATA,
   SET_LETTER,
+  CLEAR_LETTER,
 } from '../constants/display';
 import {
   SERIES_FETCH_SUCCEEDED,
@@ -50,6 +51,7 @@ function* fetchSelectedSeries({ id }) {
 function* searchSeries({ searchTerm }) {
   try {
     yield put({ type: SET_SEARCH_TERM, payload: searchTerm });
+    yield put({ type: CLEAR_LETTER });
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const series = yield call(Api.searchSeries, searchTerm);

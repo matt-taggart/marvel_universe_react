@@ -8,6 +8,7 @@ import {
   CLEAR_SEARCH_TERM,
   SET_PAGINATION_DATA,
   SET_LETTER,
+  CLEAR_LETTER,
 } from '../constants/display';
 import {
   COMICS_FETCH_SUCCEEDED,
@@ -49,7 +50,8 @@ function* fetchSelectedComic({ id }) {
 
 function* searchComics({ searchTerm }) {
   try {
-    yield put({ type: SET_SEARCH_TERM, payload: searchTerm });    
+    yield put({ type: SET_SEARCH_TERM, payload: searchTerm });
+    yield put({ type: CLEAR_LETTER });
     yield call(delay, 500);
     yield put({ type: LOADING, payload: true });
     const comics = yield call(Api.searchComics, searchTerm);
